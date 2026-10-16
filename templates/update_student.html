@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Update student metrics · EduPredict{% endblock %}
+{% block content %}
+<section class="hero"><div><p class="eyebrow">TEACHER MANAGEMENT</p><h1>Update metrics</h1><p>{{ student.name }} · {{ student.student_id }}</p></div><a class="button secondary" href="{{ url_for('dashboard') }}">Back to roster</a></section>
+<section class="panel form-panel"><form method="post">
+  <label>Attendance percentage<input type="number" name="attendance_percentage" min="0" max="100" step="0.01" required value="{{ student.attendance_percentage|default(student.attendance_rate, true) }}"></label>
+  <label>LMS logins in the last 30 days<input type="number" name="lms_logins_last_30_days" min="0" step="1" required value="{{ student.lms_logins_last_30_days|default(student.lms_activity_score, true) }}"></label>
+  <label>Previous GPA<input type="number" name="previous_gpa" min="0" max="4" step="0.01" required value="{{ student.previous_gpa }}"></label>
+  <button>Save metrics</button>
+</form></section>
+{% endblock %}

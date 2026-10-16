@@ -1,20 +1,12 @@
 import os
-import pickle
 from datetime import datetime, timezone
 from functools import wraps
 
-import numpy as np
-import pandas as pd
 from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
 from pymongo import ASCENDING, MongoClient
 from pymongo.errors import DuplicateKeyError
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
 from werkzeug.security import check_password_hash, generate_password_hash
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "models", "gpa_predictor.pkl")
+from model_engine import predict_student_performance
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = os.environ.get("FLASK_SECRET_KEY", "change-this-secret-before-production")
@@ -46,42 +38,6 @@ def seed_database():
                 "role": role,
                 "created_at": datetime.now(timezone.utc),
             })
-
-
-def ensure_model():
-    if os.path.exists(MODEL_PATH):
-        return
-    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
-    rng = np.random.default_rng(42)
-    attendance = rng.uniform(45, 100, 350)
-    activity = rng.uniform(10, 100, 350)
-    prior_gpa = rng.uniform(1.0, 4.0, 350)
-    target = np.clip(0.021 * attendance + 0.010 * activity + 0.72 * prior_gpa - 0.55 + rng.normal(0, .18, 350), 0, 4)
-    X = pd.DataFrame({"attendance_rate": attendance, "lms_activity_score": activity, "previous_gpa": prior_gpa})
-    model = Pipeline([("scale", StandardScaler()), ("regressor", RandomForestRegressor(n_estimators=180, random_state=42))])
-    model.fit(X, target)
-    with open(MODEL_PATH, "wb") as output:
-        pickle.dump(model, output)
-
-
-def predict_gpa(student):
-    ensure_model()
-    with open(MODEL_PATH, "rb") as source:
-        model = pickle.load(source)
-    values = pd.DataFrame([{
-        "attendance_rate": float(student["attendance_rate"]),
-        "lms_activity_score": float(student["lms_activity_score"]),
-        "previous_gpa": float(student["previous_gpa"]),
-    }])
-    return round(float(model.predict(values)[0]), 2)
-
-
-def risk_level(gpa, student):
-    if gpa < 2.0 or float(student["attendance_rate"]) < 60 or float(student["lms_activity_score"]) < 35:
-        return "High"
-    if gpa < 2.7 or float(student["attendance_rate"]) < 75:
-        return "Medium"
-    return "Low"
 
 
 def login_required(*roles):
@@ -119,7 +75,7 @@ def signup():
         else:
             try:
                 users.insert_one({"username": name, "email": email, "password": generate_password_hash(password), "role": "student", "created_at": datetime.now(timezone.utc)})
-                students.update_one({"email": email}, {"$setOnInsert": {"student_id": f"STU-{datetime.now().strftime('%y%m%d%H%M%S')}", "name": name, "email": email, "attendance_rate": 0.0, "lms_activity_score": 0.0, "previous_gpa": 0.0, "assigned_teacher": "teacher@edupredict.com"}}, upsert=True)
+                students.update_one({"email": email}, {"$setOnInsert": {"student_id": f"STU-{datetime.now().strftime('%y%m%d%H%M%S%f')}", "name": name, "email": email, "attendance_percentage": 0.0, "lms_logins_last_30_days": 0.0, "previous_gpa": 0.0, "midterm_score": 0.0, "assigned_teacher": "teacher@edupredict.com"}}, upsert=True)
                 flash("Your student account is ready. Please sign in.", "success")
                 return redirect(url_for("signin"))
             except DuplicateKeyError:
@@ -172,6 +128,31 @@ def latest_by_student(roster):
     return result
 
 
+@app.route("/teacher/update_student/<student_id>", methods=["GET", "POST"])
+@login_required("teacher")
+def update_student(student_id):
+    student = students.find_one({"student_id": student_id})
+    if not student:
+        abort(404)
+    if student.get("assigned_teacher") not in (None, session["user_email"]):
+        abort(403)
+    if request.method == "POST":
+        try:
+            attendance = float(request.form["attendance_percentage"])
+            logins = float(request.form["lms_logins_last_30_days"])
+            gpa = float(request.form["previous_gpa"])
+        except (KeyError, ValueError):
+            flash("Metrics must be valid numeric values.", "danger")
+        else:
+            if not 0 <= attendance <= 100 or logins < 0 or not 0 <= gpa <= 4:
+                flash("Attendance must be 0–100, logins cannot be negative, and GPA must be 0–4.", "danger")
+            else:
+                students.update_one({"_id": student["_id"]}, {"$set": {"attendance_percentage": attendance, "lms_logins_last_30_days": logins, "previous_gpa": gpa}})
+                flash("Student metrics updated successfully.", "success")
+                return redirect(url_for("dashboard"))
+    return render_template("update_student.html", student=student)
+
+
 @app.route("/analyst/predict", methods=["GET", "POST"])
 @login_required("analyst")
 def analyst_predict():
@@ -180,8 +161,8 @@ def analyst_predict():
         selected = request.form.getlist("student_email") or [item["email"] for item in roster]
         created = 0
         for student in students.find({"email": {"$in": selected}}):
-            gpa = predict_gpa(student)
-            predictions.insert_one({"student_id": student["student_id"], "student_email": student["email"], "predicted_gpa": gpa, "dropout_risk": risk_level(gpa, student), "generated_by": session["user_email"], "timestamp": datetime.now(timezone.utc)})
+            result = predict_student_performance(student)
+            predictions.insert_one({"student_id": student["student_id"], "student_email": student["email"], "predicted_gpa": result["predicted_gpa"], "predicted_performance": result["predicted_performance"], "dropout_risk": result["dropout_risk"], "generated_by": session["user_email"], "timestamp": datetime.now(timezone.utc)})
             created += 1
         flash(f"Generated and broadcast {created} prediction result(s).", "success")
         return redirect(url_for("analyst_predict"))
@@ -240,7 +221,6 @@ def forbidden(_):
 # Execute this during application startup as well as when launched by a WSGI server.
 # Both operations are idempotent, so the Flask development reloader is safe.
 seed_database()
-ensure_model()
 
 if __name__ == "__main__":
     app.run(debug=True)

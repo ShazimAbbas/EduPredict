@@ -20,6 +20,10 @@ Staff accounts are seeded at first startup. The shared initial password is `EduP
 
 Public sign-up deliberately has no role field and always creates a student account. Set `FLASK_SECRET_KEY` to a unique secret before deployment.
 
+## CSV data and model setup
+
+Put `EduPredict.csv` in the project root, then run `python seed_db.py` to add the first 25 student records. Use `python seed_db.py --clear` only when you intentionally want to reset the application collections. Run `python model_engine.py` to train and save `edupredict_model.pkl` and `scaler.pkl` from the CSV. The application will also train automatically on its first prediction request when those files are absent.
+
 ## Data flow
 
 The analyst selects student records in the Prediction Portal. The model creates a GPA forecast and a Low/Medium/High dropout assessment, then writes each result to `predictions`. The teacher, student, and admin dashboards query that same collection live on every request.
