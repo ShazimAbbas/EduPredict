@@ -113,8 +113,6 @@ def dashboard():
         return render_template("analyst_dashboard.html", student_count=students.count_documents({}), recent_predictions=list(predictions.find().sort("timestamp", -1).limit(8)))
     if role == "teacher":
         roster = list(students.find({"assigned_teacher": session["user_email"]}).sort("name", 1))
-        if not roster:  # teacher can see unassigned records as an onboarding-friendly default
-            roster = list(students.find().sort("name", 1))
         return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster))
     student = students.find_one({"email": session["user_email"]})
     student_predictions = list(predictions.find({"student_email": session["user_email"]}).sort("timestamp", -1))
@@ -154,13 +152,18 @@ def update_student(student_id):
 
 
 @app.route("/analyst/predict", methods=["GET", "POST"])
-@login_required("analyst")
+@login_required("analyst", "teacher")
 def analyst_predict():
-    roster = list(students.find().sort("name", 1))
+    # Analysts can process the whole dataset; teachers can process only their class.
+    query = {} if session["role"] == "analyst" else {"assigned_teacher": session["user_email"]}
+    roster = list(students.find(query).sort("name", 1))
     if request.method == "POST":
         selected = request.form.getlist("student_email") or [item["email"] for item in roster]
         created = 0
-        for student in students.find({"email": {"$in": selected}}):
+        prediction_query = {"email": {"$in": selected}}
+        if session["role"] == "teacher":
+            prediction_query["assigned_teacher"] = session["user_email"]
+        for student in students.find(prediction_query):
             result = predict_student_performance(student)
             predictions.insert_one({"student_id": student["student_id"], "student_email": student["email"], "predicted_gpa": result["predicted_gpa"], "predicted_performance": result["predicted_performance"], "dropout_risk": result["dropout_risk"], "generated_by": session["user_email"], "timestamp": datetime.now(timezone.utc)})
             created += 1

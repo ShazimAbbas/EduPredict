@@ -22,7 +22,7 @@ Public sign-up deliberately has no role field and always creates a student accou
 
 ## CSV data and model setup
 
-Put `EduPredict.csv` in the project root, then run `python seed_db.py` to add the first 25 student records. Use `python seed_db.py --clear` only when you intentionally want to reset the application collections. Run `python model_engine.py` to train and save `edupredict_model.pkl` and `scaler.pkl` from the CSV. The application will also train automatically on its first prediction request when those files are absent.
+Put `EduPredict.csv` in the project root, then run `python seed_db.py` to add the first 25 student records. Use `python seed_db.py --clear` only when you intentionally want to reset the application collections. Open [EduPredict_Model_Training.ipynb](D:\Projects\EduPredict\EduPredict_Model_Training.ipynb) in Jupyter or Colab and run its cells in order to train and save `edupredict_model.pkl` and `scaler.pkl`. The application uses those saved artifacts for predictions and retains a simple fallback score until they are available.
 
 ## Data flow
 
