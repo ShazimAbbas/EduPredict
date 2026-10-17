@@ -1,0 +1,1001 @@
+student_id,age,gender,course,semester,attendance_percentage,weekly_study_hours,lms_logins_last_30_days,assignment_average,midterm_score,previous_gpa,internet_access,financial_assistance_needed,final_score,passed,academic_risk,dropout_probability,dropout_risk,course_demand
+STU0001,16,Female,Business,2,91.7,17.5,53,74.7,71.2,2.19,Good,No,52.5,1,Medium,0.079,Low,Medium
+STU0002,22,Female,Mathematics,1,68.2,14.0,38,49.7,92.5,3.46,Average,Yes,49.7,0,High,0.442,Medium,High
+STU0003,21,Female,Information Technology,6,42.4,13.0,33,56.4,60.6,2.19,Good,No,28.7,0,High,0.462,High,Medium
+STU0004,19,Female,Information Technology,6,55.0,18.0,52,57.1,55.7,2.32,Good,No,38.2,0,High,0.497,High,High
+STU0005,19,Female,Engineering,7,96.5,14.3,28,87.2,58.7,2.94,Good,No,64.9,1,Medium,0.171,Low,Medium
+STU0006,23,Female,Information Technology,8,72.8,12.3,43,78.9,64.7,3.12,Good,No,49.8,0,High,0.373,Medium,High
+STU0007,16,Male,Engineering,4,68.2,19.4,45,84.8,66.5,3.24,Good,No,54.2,1,Medium,0.196,Low,Medium
+STU0008,22,Female,Information Technology,7,99.4,12.6,41,45.6,53.9,2.64,Good,Yes,48.9,0,High,0.318,Medium,Medium
+STU0009,17,Female,Computer Science,6,94.4,10.5,29,51.3,33.6,3.07,Good,No,58.8,1,Medium,0.102,Low,Medium
+STU0010,16,Male,Engineering,3,78.3,7.8,25,85.6,58.5,3.22,Poor,No,52.4,1,Medium,0.205,Low,High
+STU0011,20,Male,Computer Science,7,74.2,15.5,38,30.5,74.1,2.84,Good,No,52.4,1,Medium,0.179,Low,Medium
+STU0012,24,Female,Computer Science,1,76.3,18.2,49,94.6,70.3,2.6,Poor,No,52.3,1,Medium,0.251,Medium,High
+STU0013,22,Male,Business,5,81.0,11.7,51,45.8,88.4,1.69,Good,No,45.3,0,High,0.32,Medium,Low
+STU0014,22,Male,Engineering,8,98.8,18.5,62,88.5,100.0,3.12,Good,Yes,66.2,1,Low,0.157,Low,Low
+STU0015,22,Male,Engineering,6,83.5,2.1,17,60.8,80.9,2.73,Good,No,45.2,0,High,0.319,Medium,Low
+STU0016,23,Male,Computer Science,8,87.4,11.7,36,91.8,91.5,2.41,Good,No,57.5,1,Medium,0.118,Low,High
+STU0017,20,Male,Computer Science,1,93.2,11.8,43,100.0,81.0,3.59,Good,No,69.0,1,Low,0.09,Low,Medium
+STU0018,17,Female,Mathematics,5,62.8,8.4,38,38.6,97.1,1.7,Average,No,38.2,0,High,0.439,Medium,Medium
+STU0019,23,Male,Computer Science,7,87.8,23.9,56,86.1,99.5,3.85,Average,No,67.7,1,Low,0.058,Low,High
+STU0020,20,Female,Computer Science,6,74.2,11.7,35,46.1,84.2,2.68,Average,No,52.8,1,Medium,0.246,Low,Medium
+STU0021,20,Female,Computer Science,8,45.3,10.0,17,81.8,80.0,2.92,Good,No,43.9,0,High,0.484,High,Medium
+STU0022,19,Male,Information Technology,4,50.3,12.1,46,71.7,64.5,2.42,Good,Yes,50.6,1,High,0.563,High,Low
+STU0023,17,Male,Engineering,6,64.8,2.0,31,77.1,67.3,1.53,Average,Yes,42.6,0,High,0.51,High,Medium
+STU0024,24,Female,Engineering,4,84.9,8.2,29,60.4,62.3,2.6,Good,Yes,47.0,0,High,0.372,Medium,High
+STU0025,23,Male,Business,7,79.5,16.9,30,87.5,78.6,2.93,Good,Yes,45.7,0,High,0.385,Medium,Medium
+STU0026,21,Male,Computer Science,1,80.4,8.9,34,51.8,55.8,3.17,Good,No,44.7,0,High,0.297,Medium,High
+STU0027,19,Female,Information Technology,3,100.0,7.9,20,94.9,64.8,2.56,Good,No,58.8,1,Medium,0.07,Low,Low
+STU0028,23,Other,Information Technology,1,61.5,18.5,45,68.5,28.0,1.17,Average,No,46.8,0,High,0.442,Medium,High
+STU0029,20,Female,Computer Science,6,77.6,18.7,56,52.6,97.3,1.62,Good,Yes,53.7,1,Medium,0.226,Low,High
+STU0030,19,Male,Computer Science,2,82.0,14.6,44,100.0,64.3,4.0,Good,No,67.7,1,Low,0.176,Low,Low
+STU0031,20,Female,Information Technology,3,68.4,9.7,27,73.9,75.7,1.94,Poor,No,40.1,0,High,0.352,Medium,Medium
+STU0032,18,Female,Computer Science,7,78.4,10.8,29,100.0,92.8,3.7,Poor,No,62.4,1,Medium,0.211,Low,Medium
+STU0033,16,Male,Business,3,57.2,8.0,29,94.5,73.1,2.05,Good,No,55.3,1,High,0.478,High,High
+STU0034,20,Female,Business,2,96.3,7.0,22,62.2,92.6,2.57,Good,No,49.8,0,High,0.268,Medium,Medium
+STU0035,23,Male,Computer Science,1,69.1,6.8,16,73.6,46.9,3.14,Average,No,51.9,1,Medium,0.17,Low,High
+STU0036,16,Male,Information Technology,2,100.0,8.9,27,76.9,100.0,2.13,Good,No,62.6,1,Medium,0.054,Low,Medium
+STU0037,23,Female,Engineering,8,77.6,6.8,28,99.4,86.5,3.81,Good,Yes,62.8,1,Medium,0.128,Low,Low
+STU0038,23,Male,Engineering,5,91.4,4.2,18,82.0,71.6,2.75,Good,No,51.8,1,Medium,0.074,Low,High
+STU0039,18,Male,Engineering,8,77.3,13.1,28,77.8,92.2,3.02,Good,No,51.4,1,Medium,0.213,Low,High
+STU0040,21,Female,Information Technology,2,77.6,13.2,47,71.8,48.1,2.51,Poor,No,57.5,1,Medium,0.206,Low,High
+STU0041,17,Other,Engineering,3,70.4,20.5,33,74.2,63.1,3.16,Average,No,56.6,1,Medium,0.18,Low,High
+STU0042,22,Female,Computer Science,2,79.5,8.7,26,95.9,92.6,3.81,Poor,No,64.5,1,Medium,0.129,Low,High
+STU0043,22,Female,Information Technology,4,82.1,13.5,35,75.1,36.3,2.61,Average,No,44.3,0,High,0.266,Medium,Medium
+STU0044,19,Other,Computer Science,5,67.8,13.6,41,68.7,77.5,3.91,Average,No,55.2,1,Medium,0.256,Medium,High
+STU0045,16,Male,Information Technology,7,76.4,10.7,38,66.0,77.0,2.27,Average,No,50.2,1,Medium,0.199,Low,High
+STU0046,24,Male,Information Technology,3,70.1,15.7,54,66.1,100.0,3.23,Average,No,59.2,1,Medium,0.148,Low,High
+STU0047,20,Male,Computer Science,7,100.0,15.9,39,52.6,41.1,3.04,Good,Yes,53.8,1,Medium,0.135,Low,High
+STU0048,24,Male,Engineering,6,76.8,13.6,45,63.0,95.4,1.95,Good,No,46.9,0,High,0.352,Medium,Medium
+STU0049,22,Female,Information Technology,3,98.1,10.7,35,99.0,58.5,2.85,Good,No,48.9,0,High,0.22,Low,High
+STU0050,23,Male,Computer Science,8,75.5,10.2,19,71.7,60.4,2.71,Good,No,49.1,0,High,0.278,Medium,High
+STU0051,22,Male,Computer Science,4,81.4,5.2,37,86.3,47.2,2.1,Good,No,36.0,0,High,0.328,Medium,Low
+STU0052,17,Male,Information Technology,2,60.8,8.0,16,35.3,49.5,2.95,Good,Yes,36.5,0,High,0.52,High,High
+STU0053,19,Male,Information Technology,8,72.2,8.9,33,84.1,74.9,2.8,Average,No,49.5,0,High,0.395,Medium,Medium
+STU0054,20,Female,Information Technology,8,80.7,6.4,27,72.4,49.1,2.65,Good,No,49.5,0,High,0.372,Medium,Medium
+STU0055,20,Male,Computer Science,1,98.6,14.2,43,67.3,80.6,2.65,Good,No,68.2,1,Low,0.023,Low,Medium
+STU0056,16,Male,Engineering,8,80.9,18.0,46,77.9,56.7,2.64,Good,Yes,40.3,0,High,0.419,Medium,High
+STU0057,20,Male,Mathematics,8,96.0,7.5,33,67.1,47.4,2.44,Good,No,61.2,1,Medium,0.085,Low,High
+STU0058,17,Female,Information Technology,7,86.3,13.4,27,41.0,59.0,2.8,Poor,No,45.2,0,High,0.371,Medium,Medium
+STU0059,22,Female,Business,3,99.2,6.8,24,89.8,73.7,2.25,Good,No,57.7,1,Medium,0.075,Low,Low
+STU0060,22,Female,Engineering,6,77.2,10.5,29,78.9,63.3,4.0,Good,No,47.1,0,High,0.325,Medium,Medium
+STU0061,24,Male,Mathematics,5,100.0,8.5,23,70.0,68.6,1.71,Good,No,56.1,1,Medium,0.0,Low,Low
+STU0062,22,Male,Business,5,71.7,15.0,46,59.5,79.8,2.29,Average,No,49.2,0,High,0.42,Medium,Medium
+STU0063,19,Female,Engineering,5,68.0,8.6,38,51.5,86.4,2.35,Average,No,46.3,0,High,0.401,Medium,Medium
+STU0064,24,Female,Mathematics,6,62.3,17.1,45,78.6,62.7,4.0,Good,No,42.8,0,High,0.351,Medium,High
+STU0065,19,Female,Engineering,5,100.0,10.8,40,100.0,50.2,1.78,Good,No,53.2,1,Medium,0.099,Low,Medium
+STU0066,18,Female,Information Technology,6,88.7,8.8,30,78.3,69.3,3.0,Average,No,59.4,1,Medium,0.107,Low,Medium
+STU0067,24,Female,Computer Science,5,73.7,5.7,15,52.9,76.0,2.87,Poor,No,45.9,0,High,0.408,Medium,High
+STU0068,19,Male,Computer Science,1,94.2,13.3,37,78.6,43.2,2.93,Good,No,58.9,1,Medium,0.072,Low,Medium
+STU0069,16,Male,Information Technology,1,86.9,16.5,44,74.1,52.9,3.57,Good,No,61.4,1,Medium,0.154,Low,High
+STU0070,20,Female,Information Technology,8,100.0,13.4,34,88.8,55.8,3.55,Good,No,55.3,1,Medium,0.048,Low,Low
+STU0071,23,Male,Information Technology,8,57.9,23.2,64,84.7,64.5,2.38,Good,No,59.8,1,High,0.385,Medium,Medium
+STU0072,17,Female,Business,5,74.6,19.1,54,27.2,55.1,2.84,Average,No,43.4,0,High,0.407,Medium,Low
+STU0073,20,Male,Business,2,72.0,10.5,20,83.7,80.0,1.4,Poor,No,48.8,0,High,0.425,Medium,Medium
+STU0074,17,Female,Engineering,7,52.3,10.4,20,58.9,40.7,2.77,Poor,No,39.8,0,High,0.505,High,High
+STU0075,22,Female,Computer Science,2,91.8,14.3,45,52.3,41.1,2.14,Average,No,44.6,0,High,0.32,Medium,High
+STU0076,20,Female,Computer Science,4,74.5,7.8,21,72.0,62.3,2.57,Good,No,32.1,0,High,0.335,Medium,High
+STU0077,18,Female,Engineering,3,87.6,17.8,52,81.6,65.0,1.52,Poor,Yes,49.7,0,High,0.431,Medium,Medium
+STU0078,18,Female,Engineering,1,100.0,13.8,47,48.7,43.3,2.98,Good,No,40.4,0,High,0.272,Medium,High
+STU0079,21,Female,Mathematics,7,73.4,13.3,29,86.3,57.7,1.51,Good,No,56.2,1,Medium,0.125,Low,Medium
+STU0080,22,Male,Engineering,5,72.5,15.4,33,87.2,61.2,2.8,Average,No,61.8,1,Medium,0.199,Low,Medium
+STU0081,24,Female,Engineering,3,79.5,20.6,69,75.8,61.3,1.84,Good,No,54.7,1,Medium,0.132,Low,High
+STU0082,19,Female,Information Technology,5,90.8,12.9,41,61.1,70.6,2.11,Average,No,48.5,0,High,0.331,Medium,Medium
+STU0083,17,Male,Information Technology,1,70.6,11.4,32,59.3,56.8,3.51,Poor,No,42.4,0,High,0.459,High,Medium
+STU0084,23,Male,Computer Science,4,69.8,19.5,45,91.4,93.1,3.11,Average,No,56.4,1,Medium,0.217,Low,Low
+STU0085,21,Female,Business,5,91.7,16.8,43,50.8,76.3,3.5,Average,No,67.1,1,Low,0.049,Low,Low
+STU0086,22,Female,Mathematics,3,82.9,10.4,23,92.0,54.3,3.79,Good,No,52.2,1,Medium,0.144,Low,High
+STU0087,16,Male,Information Technology,7,51.4,12.0,43,72.4,69.6,2.16,Good,No,30.3,0,High,0.407,Medium,Medium
+STU0088,18,Male,Business,2,62.1,13.0,32,73.5,70.1,3.75,Average,No,58.8,1,Medium,0.23,Low,High
+STU0089,22,Male,Computer Science,2,97.5,13.8,49,47.7,88.7,1.67,Average,No,59.6,1,Medium,0.0,Low,Low
+STU0090,23,Male,Computer Science,5,83.2,5.2,18,72.7,57.8,3.22,Poor,No,60.2,1,Medium,0.146,Low,High
+STU0091,19,Female,Computer Science,8,68.1,4.3,11,84.8,81.0,2.35,Good,Yes,56.2,1,Medium,0.335,Medium,High
+STU0092,23,Male,Computer Science,4,75.8,7.6,23,53.6,68.7,2.05,Good,No,51.2,1,Medium,0.192,Low,High
+STU0093,23,Male,Mathematics,1,78.2,7.2,5,83.0,93.4,3.13,Good,Yes,57.7,1,Medium,0.233,Low,Medium
+STU0094,19,Female,Information Technology,8,87.6,8.8,28,76.4,89.9,3.36,Average,No,46.4,0,High,0.273,Medium,Medium
+STU0095,24,Male,Engineering,4,60.3,15.2,42,64.7,71.3,3.34,Average,No,50.3,1,Medium,0.195,Low,High
+STU0096,18,Male,Business,2,67.1,11.2,41,88.7,63.5,2.85,Poor,No,54.8,1,Medium,0.28,Medium,High
+STU0097,18,Female,Computer Science,5,81.5,13.0,24,39.8,76.6,2.79,Good,No,47.5,0,High,0.32,Medium,Medium
+STU0098,22,Female,Computer Science,3,76.7,5.9,32,80.5,64.9,3.07,Good,No,50.2,1,Medium,0.235,Low,Medium
+STU0099,21,Other,Engineering,8,85.4,9.7,38,100.0,96.6,2.91,Good,No,56.1,1,Medium,0.131,Low,High
+STU0100,17,Female,Computer Science,3,62.0,14.9,53,98.0,69.3,3.08,Good,No,48.6,0,High,0.414,Medium,Medium
+STU0101,23,Male,Mathematics,5,82.6,15.0,43,81.2,61.1,2.84,Good,No,64.2,1,Medium,0.094,Low,Low
+STU0102,17,Female,Computer Science,5,92.2,8.4,37,70.2,60.2,3.29,Average,Yes,64.2,1,Medium,0.177,Low,High
+STU0103,23,Female,Business,2,84.3,12.8,26,64.8,47.4,1.56,Good,No,43.3,0,High,0.33,Medium,Medium
+STU0104,16,Female,Engineering,4,79.8,23.0,66,70.2,77.5,2.61,Good,No,56.7,1,Medium,0.146,Low,Medium
+STU0105,23,Female,Computer Science,1,76.8,11.9,30,83.7,54.1,1.73,Average,No,40.8,0,High,0.333,Medium,High
+STU0106,23,Female,Computer Science,6,67.1,8.5,15,62.1,86.7,2.89,Average,Yes,54.0,1,Medium,0.305,Medium,Low
+STU0107,23,Female,Mathematics,7,77.1,11.1,25,87.1,46.0,3.85,Good,Yes,63.9,1,Medium,0.312,Medium,Low
+STU0108,21,Male,Computer Science,8,94.4,12.5,38,100.0,70.2,2.37,Good,Yes,48.7,0,High,0.368,Medium,Low
+STU0109,20,Female,Information Technology,3,76.5,11.2,28,74.0,87.6,2.79,Average,Yes,57.1,1,Medium,0.3,Medium,Low
+STU0110,22,Male,Information Technology,3,66.4,11.8,39,53.5,31.4,3.23,Average,No,44.6,0,High,0.419,Medium,Medium
+STU0111,18,Female,Computer Science,5,71.6,4.8,6,53.5,100.0,1.25,Average,No,48.0,0,High,0.417,Medium,High
+STU0112,23,Female,Engineering,6,80.6,7.2,9,87.4,60.8,2.33,Good,No,59.8,1,Medium,0.133,Low,Medium
+STU0113,21,Female,Engineering,8,73.1,11.3,46,74.0,70.4,2.96,Good,Yes,63.5,1,Medium,0.259,Medium,Medium
+STU0114,20,Other,Information Technology,1,84.3,11.2,42,89.0,77.7,0.67,Poor,No,47.4,0,High,0.375,Medium,High
+STU0115,20,Male,Engineering,2,84.8,9.2,22,66.5,80.3,2.02,Good,No,54.1,1,Medium,0.163,Low,Medium
+STU0116,21,Female,Computer Science,3,89.6,11.1,34,88.3,72.7,3.47,Good,Yes,59.6,1,Medium,0.233,Low,Medium
+STU0117,16,Female,Computer Science,3,96.5,12.3,45,72.5,85.0,3.4,Poor,Yes,56.2,1,Medium,0.239,Low,Medium
+STU0118,17,Male,Business,4,90.9,16.4,49,63.3,76.8,2.96,Good,Yes,57.1,1,Medium,0.231,Low,Medium
+STU0119,18,Male,Mathematics,7,65.9,11.5,36,68.6,97.9,3.32,Average,No,59.3,1,Medium,0.194,Low,Medium
+STU0120,17,Male,Computer Science,1,66.3,14.0,50,55.8,76.9,2.85,Average,No,49.9,0,High,0.43,Medium,Low
+STU0121,19,Female,Computer Science,7,77.0,9.3,25,100.0,100.0,3.09,Good,No,56.2,1,Medium,0.213,Low,High
+STU0122,22,Male,Information Technology,5,72.1,14.9,43,73.5,83.3,2.48,Average,No,49.8,0,High,0.399,Medium,High
+STU0123,21,Other,Engineering,5,63.2,13.9,40,85.3,37.3,2.78,Good,No,43.2,0,High,0.413,Medium,High
+STU0124,20,Male,Computer Science,6,72.3,16.3,44,66.4,100.0,2.26,Average,No,48.9,0,High,0.399,Medium,Low
+STU0125,23,Female,Information Technology,1,71.8,15.6,41,58.2,58.2,3.58,Poor,Yes,51.9,1,Medium,0.297,Medium,High
+STU0126,21,Male,Engineering,6,69.3,14.9,43,71.3,93.4,3.77,Average,No,60.7,1,Medium,0.211,Low,Medium
+STU0127,16,Female,Information Technology,2,73.9,11.5,36,92.6,68.5,3.67,Good,No,62.8,1,Medium,0.196,Low,Low
+STU0128,22,Male,Computer Science,5,93.3,13.2,31,66.7,86.0,2.41,Average,Yes,50.1,1,Medium,0.134,Low,High
+STU0129,21,Female,Computer Science,6,80.6,17.3,54,61.1,56.3,2.03,Poor,No,43.1,0,High,0.417,Medium,High
+STU0130,21,Female,Information Technology,5,100.0,8.7,21,77.5,78.6,3.59,Average,No,69.3,1,Low,0.03,Low,Low
+STU0131,21,Female,Information Technology,3,80.2,8.9,28,83.0,63.7,3.08,Average,No,52.0,1,Medium,0.142,Low,High
+STU0132,20,Female,Engineering,4,74.2,12.9,36,100.0,94.8,2.93,Good,No,60.6,1,Medium,0.185,Low,Low
+STU0133,16,Male,Business,4,78.1,14.1,44,80.7,75.5,2.26,Average,No,51.5,1,Medium,0.138,Low,Medium
+STU0134,21,Male,Business,1,81.3,7.9,10,85.3,83.9,3.0,Good,No,63.1,1,Medium,0.158,Low,Low
+STU0135,23,Male,Mathematics,6,83.7,11.6,43,86.5,31.2,1.94,Good,No,52.0,1,Medium,0.148,Low,Low
+STU0136,18,Male,Information Technology,1,100.0,11.5,30,56.6,66.5,3.14,Poor,Yes,60.3,1,Medium,0.187,Low,High
+STU0137,21,Female,Information Technology,4,67.0,0.9,22,59.6,75.0,3.67,Poor,No,48.9,0,High,0.475,High,Medium
+STU0138,16,Female,Mathematics,6,89.2,10.9,30,57.7,71.8,3.84,Poor,Yes,50.0,1,Medium,0.233,Low,Medium
+STU0139,19,Female,Computer Science,1,80.7,11.2,34,53.7,84.3,3.2,Good,No,64.2,1,Medium,0.249,Low,High
+STU0140,19,Female,Business,8,57.6,11.2,50,87.7,61.8,1.73,Good,Yes,49.9,0,High,0.505,High,High
+STU0141,24,Female,Engineering,4,88.0,19.1,50,79.6,68.8,2.84,Good,No,53.8,1,Medium,0.081,Low,High
+STU0142,17,Female,Computer Science,1,94.5,5.9,33,76.3,88.1,4.0,Good,No,69.7,1,Low,0.063,Low,High
+STU0143,18,Male,Information Technology,6,66.9,7.9,28,33.5,29.3,2.09,Average,Yes,29.5,0,High,0.518,High,High
+STU0144,19,Male,Computer Science,5,77.9,0.0,13,100.0,78.0,2.66,Average,Yes,62.2,1,Medium,0.232,Low,High
+STU0145,24,Female,Computer Science,6,55.6,9.6,32,60.7,62.3,3.69,Good,No,55.7,1,High,0.383,Medium,Medium
+STU0146,23,Female,Information Technology,7,61.6,10.0,39,100.0,52.5,3.13,Good,No,45.4,0,High,0.448,Medium,High
+STU0147,16,Male,Computer Science,4,91.6,9.5,25,51.8,73.7,4.0,Good,No,58.7,1,Medium,0.097,Low,Low
+STU0148,18,Female,Engineering,7,71.9,17.5,41,62.0,88.9,2.19,Average,No,55.8,1,Medium,0.219,Low,Low
+STU0149,23,Female,Mathematics,3,63.6,16.3,41,39.8,85.7,2.01,Average,Yes,60.0,1,Medium,0.343,Medium,Medium
+STU0150,16,Male,Engineering,5,81.0,12.4,38,80.8,65.7,3.56,Good,No,51.4,1,Medium,0.167,Low,Medium
+STU0151,23,Male,Computer Science,2,71.2,10.1,30,57.4,82.9,1.86,Good,No,54.7,1,Medium,0.291,Medium,High
+STU0152,18,Female,Computer Science,5,71.9,17.1,53,57.8,82.8,2.56,Good,No,50.9,1,Medium,0.123,Low,High
+STU0153,24,Female,Computer Science,3,87.6,11.9,47,53.0,66.5,2.65,Good,No,41.7,0,High,0.277,Medium,Medium
+STU0154,18,Male,Computer Science,6,62.9,7.9,20,87.4,56.2,3.43,Poor,No,49.5,0,High,0.458,High,Medium
+STU0155,19,Female,Mathematics,7,66.2,3.4,12,86.4,57.2,3.13,Average,No,48.6,0,High,0.486,High,Medium
+STU0156,21,Male,Information Technology,7,80.0,9.8,20,100.0,82.2,3.02,Good,Yes,52.6,1,Medium,0.312,Medium,High
+STU0157,17,Female,Computer Science,8,90.6,15.8,61,64.0,67.3,2.42,Average,No,53.6,1,Medium,0.169,Low,Low
+STU0158,21,Male,Engineering,1,94.1,23.4,64,78.5,50.2,3.55,Good,No,63.7,1,Medium,0.072,Low,Low
+STU0159,20,Female,Information Technology,2,69.4,12.3,41,54.4,39.4,4.0,Good,No,47.8,0,High,0.355,Medium,High
+STU0160,23,Male,Computer Science,8,90.2,8.2,17,69.6,82.1,3.18,Average,No,52.7,1,Medium,0.086,Low,Medium
+STU0161,24,Male,Computer Science,4,67.8,6.1,23,66.7,58.7,2.77,Good,Yes,44.4,0,High,0.437,Medium,Medium
+STU0162,21,Female,Business,1,100.0,14.8,47,82.4,73.6,1.79,Good,No,54.9,1,Medium,0.14,Low,Medium
+STU0163,19,Male,Engineering,3,63.3,3.2,15,91.3,89.1,2.25,Average,No,52.2,1,Medium,0.217,Low,Low
+STU0164,19,Male,Computer Science,7,95.3,14.8,51,90.9,45.7,2.55,Poor,No,60.1,1,Medium,0.154,Low,High
+STU0165,19,Male,Mathematics,3,69.5,16.1,64,61.5,67.2,2.33,Good,No,48.8,0,High,0.413,Medium,Medium
+STU0166,23,Female,Engineering,1,100.0,14.2,34,91.0,65.1,2.69,Average,No,49.8,0,High,0.193,Low,Medium
+STU0167,18,Female,Engineering,6,85.7,10.9,26,74.3,74.5,3.94,Good,No,54.8,1,Medium,0.139,Low,High
+STU0168,17,Other,Computer Science,2,64.8,14.8,36,69.8,89.1,3.57,Average,No,56.6,1,Medium,0.177,Low,High
+STU0169,19,Male,Computer Science,3,71.2,12.9,51,63.7,45.4,2.59,Good,No,50.9,1,Medium,0.183,Low,Medium
+STU0170,16,Male,Engineering,1,88.2,8.1,36,66.0,77.7,1.85,Average,Yes,57.0,1,Medium,0.184,Low,High
+STU0171,16,Male,Information Technology,5,91.7,21.3,56,100.0,85.5,3.64,Good,No,77.4,1,Low,0.088,Low,Low
+STU0172,16,Female,Business,4,77.1,10.2,33,79.9,64.8,2.67,Poor,Yes,51.6,1,Medium,0.321,Medium,Medium
+STU0173,22,Other,Engineering,7,78.6,15.9,38,77.8,65.7,1.49,Average,No,52.6,1,Medium,0.174,Low,High
+STU0174,22,Female,Computer Science,3,87.9,0.0,17,70.8,75.1,3.2,Good,No,43.8,0,High,0.3,Medium,Low
+STU0175,22,Female,Engineering,2,79.7,18.4,47,100.0,73.9,3.42,Average,Yes,63.6,1,Medium,0.256,Medium,Medium
+STU0176,20,Male,Mathematics,2,61.2,19.3,50,95.9,77.9,1.0,Good,No,42.6,0,High,0.38,Medium,High
+STU0177,22,Female,Business,2,67.4,12.1,41,63.5,77.5,2.12,Average,Yes,46.7,0,High,0.498,High,High
+STU0178,17,Female,Information Technology,4,81.1,14.8,41,70.6,51.3,2.62,Good,No,66.8,1,Low,0.147,Low,High
+STU0179,24,Male,Engineering,1,93.8,14.8,41,71.6,84.8,3.21,Good,No,61.0,1,Medium,0.085,Low,High
+STU0180,20,Male,Information Technology,4,99.0,8.8,29,77.3,87.8,2.34,Average,No,51.7,1,Medium,0.052,Low,Medium
+STU0181,24,Male,Engineering,7,88.1,14.7,49,63.8,71.2,2.12,Good,No,52.9,1,Medium,0.118,Low,High
+STU0182,17,Male,Engineering,7,81.7,8.0,41,82.0,42.6,3.21,Good,No,46.6,0,High,0.408,Medium,Medium
+STU0183,20,Male,Engineering,6,87.7,9.0,34,98.2,66.0,2.37,Good,No,48.9,0,High,0.307,Medium,High
+STU0184,22,Male,Computer Science,8,69.3,17.6,55,54.0,71.3,3.08,Good,No,62.2,1,Medium,0.157,Low,Medium
+STU0185,20,Female,Computer Science,7,76.0,16.9,46,56.9,48.5,1.92,Good,No,49.4,0,High,0.393,Medium,Low
+STU0186,20,Male,Computer Science,6,67.3,8.5,23,67.3,61.9,1.75,Average,Yes,44.7,0,High,0.452,High,Low
+STU0187,17,Male,Information Technology,7,61.8,8.3,33,68.0,44.0,3.23,Average,No,41.8,0,High,0.424,Medium,High
+STU0188,19,Female,Information Technology,1,82.3,8.8,31,100.0,78.3,2.88,Good,Yes,56.0,1,Medium,0.207,Low,Low
+STU0189,18,Female,Business,7,80.4,15.7,33,91.0,70.8,3.35,Good,No,67.4,1,Low,0.21,Low,Medium
+STU0190,18,Female,Information Technology,3,86.9,7.0,23,90.1,40.0,2.33,Average,No,49.9,0,High,0.289,Medium,High
+STU0191,22,Male,Engineering,6,85.1,13.8,40,70.8,74.0,2.14,Average,No,33.1,0,High,0.376,Medium,High
+STU0192,21,Female,Mathematics,8,81.2,15.7,40,70.4,67.0,3.65,Average,Yes,69.9,1,Low,0.193,Low,Medium
+STU0193,21,Male,Computer Science,4,85.2,11.6,47,51.8,76.8,1.63,Good,No,47.4,0,High,0.307,Medium,Medium
+STU0194,19,Male,Engineering,1,77.4,17.1,51,87.5,61.3,3.58,Good,Yes,58.8,1,Medium,0.306,Medium,High
+STU0195,24,Female,Business,3,83.4,10.5,44,82.9,54.4,3.62,Average,No,60.8,1,Medium,0.153,Low,Medium
+STU0196,16,Female,Information Technology,4,68.6,10.9,36,95.6,54.9,3.3,Good,No,55.4,1,Medium,0.296,Medium,Medium
+STU0197,19,Female,Computer Science,8,82.8,7.1,26,71.6,58.9,2.22,Good,No,51.5,1,Medium,0.138,Low,High
+STU0198,17,Female,Engineering,8,86.7,17.1,40,72.7,68.3,2.13,Good,Yes,49.4,0,High,0.403,Medium,Medium
+STU0199,19,Female,Mathematics,5,69.3,8.2,28,77.7,70.5,2.55,Average,No,41.8,0,High,0.459,High,Medium
+STU0200,24,Male,Business,8,78.7,13.7,40,89.3,64.8,1.79,Good,Yes,52.0,1,Medium,0.185,Low,Low
+STU0201,19,Male,Mathematics,4,69.9,11.6,25,51.5,60.8,2.03,Average,No,50.7,1,Medium,0.135,Low,Low
+STU0202,24,Male,Mathematics,4,71.2,6.7,20,86.8,62.0,3.15,Average,Yes,47.5,0,High,0.423,Medium,Medium
+STU0203,20,Male,Information Technology,7,63.4,9.0,27,74.7,100.0,3.15,Good,No,50.6,1,Medium,0.259,Medium,High
+STU0204,22,Female,Business,6,94.5,18.9,55,58.1,54.9,1.97,Average,No,55.8,1,Medium,0.038,Low,Medium
+STU0205,20,Male,Information Technology,5,91.9,13.0,42,41.6,58.5,3.17,Average,No,46.2,0,High,0.316,Medium,High
+STU0206,18,Female,Mathematics,4,85.0,7.0,21,72.8,100.0,3.02,Good,Yes,55.2,1,Medium,0.241,Low,High
+STU0207,22,Female,Computer Science,6,100.0,13.5,43,98.2,75.2,3.76,Average,No,62.5,1,Medium,0.161,Low,High
+STU0208,24,Female,Information Technology,7,75.5,11.3,33,100.0,44.5,3.1,Good,No,51.9,1,Medium,0.22,Low,Low
+STU0209,18,Male,Engineering,4,100.0,29.3,52,80.7,82.3,3.44,Good,No,56.7,1,Medium,0.095,Low,High
+STU0210,23,Male,Computer Science,1,75.0,13.4,36,100.0,52.5,3.03,Average,No,50.6,1,Medium,0.234,Low,Low
+STU0211,18,Other,Engineering,1,81.3,10.1,41,74.3,83.5,3.39,Average,No,57.9,1,Medium,0.176,Low,High
+STU0212,22,Female,Information Technology,2,72.8,19.1,39,90.3,64.4,1.8,Good,No,52.1,1,Medium,0.17,Low,Medium
+STU0213,23,Female,Mathematics,4,82.8,2.8,17,67.8,60.5,2.61,Poor,No,53.9,1,Medium,0.163,Low,High
+STU0214,20,Female,Engineering,5,88.9,12.5,50,66.8,95.4,2.67,Average,No,67.6,1,Low,0.102,Low,Medium
+STU0215,22,Female,Information Technology,7,76.5,22.0,52,64.2,77.6,2.53,Average,No,61.9,1,Medium,0.172,Low,High
+STU0216,18,Male,Engineering,2,100.0,11.4,35,42.0,84.5,3.01,Good,No,59.3,1,Medium,0.087,Low,Low
+STU0217,16,Female,Information Technology,7,81.1,3.3,7,95.6,75.4,3.14,Good,Yes,55.0,1,Medium,0.15,Low,Low
+STU0218,16,Male,Business,6,81.5,10.0,45,64.7,60.4,2.97,Good,No,45.8,0,High,0.325,Medium,High
+STU0219,20,Female,Business,1,66.2,19.3,52,62.2,78.4,2.58,Average,No,50.4,1,Medium,0.216,Low,Medium
+STU0220,24,Female,Engineering,3,83.4,13.9,41,56.1,88.6,2.18,Good,No,54.8,1,Medium,0.168,Low,High
+STU0221,17,Female,Computer Science,3,76.3,7.8,38,71.7,70.3,3.47,Average,No,57.5,1,Medium,0.24,Low,High
+STU0222,20,Male,Computer Science,8,70.1,8.6,34,100.0,98.6,2.94,Good,No,62.9,1,Medium,0.207,Low,High
+STU0223,22,Male,Business,8,67.9,9.2,23,100.0,82.5,1.99,Average,Yes,52.0,1,Medium,0.252,Medium,High
+STU0224,17,Female,Business,7,100.0,13.8,35,48.4,71.6,2.56,Average,No,56.3,1,Medium,0.007,Low,High
+STU0225,22,Male,Information Technology,5,74.6,18.7,55,69.3,72.3,1.48,Average,No,55.2,1,Medium,0.209,Low,High
+STU0226,18,Male,Computer Science,4,59.1,17.3,43,58.5,70.3,2.72,Average,Yes,52.2,1,High,0.469,High,Low
+STU0227,23,Male,Information Technology,3,68.9,14.3,25,90.8,46.7,2.56,Average,No,48.5,0,High,0.419,Medium,Medium
+STU0228,21,Male,Engineering,7,77.3,5.3,21,79.6,66.5,2.3,Good,No,43.6,0,High,0.407,Medium,High
+STU0229,20,Male,Computer Science,1,85.1,5.4,10,64.8,71.8,3.81,Average,No,49.0,0,High,0.258,Medium,Medium
+STU0230,17,Female,Information Technology,3,85.2,14.7,55,76.2,60.9,1.89,Poor,No,45.3,0,High,0.401,Medium,Medium
+STU0231,20,Male,Mathematics,2,86.8,5.3,23,67.4,73.7,3.19,Average,No,54.3,1,Medium,0.185,Low,Medium
+STU0232,23,Male,Computer Science,4,69.6,10.9,27,100.0,68.4,4.0,Good,No,61.6,1,Medium,0.242,Low,Medium
+STU0233,16,Male,Engineering,3,82.4,13.5,34,83.8,81.2,3.45,Poor,No,50.6,1,Medium,0.127,Low,Medium
+STU0234,22,Male,Computer Science,2,66.6,6.3,9,85.7,79.3,2.68,Good,No,48.4,0,High,0.359,Medium,High
+STU0235,20,Male,Engineering,4,69.9,6.9,16,32.3,70.8,1.91,Good,No,40.6,0,High,0.329,Medium,High
+STU0236,22,Female,Engineering,7,66.1,11.5,43,73.9,44.8,1.75,Good,No,36.0,0,High,0.417,Medium,High
+STU0237,21,Male,Engineering,5,62.6,14.5,60,100.0,98.4,2.41,Good,No,59.9,1,Medium,0.246,Low,Medium
+STU0238,19,Male,Computer Science,7,91.8,17.3,54,96.2,65.6,2.22,Good,No,54.7,1,Medium,0.005,Low,High
+STU0239,18,Male,Information Technology,8,87.0,15.0,42,45.4,66.6,2.2,Good,No,42.6,0,High,0.3,Medium,High
+STU0240,21,Male,Engineering,8,90.7,12.4,34,70.0,62.2,2.47,Poor,Yes,51.5,1,Medium,0.289,Medium,Low
+STU0241,17,Male,Computer Science,3,78.5,8.3,21,55.8,59.7,2.63,Good,No,48.0,0,High,0.352,Medium,Medium
+STU0242,21,Male,Computer Science,8,88.1,6.6,41,100.0,94.2,3.04,Good,No,56.6,1,Medium,0.133,Low,Medium
+STU0243,16,Female,Computer Science,8,55.1,9.4,29,78.9,91.6,1.83,Average,No,46.4,0,High,0.425,Medium,High
+STU0244,21,Male,Mathematics,8,89.2,14.0,58,62.7,75.6,2.22,Average,No,54.2,1,Medium,0.081,Low,Medium
+STU0245,21,Female,Business,3,80.3,13.7,51,75.5,66.2,2.59,Good,No,47.1,0,High,0.338,Medium,Low
+STU0246,16,Male,Business,2,86.2,1.5,0,33.3,78.5,2.56,Good,No,34.8,0,High,0.317,Medium,Low
+STU0247,22,Male,Engineering,5,82.9,8.1,22,57.6,69.3,3.99,Average,No,44.3,0,High,0.353,Medium,Low
+STU0248,19,Male,Information Technology,8,65.2,18.0,44,75.6,64.8,2.86,Average,Yes,48.2,0,High,0.507,High,Medium
+STU0249,23,Female,Information Technology,8,58.5,12.4,37,88.5,73.7,1.57,Average,No,39.0,0,High,0.429,Medium,High
+STU0250,16,Female,Information Technology,5,68.7,4.9,20,43.9,60.5,2.99,Good,No,40.5,0,High,0.429,Medium,Medium
+STU0251,17,Male,Business,2,85.3,23.8,86,68.9,72.3,3.08,Average,No,66.8,1,Low,0.124,Low,High
+STU0252,20,Male,Computer Science,4,87.0,11.9,28,91.2,71.5,2.61,Average,No,47.7,0,High,0.254,Medium,Low
+STU0253,17,Male,Engineering,6,60.2,13.9,42,51.8,78.2,1.85,Average,No,41.7,0,High,0.438,Medium,Medium
+STU0254,18,Male,Engineering,5,65.2,14.0,46,78.7,57.5,3.93,Average,No,65.5,1,Medium,0.224,Low,High
+STU0255,21,Female,Information Technology,3,68.6,10.2,32,76.1,80.1,1.95,Average,Yes,51.0,1,Medium,0.305,Medium,High
+STU0256,17,Male,Business,3,73.4,8.4,29,100.0,52.6,3.16,Average,Yes,50.6,1,Medium,0.216,Low,High
+STU0257,22,Male,Computer Science,1,60.3,22.6,51,71.3,58.3,2.84,Average,Yes,48.2,0,High,0.57,High,Medium
+STU0258,16,Female,Mathematics,3,59.5,17.0,48,72.3,59.0,3.12,Average,No,51.4,1,High,0.45,High,Medium
+STU0259,17,Male,Mathematics,6,67.3,16.1,50,88.7,49.8,3.89,Good,No,64.0,1,Medium,0.199,Low,High
+STU0260,21,Male,Mathematics,2,79.1,14.9,45,53.8,85.3,3.09,Good,No,50.1,1,Medium,0.126,Low,Low
+STU0261,23,Female,Information Technology,8,62.7,7.0,30,71.5,51.5,2.31,Average,No,37.9,0,High,0.452,High,High
+STU0262,17,Male,Computer Science,1,76.5,18.4,62,67.7,56.1,3.47,Average,No,44.2,0,High,0.31,Medium,Medium
+STU0263,18,Male,Computer Science,5,91.8,7.8,35,72.8,89.3,2.26,Good,Yes,55.1,1,Medium,0.283,Medium,Low
+STU0264,24,Male,Computer Science,4,61.1,13.4,40,88.6,58.3,2.81,Good,No,41.2,0,High,0.391,Medium,High
+STU0265,24,Female,Computer Science,7,75.3,3.8,9,83.9,64.8,1.79,Average,No,43.5,0,High,0.428,Medium,High
+STU0266,21,Male,Computer Science,8,91.3,1.8,9,63.0,50.8,1.98,Average,No,38.2,0,High,0.287,Medium,High
+STU0267,20,Male,Mathematics,5,72.6,13.6,38,77.2,82.2,2.74,Good,No,60.1,1,Medium,0.253,Medium,High
+STU0268,19,Male,Computer Science,6,70.5,8.0,30,98.8,82.4,2.96,Good,No,53.2,1,Medium,0.169,Low,Medium
+STU0269,21,Male,Computer Science,6,93.1,2.1,11,61.7,80.6,1.51,Good,No,49.5,0,High,0.288,Medium,High
+STU0270,21,Female,Engineering,5,74.0,14.7,35,77.3,77.1,3.05,Poor,No,45.0,0,High,0.456,High,High
+STU0271,18,Male,Business,2,92.4,22.6,50,71.9,69.3,2.13,Average,No,55.2,1,Medium,0.137,Low,Medium
+STU0272,16,Female,Engineering,4,83.6,18.9,38,74.0,59.1,3.6,Average,Yes,48.7,0,High,0.45,High,Medium
+STU0273,17,Female,Business,2,73.5,10.7,32,48.9,54.1,2.45,Good,No,40.1,0,High,0.347,Medium,High
+STU0274,24,Female,Engineering,4,84.2,12.0,25,97.6,89.9,1.91,Average,No,70.1,1,Low,0.147,Low,Low
+STU0275,19,Male,Business,5,82.2,16.4,38,62.6,81.0,2.75,Good,No,59.2,1,Medium,0.201,Low,High
+STU0276,20,Female,Information Technology,2,91.3,17.6,46,91.4,56.2,2.06,Poor,No,52.8,1,Medium,0.147,Low,Medium
+STU0277,20,Female,Business,2,70.9,10.3,22,65.1,68.7,3.59,Good,No,70.4,1,Medium,0.219,Low,High
+STU0278,23,Male,Information Technology,7,78.5,12.2,40,65.0,62.9,2.7,Good,No,43.6,0,High,0.337,Medium,High
+STU0279,16,Female,Information Technology,4,77.2,13.5,46,94.4,48.8,2.59,Average,No,58.0,1,Medium,0.179,Low,High
+STU0280,16,Female,Information Technology,2,87.2,14.8,38,90.9,71.0,3.11,Good,No,49.3,0,High,0.315,Medium,High
+STU0281,18,Male,Computer Science,6,64.7,11.3,31,78.3,60.9,2.0,Average,No,44.0,0,High,0.37,Medium,Low
+STU0282,20,Female,Engineering,6,91.2,11.4,39,87.2,51.8,1.8,Average,No,41.6,0,High,0.285,Medium,High
+STU0283,22,Male,Computer Science,7,84.1,18.9,46,70.4,42.9,2.99,Good,No,51.9,1,Medium,0.149,Low,High
+STU0284,20,Female,Computer Science,7,60.9,18.0,43,74.9,41.4,1.93,Good,Yes,42.7,0,High,0.492,High,High
+STU0285,19,Other,Computer Science,8,93.7,14.4,51,64.4,61.7,1.93,Average,No,47.4,0,High,0.348,Medium,High
+STU0286,24,Male,Engineering,5,100.0,20.6,62,89.5,66.6,3.29,Average,No,68.4,1,Low,0.12,Low,High
+STU0287,17,Female,Information Technology,3,91.0,10.1,37,63.9,53.1,3.07,Good,No,46.9,0,High,0.308,Medium,High
+STU0288,21,Male,Business,7,96.6,20.1,62,98.8,79.1,1.82,Good,No,61.4,1,Medium,0.063,Low,Medium
+STU0289,20,Female,Engineering,3,79.1,14.7,27,69.9,66.9,2.27,Average,No,54.5,1,Medium,0.131,Low,High
+STU0290,20,Female,Computer Science,3,56.4,28.4,83,75.3,77.8,2.07,Good,No,42.2,0,High,0.513,High,High
+STU0291,23,Male,Engineering,7,54.0,6.0,26,87.1,64.9,3.94,Average,No,47.0,0,High,0.404,Medium,Low
+STU0292,18,Male,Information Technology,8,81.3,8.6,37,75.4,54.6,3.33,Average,Yes,51.5,1,Medium,0.239,Low,Low
+STU0293,24,Male,Computer Science,3,70.3,14.1,44,70.2,69.9,2.41,Good,No,52.7,1,Medium,0.213,Low,High
+STU0294,18,Male,Business,6,66.1,14.0,41,74.5,46.5,3.1,Average,Yes,55.8,1,Medium,0.283,Medium,Medium
+STU0295,20,Male,Mathematics,8,77.2,21.8,56,89.3,77.2,1.75,Good,Yes,52.9,1,Medium,0.211,Low,Medium
+STU0296,20,Male,Computer Science,7,86.0,8.7,32,64.4,52.1,2.23,Good,No,43.9,0,High,0.285,Medium,Medium
+STU0297,23,Male,Business,1,59.1,16.5,44,73.0,83.6,2.77,Average,No,46.4,0,High,0.402,Medium,High
+STU0298,19,Male,Computer Science,6,72.2,17.8,56,75.2,62.2,3.02,Poor,No,54.0,1,Medium,0.223,Low,High
+STU0299,18,Female,Business,2,97.6,15.5,31,88.8,86.1,2.63,Average,Yes,59.2,1,Medium,0.223,Low,High
+STU0300,16,Female,Business,7,64.0,7.2,22,73.4,48.9,2.87,Good,No,43.0,0,High,0.404,Medium,High
+STU0301,19,Female,Business,1,89.3,19.0,68,100.0,56.5,2.75,Average,No,57.0,1,Medium,0.102,Low,High
+STU0302,23,Male,Business,8,71.7,18.1,45,72.5,74.5,2.59,Good,No,55.3,1,Medium,0.197,Low,Medium
+STU0303,16,Female,Computer Science,2,85.1,15.0,41,71.2,87.9,2.49,Good,Yes,52.1,1,Medium,0.246,Low,Low
+STU0304,24,Female,Business,4,92.3,13.0,32,72.3,96.3,2.4,Good,No,53.0,1,Medium,0.097,Low,Medium
+STU0305,20,Male,Business,2,87.6,13.1,42,53.9,68.7,2.86,Good,No,53.3,1,Medium,0.166,Low,Low
+STU0306,17,Male,Business,7,89.8,11.6,30,58.4,99.2,2.99,Good,No,39.2,0,High,0.25,Medium,Medium
+STU0307,18,Female,Computer Science,4,63.0,15.2,42,66.5,63.1,2.84,Poor,No,44.1,0,High,0.515,High,Medium
+STU0308,20,Male,Information Technology,6,92.5,12.2,44,93.2,86.7,1.87,Good,Yes,50.4,1,Medium,0.19,Low,High
+STU0309,18,Female,Information Technology,1,66.9,7.8,22,74.5,52.0,2.0,Average,Yes,49.9,0,High,0.47,High,High
+STU0310,16,Other,Computer Science,4,81.4,6.8,31,67.2,75.1,2.98,Average,No,49.0,0,High,0.307,Medium,Medium
+STU0311,21,Male,Computer Science,8,81.4,8.2,35,94.6,28.2,3.73,Good,No,47.9,0,High,0.285,Medium,High
+STU0312,22,Male,Information Technology,8,84.3,13.1,47,99.8,48.9,2.81,Good,Yes,53.7,1,Medium,0.156,Low,High
+STU0313,17,Other,Engineering,2,82.4,11.9,37,95.1,75.9,2.41,Good,No,52.2,1,Medium,0.12,Low,High
+STU0314,18,Female,Computer Science,4,67.0,13.1,65,61.4,45.7,2.86,Good,No,41.8,0,High,0.416,Medium,High
+STU0315,18,Male,Engineering,4,60.5,14.5,50,67.1,75.3,1.9,Average,No,46.3,0,High,0.38,Medium,High
+STU0316,21,Female,Information Technology,5,89.3,8.9,32,100.0,83.4,3.62,Poor,No,60.3,1,Medium,0.121,Low,High
+STU0317,22,Female,Engineering,5,80.4,19.3,45,78.9,59.5,2.83,Average,Yes,50.8,1,Medium,0.202,Low,High
+STU0318,22,Female,Information Technology,1,92.9,10.7,33,70.7,51.5,2.23,Good,No,42.5,0,High,0.273,Medium,Low
+STU0319,24,Female,Information Technology,7,77.4,9.8,43,86.5,59.9,2.58,Good,No,43.9,0,High,0.337,Medium,Medium
+STU0320,22,Male,Business,2,59.7,14.4,55,91.1,51.6,2.33,Good,No,47.4,0,High,0.416,Medium,Medium
+STU0321,18,Male,Mathematics,3,90.6,2.8,28,65.9,66.3,3.62,Poor,No,54.8,1,Medium,0.219,Low,Low
+STU0322,16,Female,Information Technology,7,73.2,8.0,34,78.5,69.7,2.56,Good,Yes,41.3,0,High,0.497,High,Low
+STU0323,21,Male,Information Technology,6,82.4,16.9,37,89.8,62.8,2.81,Good,No,59.9,1,Medium,0.231,Low,Low
+STU0324,24,Female,Business,4,69.6,3.3,21,56.4,96.5,3.1,Average,No,55.4,1,Medium,0.137,Low,Medium
+STU0325,24,Female,Engineering,8,99.4,17.6,39,75.2,55.8,2.18,Average,No,58.6,1,Medium,0.048,Low,Low
+STU0326,18,Male,Computer Science,4,66.6,19.6,41,57.2,91.7,2.84,Good,No,54.7,1,Medium,0.242,Low,Medium
+STU0327,18,Female,Information Technology,5,73.6,10.2,34,59.3,50.3,2.89,Average,No,49.0,0,High,0.347,Medium,High
+STU0328,16,Male,Information Technology,2,79.4,13.5,44,66.0,69.2,1.61,Good,No,59.7,1,Medium,0.197,Low,High
+STU0329,17,Female,Mathematics,2,63.8,17.6,56,82.6,88.1,2.88,Good,No,53.7,1,Medium,0.233,Low,High
+STU0330,20,Male,Information Technology,4,82.3,9.7,35,69.8,87.2,2.67,Good,Yes,47.7,0,High,0.474,High,Low
+STU0331,20,Female,Information Technology,5,99.0,16.3,50,64.6,60.9,2.79,Good,No,44.7,0,High,0.306,Medium,High
+STU0332,19,Female,Mathematics,7,71.6,8.6,21,75.8,77.4,2.72,Poor,No,61.5,1,Medium,0.296,Medium,Low
+STU0333,18,Male,Information Technology,4,83.1,9.6,30,56.6,75.2,2.88,Good,No,61.1,1,Medium,0.131,Low,Medium
+STU0334,23,Female,Computer Science,8,42.3,8.0,16,81.9,58.8,3.64,Average,No,41.3,0,High,0.487,High,Medium
+STU0335,20,Female,Computer Science,5,77.5,13.7,24,93.1,78.5,1.87,Good,No,49.1,0,High,0.338,Medium,High
+STU0336,23,Female,Computer Science,1,73.9,17.8,55,73.7,99.7,2.46,Average,Yes,54.5,1,Medium,0.204,Low,High
+STU0337,24,Female,Computer Science,6,67.4,11.1,28,71.8,76.0,3.17,Poor,Yes,59.0,1,Medium,0.409,Medium,High
+STU0338,18,Other,Information Technology,5,92.1,5.6,29,81.0,77.6,3.04,Good,No,48.6,0,High,0.321,Medium,High
+STU0339,17,Male,Engineering,4,73.8,6.6,33,42.5,79.4,3.02,Poor,Yes,35.4,0,High,0.491,High,Medium
+STU0340,24,Female,Engineering,4,75.7,14.0,36,83.6,43.2,4.0,Average,No,66.3,1,Low,0.229,Low,High
+STU0341,21,Male,Computer Science,3,73.1,21.2,61,100.0,75.8,3.13,Average,No,61.7,1,Medium,0.162,Low,Low
+STU0342,18,Female,Business,5,53.1,14.0,36,73.0,50.7,3.49,Good,No,49.6,0,High,0.374,Medium,Medium
+STU0343,21,Female,Computer Science,5,63.3,10.1,17,73.1,58.0,2.49,Average,No,44.1,0,High,0.447,Medium,High
+STU0344,20,Male,Mathematics,4,90.5,15.8,46,86.9,100.0,2.0,Good,No,62.2,1,Medium,0.067,Low,High
+STU0345,24,Male,Computer Science,3,50.6,10.8,30,100.0,63.7,2.48,Poor,Yes,39.5,0,High,0.59,High,Medium
+STU0346,18,Female,Business,4,68.0,10.1,29,90.6,55.4,3.2,Poor,No,46.3,0,High,0.456,High,Medium
+STU0347,24,Male,Information Technology,4,72.8,7.2,42,40.5,87.6,2.98,Good,No,48.5,0,High,0.384,Medium,Medium
+STU0348,24,Female,Business,4,100.0,19.0,40,84.0,51.9,2.98,Poor,No,43.6,0,High,0.354,Medium,Medium
+STU0349,17,Male,Information Technology,3,88.0,0.0,13,100.0,60.4,2.55,Average,Yes,50.5,1,Medium,0.231,Low,Medium
+STU0350,17,Female,Engineering,5,70.8,16.0,37,85.0,89.2,2.44,Average,No,53.2,1,Medium,0.219,Low,High
+STU0351,20,Male,Computer Science,2,95.0,9.7,39,56.5,68.7,2.57,Good,Yes,48.7,0,High,0.328,Medium,Low
+STU0352,16,Male,Mathematics,5,68.4,9.9,34,79.5,41.5,3.21,Good,Yes,43.9,0,High,0.478,High,Low
+STU0353,18,Female,Information Technology,1,91.1,20.5,58,54.5,77.2,3.29,Good,No,50.5,1,Medium,0.055,Low,Medium
+STU0354,19,Female,Engineering,4,60.3,8.4,21,94.7,61.3,2.0,Good,No,35.8,0,High,0.481,High,High
+STU0355,24,Male,Engineering,7,92.0,8.6,23,59.7,94.2,3.23,Poor,No,57.9,1,Medium,0.116,Low,Medium
+STU0356,24,Male,Mathematics,7,72.7,11.3,42,76.2,57.7,2.24,Good,No,45.2,0,High,0.355,Medium,Medium
+STU0357,17,Female,Computer Science,6,64.6,14.1,55,61.3,85.9,3.03,Average,No,43.3,0,High,0.349,Medium,High
+STU0358,24,Female,Computer Science,6,75.2,9.8,35,66.3,98.2,2.57,Average,No,53.9,1,Medium,0.15,Low,High
+STU0359,16,Male,Computer Science,1,81.6,4.1,12,98.8,53.5,3.8,Average,No,53.7,1,Medium,0.154,Low,Medium
+STU0360,22,Female,Computer Science,3,71.6,7.7,30,76.7,64.7,2.41,Good,No,45.0,0,High,0.352,Medium,High
+STU0361,23,Female,Business,6,85.2,18.4,70,66.1,74.6,2.83,Average,No,41.7,0,High,0.365,Medium,Medium
+STU0362,24,Female,Mathematics,7,70.4,12.4,38,56.7,53.4,3.12,Average,No,50.2,1,Medium,0.207,Low,High
+STU0363,18,Female,Mathematics,5,86.1,14.3,53,45.1,72.6,2.09,Average,No,39.8,0,High,0.297,Medium,Medium
+STU0364,24,Female,Information Technology,7,83.7,10.7,28,55.0,64.2,2.65,Good,No,48.4,0,High,0.32,Medium,High
+STU0365,17,Male,Business,3,77.2,8.7,29,76.8,63.8,2.51,Average,No,44.4,0,High,0.4,Medium,High
+STU0366,20,Female,Engineering,2,72.3,20.4,60,90.7,68.8,2.34,Good,Yes,51.5,1,Medium,0.307,Medium,High
+STU0367,20,Female,Mathematics,1,80.0,11.1,38,66.0,69.2,2.39,Average,No,55.9,1,Medium,0.114,Low,High
+STU0368,18,Female,Computer Science,5,85.2,9.8,25,100.0,70.8,3.48,Good,Yes,62.7,1,Medium,0.192,Low,Low
+STU0369,16,Male,Information Technology,6,100.0,17.5,42,63.5,57.8,2.28,Good,No,58.4,1,Medium,0.099,Low,High
+STU0370,22,Male,Engineering,3,90.2,8.4,36,71.2,58.6,3.1,Average,No,53.9,1,Medium,0.133,Low,Medium
+STU0371,19,Female,Information Technology,7,90.7,9.0,39,57.7,66.0,2.92,Good,Yes,52.9,1,Medium,0.155,Low,Medium
+STU0372,21,Male,Information Technology,6,100.0,12.1,49,90.9,67.2,1.72,Poor,No,43.7,0,High,0.35,Medium,Medium
+STU0373,19,Female,Mathematics,3,84.7,12.0,51,100.0,60.5,3.06,Average,No,54.9,1,Medium,0.106,Low,High
+STU0374,19,Male,Mathematics,2,84.3,13.3,40,46.8,73.5,1.71,Good,No,44.2,0,High,0.375,Medium,High
+STU0375,23,Female,Mathematics,6,87.2,22.5,57,69.5,37.1,3.14,Good,No,58.5,1,Medium,0.152,Low,High
+STU0376,16,Female,Engineering,6,64.9,13.7,51,95.2,55.6,2.34,Good,Yes,46.2,0,High,0.435,Medium,Medium
+STU0377,22,Male,Computer Science,2,72.2,0.1,16,51.8,63.2,2.71,Poor,Yes,44.2,0,High,0.49,High,High
+STU0378,22,Male,Information Technology,3,71.4,13.6,32,84.1,53.4,1.79,Average,No,47.5,0,High,0.353,Medium,High
+STU0379,19,Female,Information Technology,4,86.4,12.2,29,94.5,95.7,2.79,Good,No,68.1,1,Low,0.141,Low,High
+STU0380,18,Female,Business,5,75.7,12.2,41,76.3,68.3,3.35,Good,No,52.9,1,Medium,0.169,Low,Medium
+STU0381,16,Male,Information Technology,2,79.8,13.2,38,83.8,71.0,2.14,Good,Yes,56.8,1,Medium,0.195,Low,Medium
+STU0382,24,Female,Business,8,92.1,11.9,36,100.0,59.8,2.27,Average,No,44.9,0,High,0.236,Low,High
+STU0383,24,Female,Information Technology,4,89.2,11.7,44,100.0,67.7,3.02,Good,Yes,49.0,0,High,0.405,Medium,High
+STU0384,18,Male,Engineering,4,75.9,15.1,49,74.0,47.3,3.04,Good,No,35.8,0,High,0.368,Medium,Low
+STU0385,16,Male,Information Technology,1,69.3,9.3,41,66.5,65.1,1.0,Average,No,45.5,0,High,0.387,Medium,Medium
+STU0386,17,Male,Information Technology,8,92.8,7.3,11,60.3,52.1,4.0,Good,No,56.6,1,Medium,0.12,Low,Medium
+STU0387,16,Male,Computer Science,2,88.1,27.1,72,90.6,63.3,3.07,Good,No,65.6,1,Low,0.103,Low,Medium
+STU0388,23,Male,Computer Science,8,57.1,8.4,34,53.1,24.5,3.19,Average,No,33.4,0,High,0.439,Medium,High
+STU0389,24,Male,Engineering,4,73.9,12.5,25,71.0,48.8,2.6,Poor,No,43.1,0,High,0.526,High,Low
+STU0390,17,Female,Information Technology,7,80.2,4.5,15,76.6,92.9,1.4,Good,No,48.8,0,High,0.386,Medium,Medium
+STU0391,22,Male,Computer Science,2,88.1,12.6,31,67.0,82.1,3.17,Poor,No,64.8,1,Medium,0.176,Low,High
+STU0392,17,Female,Engineering,2,89.8,7.3,26,79.5,90.4,2.3,Good,No,65.4,1,Low,0.1,Low,Medium
+STU0393,19,Male,Business,7,81.7,9.8,45,100.0,91.6,3.08,Average,No,65.7,1,Low,0.039,Low,Low
+STU0394,21,Male,Computer Science,7,85.6,17.2,64,73.1,79.4,2.55,Good,No,57.2,1,Medium,0.18,Low,High
+STU0395,22,Female,Information Technology,5,78.8,14.4,35,68.0,60.3,2.87,Average,No,58.2,1,Medium,0.196,Low,Medium
+STU0396,23,Female,Computer Science,1,69.2,14.8,47,91.2,50.4,2.16,Good,Yes,46.6,0,High,0.441,Medium,High
+STU0397,16,Male,Business,8,74.6,3.1,21,78.8,87.5,3.31,Poor,Yes,52.3,1,Medium,0.264,Medium,High
+STU0398,17,Male,Computer Science,4,78.2,21.2,60,98.0,69.1,1.87,Poor,No,53.9,1,Medium,0.181,Low,High
+STU0399,18,Male,Computer Science,8,77.5,6.0,26,77.6,100.0,4.0,Good,No,54.6,1,Medium,0.188,Low,Medium
+STU0400,18,Female,Computer Science,7,53.5,19.6,56,71.0,61.8,4.0,Good,No,50.9,1,High,0.442,Medium,High
+STU0401,24,Male,Business,7,72.8,17.1,61,46.5,100.0,3.84,Average,No,50.1,1,Medium,0.216,Low,Medium
+STU0402,22,Male,Computer Science,6,78.7,14.9,52,49.1,65.3,3.59,Good,Yes,56.9,1,Medium,0.249,Low,High
+STU0403,18,Male,Engineering,6,74.3,7.7,18,45.6,90.7,2.64,Average,No,51.6,1,Medium,0.221,Low,Medium
+STU0404,24,Male,Computer Science,5,74.8,12.8,45,81.1,96.8,3.52,Average,No,68.4,1,Medium,0.196,Low,Medium
+STU0405,20,Female,Business,1,84.3,9.6,38,53.2,50.6,2.63,Good,No,35.5,0,High,0.356,Medium,Low
+STU0406,20,Female,Information Technology,4,64.0,12.1,39,95.1,59.8,1.61,Good,No,57.9,1,Medium,0.14,Low,High
+STU0407,19,Female,Information Technology,6,56.8,10.8,43,75.5,50.4,3.75,Poor,Yes,38.8,0,High,0.523,High,High
+STU0408,17,Male,Computer Science,7,73.5,1.8,15,71.1,47.1,3.49,Good,No,39.5,0,High,0.351,Medium,Low
+STU0409,24,Male,Engineering,5,87.9,17.6,50,61.5,79.3,2.68,Average,Yes,50.6,1,Medium,0.252,Medium,High
+STU0410,16,Male,Engineering,6,99.9,11.6,36,85.0,64.7,1.84,Good,No,60.9,1,Medium,0.156,Low,High
+STU0411,17,Female,Computer Science,1,88.2,9.6,15,62.1,68.9,2.29,Good,No,50.5,1,Medium,0.121,Low,Medium
+STU0412,18,Female,Computer Science,4,58.9,9.2,30,59.2,77.5,1.43,Good,Yes,40.0,0,High,0.48,High,Medium
+STU0413,18,Female,Mathematics,5,75.0,13.8,35,94.0,36.4,3.36,Good,No,46.7,0,High,0.282,Medium,High
+STU0414,17,Other,Information Technology,8,81.3,7.5,17,80.7,89.9,1.58,Average,No,43.2,0,High,0.369,Medium,High
+STU0415,16,Other,Computer Science,3,80.3,0.7,23,71.2,62.1,2.9,Good,Yes,54.7,1,Medium,0.217,Low,High
+STU0416,22,Female,Computer Science,2,85.0,14.0,45,85.3,77.1,2.11,Average,Yes,59.0,1,Medium,0.338,Medium,High
+STU0417,24,Male,Business,3,66.1,14.6,42,75.1,78.6,1.7,Average,No,56.0,1,Medium,0.186,Low,High
+STU0418,17,Male,Business,2,78.8,11.0,30,81.1,91.3,2.87,Good,No,59.2,1,Medium,0.249,Low,Low
+STU0419,18,Male,Business,5,83.5,6.3,26,61.9,66.2,2.47,Good,Yes,32.0,0,High,0.436,Medium,High
+STU0420,20,Female,Mathematics,6,88.7,12.4,45,100.0,31.9,3.29,Average,No,46.2,0,High,0.264,Medium,Medium
+STU0421,24,Male,Information Technology,7,67.5,4.7,14,65.7,69.0,1.81,Average,No,45.6,0,High,0.399,Medium,High
+STU0422,22,Female,Information Technology,8,73.5,6.9,25,99.9,71.4,2.17,Average,No,49.7,0,High,0.397,Medium,High
+STU0423,22,Female,Information Technology,1,42.9,8.2,35,72.0,50.4,1.03,Good,No,30.9,0,High,0.479,High,High
+STU0424,21,Female,Information Technology,2,69.9,16.2,30,87.9,70.5,1.17,Average,Yes,41.3,0,High,0.494,High,Medium
+STU0425,19,Male,Computer Science,3,71.2,10.2,32,86.7,61.9,3.96,Good,No,60.8,1,Medium,0.228,Low,Low
+STU0426,17,Male,Computer Science,2,64.7,9.8,28,93.3,45.2,4.0,Average,Yes,54.9,1,Medium,0.325,Medium,Medium
+STU0427,23,Male,Information Technology,7,80.2,21.8,57,61.6,79.4,2.76,Good,No,57.3,1,Medium,0.159,Low,High
+STU0428,23,Female,Business,2,77.3,13.8,36,92.2,58.4,2.12,Average,No,47.0,0,High,0.304,Medium,Low
+STU0429,16,Female,Computer Science,1,48.6,13.7,41,100.0,61.1,2.49,Good,No,49.5,0,High,0.463,High,Low
+STU0430,22,Female,Information Technology,7,80.8,10.2,48,70.9,60.1,3.31,Average,No,43.7,0,High,0.344,Medium,High
+STU0431,16,Male,Business,8,65.9,9.0,27,75.6,89.0,2.34,Good,Yes,49.9,0,High,0.401,Medium,Medium
+STU0432,22,Male,Business,2,84.3,1.1,15,66.6,67.3,2.87,Average,No,33.9,0,High,0.33,Medium,Medium
+STU0433,23,Male,Engineering,3,61.3,16.8,63,69.5,69.3,2.69,Good,No,39.5,0,High,0.411,Medium,Medium
+STU0434,17,Female,Engineering,5,78.4,14.2,37,100.0,60.5,2.3,Average,No,51.4,1,Medium,0.115,Low,High
+STU0435,19,Female,Business,5,74.3,11.1,49,58.9,75.9,2.33,Good,No,61.9,1,Medium,0.169,Low,Medium
+STU0436,17,Male,Computer Science,8,81.9,11.3,35,59.9,90.9,2.91,Good,No,43.5,0,High,0.32,Medium,High
+STU0437,21,Female,Information Technology,4,79.6,15.7,59,100.0,79.0,2.02,Average,No,48.7,0,High,0.419,Medium,Medium
+STU0438,24,Male,Business,1,74.7,4.2,25,85.0,79.7,3.02,Good,No,54.8,1,Medium,0.19,Low,Low
+STU0439,16,Female,Computer Science,4,58.0,9.1,32,100.0,78.3,2.37,Good,No,62.0,1,High,0.469,High,Medium
+STU0440,19,Male,Computer Science,5,58.8,6.3,23,67.8,44.5,2.79,Average,No,42.7,0,High,0.42,Medium,Low
+STU0441,24,Male,Computer Science,5,70.4,20.9,51,77.0,53.1,3.67,Average,No,57.8,1,Medium,0.123,Low,High
+STU0442,18,Female,Information Technology,5,77.9,16.4,47,64.4,64.5,2.58,Average,No,47.7,0,High,0.375,Medium,Low
+STU0443,17,Male,Information Technology,8,70.1,1.0,19,77.3,55.7,3.34,Good,No,44.7,0,High,0.353,Medium,Medium
+STU0444,20,Male,Computer Science,7,86.1,4.4,20,46.6,49.9,1.45,Good,Yes,39.0,0,High,0.382,Medium,Medium
+STU0445,20,Male,Engineering,3,74.4,11.3,32,86.0,36.2,2.37,Average,No,41.8,0,High,0.32,Medium,Medium
+STU0446,21,Male,Mathematics,3,65.5,9.6,29,80.2,45.1,2.72,Good,No,49.7,0,High,0.401,Medium,Medium
+STU0447,18,Female,Computer Science,6,74.4,5.4,30,74.1,63.6,4.0,Average,No,43.4,0,High,0.405,Medium,Medium
+STU0448,24,Female,Mathematics,4,80.9,21.7,68,68.8,66.8,1.33,Good,Yes,53.4,1,Medium,0.274,Medium,High
+STU0449,20,Female,Computer Science,4,82.2,13.6,35,60.7,54.5,2.63,Poor,No,47.9,0,High,0.455,High,Low
+STU0450,18,Male,Mathematics,2,100.0,14.4,36,86.6,69.3,3.72,Average,No,60.7,1,Medium,0.149,Low,Medium
+STU0451,24,Female,Mathematics,3,69.3,8.5,32,56.3,60.6,2.15,Good,Yes,32.8,0,High,0.381,Medium,High
+STU0452,24,Male,Computer Science,6,77.0,15.6,57,83.2,86.5,2.55,Good,No,50.2,1,Medium,0.124,Low,Low
+STU0453,20,Male,Engineering,7,83.5,10.1,41,100.0,65.3,2.93,Good,No,63.5,1,Medium,0.074,Low,High
+STU0454,16,Male,Mathematics,7,77.7,10.6,23,98.8,79.8,2.83,Good,No,56.1,1,Medium,0.194,Low,High
+STU0455,21,Female,Mathematics,3,71.5,15.1,41,50.9,71.5,3.8,Average,No,53.4,1,Medium,0.166,Low,High
+STU0456,20,Female,Mathematics,2,57.9,3.9,11,66.4,44.2,3.01,Good,Yes,36.0,0,High,0.489,High,High
+STU0457,17,Female,Business,2,71.4,20.0,52,81.7,66.5,3.63,Good,No,56.3,1,Medium,0.186,Low,High
+STU0458,21,Female,Computer Science,4,64.0,12.9,51,73.9,47.0,2.45,Good,No,36.2,0,High,0.419,Medium,Medium
+STU0459,23,Female,Engineering,5,55.6,18.4,39,52.6,66.2,2.18,Average,Yes,43.6,0,High,0.458,High,High
+STU0460,16,Female,Business,8,67.7,6.6,12,81.2,55.3,2.54,Good,Yes,48.5,0,High,0.419,Medium,Medium
+STU0461,22,Female,Business,8,64.4,7.4,20,74.8,74.5,1.89,Good,No,47.6,0,High,0.402,Medium,Medium
+STU0462,17,Male,Information Technology,1,85.6,6.2,26,100.0,45.2,3.04,Poor,No,47.4,0,High,0.426,Medium,High
+STU0463,22,Male,Business,6,85.8,13.3,44,70.9,68.2,2.43,Good,No,49.5,0,High,0.316,Medium,High
+STU0464,19,Male,Computer Science,3,66.2,12.3,41,93.7,77.7,2.23,Good,Yes,55.4,1,Medium,0.264,Medium,High
+STU0465,16,Female,Engineering,2,74.6,9.7,41,54.7,83.4,3.05,Poor,Yes,49.5,0,High,0.416,Medium,Low
+STU0466,24,Male,Computer Science,5,53.8,6.9,11,58.6,55.0,1.9,Good,No,36.0,0,High,0.483,High,High
+STU0467,17,Female,Business,1,71.6,5.7,32,86.5,68.3,3.24,Poor,No,63.7,1,Medium,0.224,Low,Medium
+STU0468,21,Male,Engineering,3,83.2,11.8,33,92.3,71.1,2.37,Average,No,48.8,0,High,0.281,Medium,High
+STU0469,17,Female,Information Technology,5,88.7,9.7,37,59.7,94.3,3.51,Average,Yes,64.1,1,Medium,0.137,Low,High
+STU0470,24,Male,Information Technology,3,68.7,8.6,18,75.4,42.8,2.43,Good,No,36.7,0,High,0.328,Medium,Medium
+STU0471,22,Male,Information Technology,5,91.7,19.7,53,52.9,52.5,3.14,Good,No,55.2,1,Medium,0.075,Low,High
+STU0472,23,Male,Mathematics,4,58.3,11.6,37,72.1,100.0,2.83,Good,No,57.3,1,High,0.417,Medium,Medium
+STU0473,19,Male,Engineering,7,61.8,18.4,60,88.4,63.4,3.22,Good,No,50.3,1,Medium,0.184,Low,Medium
+STU0474,20,Female,Information Technology,2,87.2,9.3,18,68.0,35.9,2.78,Good,No,38.8,0,High,0.319,Medium,High
+STU0475,21,Male,Computer Science,1,99.7,13.2,39,71.0,58.1,1.54,Average,Yes,37.4,0,High,0.331,Medium,High
+STU0476,23,Female,Computer Science,5,84.4,11.7,27,56.9,20.9,3.41,Average,No,40.5,0,High,0.411,Medium,Medium
+STU0477,23,Male,Information Technology,3,77.5,3.5,22,64.6,72.1,2.64,Good,No,51.0,1,Medium,0.102,Low,Low
+STU0478,16,Male,Mathematics,6,49.5,19.1,58,100.0,81.8,3.25,Average,No,50.0,1,High,0.468,High,Medium
+STU0479,21,Female,Engineering,1,51.7,11.3,45,76.2,52.5,3.18,Poor,Yes,46.2,0,High,0.6,High,Low
+STU0480,16,Male,Computer Science,5,79.7,15.7,40,59.0,60.0,2.16,Average,No,37.9,0,High,0.3,Medium,Medium
+STU0481,18,Other,Engineering,8,73.3,8.2,35,70.0,83.7,2.06,Average,No,47.6,0,High,0.371,Medium,Medium
+STU0482,23,Female,Information Technology,1,63.6,11.2,46,49.4,38.2,3.16,Average,No,34.1,0,High,0.436,Medium,Medium
+STU0483,18,Female,Engineering,3,78.9,7.7,14,58.8,45.5,2.49,Good,No,42.7,0,High,0.348,Medium,High
+STU0484,23,Male,Computer Science,7,79.5,18.2,55,96.8,64.1,3.36,Good,No,55.6,1,Medium,0.217,Low,Low
+STU0485,20,Male,Business,5,90.3,13.6,48,72.7,55.2,2.58,Poor,Yes,44.0,0,High,0.352,Medium,High
+STU0486,18,Female,Mathematics,2,79.8,13.8,38,100.0,63.0,3.42,Average,No,54.1,1,Medium,0.127,Low,High
+STU0487,19,Male,Computer Science,2,94.0,18.8,42,73.5,46.5,3.0,Average,No,47.8,0,High,0.343,Medium,Medium
+STU0488,20,Male,Business,7,78.1,17.8,57,74.4,71.6,2.9,Poor,No,46.4,0,High,0.444,Medium,High
+STU0489,22,Male,Mathematics,7,76.5,15.8,35,85.3,65.5,2.44,Good,Yes,58.8,1,Medium,0.276,Medium,Low
+STU0490,21,Female,Computer Science,3,91.8,4.9,19,32.2,77.3,2.86,Good,No,45.1,0,High,0.342,Medium,Medium
+STU0491,24,Female,Computer Science,4,65.3,8.5,28,78.3,71.4,3.53,Average,No,39.2,0,High,0.322,Medium,High
+STU0492,23,Female,Business,7,100.0,7.0,31,74.2,71.5,2.66,Good,No,50.8,1,Medium,0.112,Low,Low
+STU0493,22,Female,Information Technology,2,82.9,15.6,39,98.8,43.4,3.07,Average,Yes,59.7,1,Medium,0.271,Medium,Medium
+STU0494,21,Male,Computer Science,2,83.0,12.9,33,90.4,76.4,2.73,Average,Yes,52.1,1,Medium,0.202,Low,High
+STU0495,18,Female,Information Technology,7,84.8,5.0,22,56.9,62.4,2.79,Average,No,56.1,1,Medium,0.246,Low,Medium
+STU0496,19,Male,Engineering,2,100.0,11.1,42,94.9,65.2,3.91,Good,No,57.4,1,Medium,0.088,Low,High
+STU0497,17,Female,Computer Science,7,88.3,4.5,38,70.8,85.8,3.54,Average,No,59.8,1,Medium,0.039,Low,High
+STU0498,19,Male,Information Technology,4,57.1,11.7,24,60.5,55.8,2.76,Good,Yes,49.3,0,High,0.527,High,Low
+STU0499,24,Other,Engineering,8,96.2,3.7,21,78.2,91.0,2.85,Average,Yes,60.2,1,Medium,0.146,Low,High
+STU0500,19,Male,Information Technology,1,73.6,14.6,33,71.8,92.6,2.21,Good,Yes,44.9,0,High,0.492,High,Medium
+STU0501,17,Male,Engineering,8,79.4,13.9,49,99.6,80.8,2.58,Average,No,52.3,1,Medium,0.184,Low,Low
+STU0502,21,Male,Information Technology,2,61.4,21.5,50,80.4,51.3,2.92,Good,No,56.5,1,Medium,0.21,Low,High
+STU0503,24,Male,Mathematics,1,84.8,16.2,40,78.3,30.8,3.3,Good,No,45.4,0,High,0.381,Medium,Medium
+STU0504,23,Male,Business,6,69.5,9.9,27,89.4,86.3,3.22,Good,Yes,62.4,1,Medium,0.32,Medium,High
+STU0505,18,Female,Computer Science,5,79.3,16.1,45,92.5,69.9,1.92,Good,No,50.4,1,Medium,0.13,Low,Medium
+STU0506,20,Male,Engineering,7,74.3,5.0,24,87.5,55.3,3.38,Good,No,52.1,1,Medium,0.177,Low,Low
+STU0507,20,Female,Information Technology,1,100.0,7.2,30,97.7,88.0,2.64,Average,No,52.9,1,Medium,0.101,Low,High
+STU0508,18,Male,Computer Science,1,100.0,13.7,40,84.7,53.4,2.01,Average,No,48.8,0,High,0.245,Low,High
+STU0509,18,Female,Computer Science,5,78.6,1.2,2,77.7,60.8,3.64,Good,Yes,46.2,0,High,0.412,Medium,Medium
+STU0510,18,Male,Business,8,78.8,11.8,42,94.8,76.9,3.72,Average,No,61.3,1,Medium,0.166,Low,High
+STU0511,24,Female,Computer Science,4,73.1,6.9,25,73.5,49.1,2.88,Average,No,46.9,0,High,0.325,Medium,Medium
+STU0512,22,Female,Computer Science,7,92.4,12.5,47,75.5,66.1,3.2,Average,No,58.5,1,Medium,0.021,Low,Medium
+STU0513,23,Male,Computer Science,8,73.7,6.6,19,100.0,86.5,3.24,Good,No,55.5,1,Medium,0.195,Low,High
+STU0514,23,Female,Information Technology,7,72.5,14.1,28,100.0,71.6,3.68,Good,No,53.7,1,Medium,0.11,Low,High
+STU0515,24,Male,Information Technology,5,90.7,12.1,36,74.9,89.2,3.21,Poor,No,60.3,1,Medium,0.137,Low,Medium
+STU0516,16,Male,Information Technology,6,71.0,19.0,62,67.7,87.3,1.77,Good,No,44.4,0,High,0.305,Medium,High
+STU0517,23,Female,Computer Science,5,77.5,12.0,38,98.4,68.1,4.0,Good,No,66.3,1,Low,0.104,Low,Medium
+STU0518,16,Female,Computer Science,6,57.4,8.2,26,87.8,28.3,3.45,Average,No,44.0,0,High,0.447,Medium,High
+STU0519,20,Male,Business,5,87.2,10.8,27,80.0,49.2,2.34,Good,Yes,47.1,0,High,0.382,Medium,High
+STU0520,21,Male,Information Technology,5,100.0,5.3,36,69.9,81.0,1.98,Average,No,55.2,1,Medium,0.07,Low,Medium
+STU0521,19,Female,Business,4,87.4,14.0,33,80.3,41.6,3.05,Good,No,50.8,1,Medium,0.078,Low,Medium
+STU0522,17,Female,Computer Science,6,97.0,14.9,37,74.7,62.4,2.51,Average,No,44.1,0,High,0.246,Low,High
+STU0523,17,Other,Computer Science,7,67.0,24.3,68,64.4,73.8,2.93,Poor,No,46.3,0,High,0.467,High,High
+STU0524,23,Female,Computer Science,8,81.1,8.9,15,77.1,93.0,3.22,Poor,No,63.9,1,Medium,0.214,Low,Medium
+STU0525,18,Female,Information Technology,5,65.7,10.7,44,79.2,58.2,2.3,Poor,No,46.8,0,High,0.49,High,Medium
+STU0526,18,Male,Information Technology,1,75.0,9.1,35,69.0,57.1,1.92,Average,No,34.4,0,High,0.399,Medium,Medium
+STU0527,24,Female,Engineering,5,88.0,13.1,46,89.5,67.1,2.97,Good,No,58.8,1,Medium,0.118,Low,High
+STU0528,17,Male,Information Technology,3,79.3,13.9,45,95.6,74.0,2.33,Poor,Yes,51.8,1,Medium,0.229,Low,High
+STU0529,24,Female,Information Technology,1,59.6,11.7,34,90.5,65.4,2.8,Poor,No,45.1,0,High,0.451,High,High
+STU0530,24,Male,Business,1,60.9,17.4,40,70.6,85.8,1.76,Good,No,41.6,0,High,0.412,Medium,Medium
+STU0531,21,Female,Computer Science,5,60.0,8.9,28,87.1,54.4,2.52,Good,Yes,52.1,1,Medium,0.289,Medium,High
+STU0532,17,Female,Information Technology,8,84.4,16.9,39,76.2,70.0,3.2,Good,No,44.6,0,High,0.28,Medium,Low
+STU0533,17,Female,Information Technology,5,100.0,14.7,46,55.2,75.6,3.12,Average,No,50.8,1,Medium,0.083,Low,Medium
+STU0534,18,Female,Information Technology,4,95.7,11.9,43,85.8,61.2,2.15,Average,No,53.9,1,Medium,0.194,Low,Medium
+STU0535,21,Male,Computer Science,1,53.4,10.4,45,77.3,82.3,1.88,Good,No,55.5,1,High,0.427,Medium,Medium
+STU0536,17,Female,Engineering,6,96.5,24.1,66,100.0,70.5,2.71,Good,No,65.7,1,Low,0.094,Low,Medium
+STU0537,20,Male,Mathematics,1,90.2,7.9,35,98.3,81.4,3.09,Average,No,55.1,1,Medium,0.067,Low,Medium
+STU0538,17,Male,Computer Science,7,57.9,13.5,37,86.4,71.3,2.98,Good,Yes,60.5,1,High,0.558,High,Medium
+STU0539,20,Male,Business,7,74.1,8.2,24,79.0,74.4,2.34,Poor,Yes,42.0,0,High,0.539,High,High
+STU0540,16,Male,Engineering,8,92.2,20.9,60,77.6,57.2,2.91,Good,Yes,57.2,1,Medium,0.223,Low,Low
+STU0541,22,Male,Computer Science,3,85.2,16.4,43,58.9,57.3,3.75,Good,No,56.2,1,Medium,0.194,Low,Medium
+STU0542,16,Female,Engineering,2,61.0,8.6,31,47.2,88.8,2.84,Good,No,41.6,0,High,0.399,Medium,Medium
+STU0543,17,Female,Business,3,85.9,14.6,34,61.0,78.8,1.56,Average,Yes,53.0,1,Medium,0.204,Low,Medium
+STU0544,17,Female,Mathematics,7,50.2,13.3,32,74.2,50.6,2.84,Average,Yes,40.9,0,High,0.608,High,Medium
+STU0545,23,Male,Mathematics,2,75.1,9.4,36,41.3,71.1,4.0,Good,No,54.1,1,Medium,0.205,Low,High
+STU0546,16,Male,Computer Science,8,92.8,15.8,52,66.3,27.6,1.8,Good,Yes,32.6,0,High,0.28,Medium,Medium
+STU0547,19,Male,Information Technology,2,78.2,13.9,33,71.0,58.2,2.72,Good,Yes,51.6,1,Medium,0.265,Medium,Medium
+STU0548,21,Female,Information Technology,1,71.5,13.1,44,71.6,84.3,2.54,Good,No,49.6,0,High,0.351,Medium,High
+STU0549,20,Female,Computer Science,2,89.6,11.8,32,64.4,65.9,2.77,Average,No,58.4,1,Medium,0.158,Low,Low
+STU0550,22,Male,Information Technology,7,90.7,14.2,41,69.5,70.0,2.84,Good,No,54.0,1,Medium,0.134,Low,High
+STU0551,23,Female,Mathematics,5,95.0,13.1,50,100.0,16.7,3.5,Good,No,60.5,1,Medium,0.03,Low,Medium
+STU0552,19,Male,Computer Science,3,89.4,12.3,44,85.6,61.3,2.76,Good,No,57.4,1,Medium,0.133,Low,High
+STU0553,23,Male,Information Technology,6,92.1,8.8,36,66.0,73.8,3.59,Good,No,55.2,1,Medium,0.12,Low,Low
+STU0554,18,Male,Engineering,6,87.5,20.5,70,73.9,75.9,2.62,Good,No,60.9,1,Medium,0.145,Low,Medium
+STU0555,24,Male,Information Technology,5,81.5,6.7,19,74.5,84.4,2.45,Good,Yes,57.1,1,Medium,0.257,Medium,High
+STU0556,20,Female,Information Technology,5,79.2,14.1,33,62.7,64.4,2.23,Good,Yes,50.6,1,Medium,0.303,Medium,Medium
+STU0557,22,Female,Mathematics,1,74.9,10.4,27,62.7,65.2,1.43,Good,No,29.6,0,High,0.377,Medium,High
+STU0558,23,Male,Information Technology,3,62.2,20.8,54,91.2,45.4,2.89,Good,No,44.4,0,High,0.412,Medium,Low
+STU0559,23,Female,Computer Science,5,65.6,7.5,8,68.3,64.5,4.0,Poor,No,59.2,1,Medium,0.324,Medium,Medium
+STU0560,23,Female,Computer Science,2,74.3,8.3,27,57.5,46.6,3.02,Good,No,37.0,0,High,0.453,High,High
+STU0561,20,Female,Mathematics,4,81.1,7.2,21,74.3,36.6,3.18,Good,No,52.2,1,Medium,0.192,Low,High
+STU0562,16,Female,Computer Science,1,96.7,13.6,46,76.9,49.6,2.41,Good,No,55.5,1,Medium,0.101,Low,Medium
+STU0563,20,Male,Information Technology,7,77.5,5.1,24,43.4,93.6,2.53,Average,Yes,43.8,0,High,0.447,Medium,Medium
+STU0564,17,Female,Computer Science,1,91.0,9.6,26,74.3,63.4,3.39,Poor,No,43.0,0,High,0.366,Medium,High
+STU0565,24,Male,Information Technology,1,92.0,1.2,17,88.9,71.7,4.0,Average,No,55.5,1,Medium,0.113,Low,High
+STU0566,18,Female,Mathematics,6,75.0,13.2,45,82.2,59.3,3.74,Average,No,67.0,1,Low,0.267,Medium,High
+STU0567,18,Male,Information Technology,2,85.7,9.5,25,100.0,37.6,3.26,Average,Yes,48.0,0,High,0.367,Medium,High
+STU0568,18,Female,Mathematics,3,74.8,4.6,16,95.0,83.9,2.72,Good,No,50.2,1,Medium,0.227,Low,Medium
+STU0569,21,Male,Computer Science,3,95.2,17.4,30,98.2,31.1,2.85,Average,No,48.1,0,High,0.274,Medium,High
+STU0570,21,Male,Information Technology,2,86.3,5.5,13,100.0,58.6,2.17,Average,No,58.9,1,Medium,0.076,Low,Medium
+STU0571,24,Female,Engineering,7,62.5,16.0,39,87.1,67.1,1.69,Good,No,46.2,0,High,0.402,Medium,Low
+STU0572,19,Female,Information Technology,6,80.1,8.5,29,77.6,71.9,1.91,Good,No,45.3,0,High,0.318,Medium,High
+STU0573,18,Male,Computer Science,2,99.4,20.0,46,90.6,55.7,2.73,Good,No,66.3,1,Low,0.106,Low,High
+STU0574,16,Female,Engineering,6,75.6,15.7,40,66.1,36.8,2.5,Good,No,47.8,0,High,0.361,Medium,Low
+STU0575,16,Female,Information Technology,6,83.8,7.0,16,76.7,54.4,1.67,Average,No,39.8,0,High,0.284,Medium,High
+STU0576,19,Male,Information Technology,5,85.1,7.4,28,64.6,55.3,2.67,Good,No,40.3,0,High,0.378,Medium,Medium
+STU0577,24,Female,Mathematics,5,64.5,15.0,46,81.4,54.9,2.48,Average,No,54.5,1,Medium,0.266,Medium,Low
+STU0578,20,Male,Computer Science,8,84.6,10.7,37,64.6,84.5,1.88,Poor,No,50.4,1,Medium,0.265,Medium,High
+STU0579,24,Female,Information Technology,4,59.9,11.2,35,64.0,47.4,2.44,Good,No,32.4,0,High,0.43,Medium,High
+STU0580,16,Male,Computer Science,4,69.9,18.4,38,81.6,73.1,2.48,Good,No,42.1,0,High,0.379,Medium,Medium
+STU0581,16,Male,Information Technology,5,92.0,8.3,23,72.8,70.7,2.27,Average,Yes,44.9,0,High,0.4,Medium,Low
+STU0582,23,Female,Computer Science,7,82.6,12.5,34,44.2,84.3,3.35,Average,Yes,45.2,0,High,0.387,Medium,Medium
+STU0583,16,Female,Business,6,74.0,16.8,44,51.7,65.7,1.37,Good,No,30.6,0,High,0.369,Medium,Low
+STU0584,16,Female,Computer Science,1,83.8,16.0,46,56.6,81.4,1.31,Good,No,41.1,0,High,0.318,Medium,High
+STU0585,19,Female,Business,4,77.2,11.2,46,60.9,65.1,2.7,Average,No,42.8,0,High,0.293,Medium,Medium
+STU0586,24,Female,Computer Science,6,78.2,10.6,40,81.6,75.4,2.77,Poor,Yes,50.9,1,Medium,0.312,Medium,High
+STU0587,22,Female,Information Technology,2,86.5,3.3,9,78.5,42.5,2.98,Good,No,58.0,1,Medium,0.116,Low,Low
+STU0588,16,Female,Information Technology,8,68.5,6.7,30,92.0,23.1,2.32,Good,No,40.4,0,High,0.376,Medium,Low
+STU0589,23,Male,Business,7,78.5,13.6,45,87.0,74.4,2.06,Poor,No,51.6,1,Medium,0.241,Low,Medium
+STU0590,23,Male,Information Technology,7,73.9,11.3,28,92.2,75.3,2.69,Good,Yes,57.4,1,Medium,0.315,Medium,High
+STU0591,23,Male,Information Technology,1,57.4,12.4,44,84.7,76.1,2.39,Good,No,48.1,0,High,0.396,Medium,High
+STU0592,24,Female,Engineering,5,66.0,17.2,47,78.4,59.1,3.79,Average,No,55.9,1,Medium,0.203,Low,Medium
+STU0593,18,Male,Business,5,98.4,6.1,12,92.6,93.3,2.47,Good,No,61.6,1,Medium,0.056,Low,Medium
+STU0594,24,Male,Computer Science,6,83.0,10.8,37,89.7,60.2,2.66,Good,No,53.6,1,Medium,0.115,Low,Low
+STU0595,18,Female,Mathematics,7,60.8,12.9,40,81.0,75.2,4.0,Average,No,71.8,1,Medium,0.213,Low,Medium
+STU0596,23,Male,Information Technology,3,58.0,8.5,27,95.3,78.1,2.56,Average,No,56.7,1,High,0.42,Medium,Medium
+STU0597,21,Male,Computer Science,5,76.5,19.2,52,37.5,97.2,3.09,Good,Yes,46.8,0,High,0.457,High,High
+STU0598,23,Female,Information Technology,6,98.3,16.5,41,70.4,62.6,3.15,Good,Yes,58.5,1,Medium,0.18,Low,Medium
+STU0599,21,Female,Computer Science,7,75.6,13.5,45,70.1,56.9,3.21,Average,No,45.8,0,High,0.315,Medium,High
+STU0600,21,Male,Computer Science,7,95.0,21.0,56,93.4,42.5,2.9,Average,Yes,58.9,1,Medium,0.232,Low,High
+STU0601,21,Male,Engineering,3,82.6,4.5,21,100.0,94.4,2.84,Average,No,51.2,1,Medium,0.187,Low,Low
+STU0602,23,Male,Computer Science,8,84.1,12.0,39,51.8,75.2,2.77,Average,No,43.6,0,High,0.288,Medium,Medium
+STU0603,22,Female,Engineering,1,60.6,13.8,31,97.6,75.7,2.3,Average,No,54.2,1,Medium,0.287,Medium,High
+STU0604,17,Female,Mathematics,4,90.2,7.4,19,56.3,100.0,2.93,Average,Yes,61.6,1,Medium,0.212,Low,Medium
+STU0605,23,Male,Business,5,73.6,13.5,22,56.7,73.5,4.0,Average,No,56.7,1,Medium,0.179,Low,Medium
+STU0606,20,Female,Business,1,89.2,6.5,29,71.3,45.9,3.55,Good,No,55.9,1,Medium,0.138,Low,High
+STU0607,18,Male,Business,4,67.4,15.5,34,69.9,64.7,2.91,Poor,No,51.9,1,Medium,0.269,Medium,Medium
+STU0608,20,Male,Mathematics,5,80.3,17.3,49,50.1,51.4,3.3,Average,No,49.5,0,High,0.361,Medium,High
+STU0609,24,Other,Information Technology,5,82.6,13.4,42,85.4,61.3,2.09,Good,No,47.9,0,High,0.337,Medium,Medium
+STU0610,23,Male,Computer Science,1,76.0,2.7,21,85.9,61.2,2.52,Good,No,53.4,1,Medium,0.163,Low,Medium
+STU0611,23,Male,Information Technology,3,83.3,7.2,16,91.9,58.0,3.36,Average,No,60.7,1,Medium,0.066,Low,Medium
+STU0612,20,Male,Information Technology,2,74.5,14.8,42,68.1,44.3,3.74,Good,No,49.8,0,High,0.383,Medium,Medium
+STU0613,23,Female,Computer Science,6,69.6,12.1,50,74.4,95.1,2.16,Average,Yes,51.7,1,Medium,0.267,Medium,Low
+STU0614,19,Female,Business,3,98.9,0.0,24,74.5,73.1,2.36,Good,No,61.1,1,Medium,0.116,Low,Low
+STU0615,22,Other,Computer Science,5,91.6,18.2,58,100.0,64.2,4.0,Good,Yes,63.6,1,Medium,0.213,Low,Medium
+STU0616,21,Male,Mathematics,6,68.1,12.7,41,29.7,80.9,2.77,Good,Yes,45.2,0,High,0.454,High,Medium
+STU0617,18,Male,Computer Science,7,85.4,7.9,19,59.7,76.0,3.98,Average,No,58.2,1,Medium,0.179,Low,High
+STU0618,18,Female,Computer Science,2,68.3,17.0,53,75.1,72.7,2.84,Good,No,51.6,1,Medium,0.215,Low,Low
+STU0619,16,Male,Computer Science,8,62.6,8.6,28,57.6,79.6,2.87,Average,No,42.5,0,High,0.416,Medium,Low
+STU0620,17,Female,Computer Science,2,91.4,8.6,33,70.9,70.3,2.49,Good,Yes,54.1,1,Medium,0.189,Low,Medium
+STU0621,19,Female,Computer Science,1,55.8,13.8,35,73.0,79.4,3.36,Good,No,51.5,1,High,0.504,High,Medium
+STU0622,20,Male,Computer Science,1,90.0,20.9,55,64.5,80.8,3.65,Good,No,70.8,1,Low,0.091,Low,Medium
+STU0623,17,Female,Computer Science,2,74.7,20.1,56,76.0,70.8,1.98,Good,No,55.5,1,Medium,0.168,Low,Low
+STU0624,19,Male,Computer Science,7,75.2,13.8,42,85.1,64.3,2.45,Average,No,47.9,0,High,0.31,Medium,Medium
+STU0625,21,Male,Information Technology,2,83.3,14.3,45,71.2,94.0,3.34,Average,Yes,63.4,1,Medium,0.256,Medium,High
+STU0626,18,Female,Information Technology,6,85.6,16.0,41,67.7,59.9,2.61,Good,Yes,52.7,1,Medium,0.194,Low,High
+STU0627,19,Female,Information Technology,4,67.3,5.7,12,72.3,74.7,2.35,Good,No,54.9,1,Medium,0.192,Low,Medium
+STU0628,19,Female,Information Technology,1,87.3,15.2,56,74.9,75.0,3.41,Average,No,54.6,1,Medium,0.11,Low,High
+STU0629,20,Female,Computer Science,4,79.5,8.3,48,47.2,57.6,3.47,Average,No,48.3,0,High,0.345,Medium,High
+STU0630,19,Other,Computer Science,1,61.7,13.6,43,82.4,54.3,2.39,Good,No,45.9,0,High,0.363,Medium,High
+STU0631,22,Other,Computer Science,4,75.8,10.9,23,67.8,62.0,2.85,Average,No,49.4,0,High,0.267,Medium,Medium
+STU0632,18,Female,Engineering,5,96.0,14.5,36,95.2,59.6,1.85,Good,No,48.8,0,High,0.294,Medium,Medium
+STU0633,19,Male,Mathematics,5,99.8,12.6,42,84.5,43.2,2.07,Good,Yes,54.0,1,Medium,0.076,Low,Medium
+STU0634,19,Female,Mathematics,3,87.3,0.0,21,93.7,56.9,2.79,Average,No,53.9,1,Medium,0.165,Low,Medium
+STU0635,17,Female,Information Technology,7,62.5,12.9,29,58.8,72.5,2.72,Average,No,54.5,1,Medium,0.292,Medium,High
+STU0636,22,Male,Information Technology,5,84.4,15.2,42,69.1,89.5,2.02,Average,No,53.5,1,Medium,0.136,Low,Medium
+STU0637,18,Male,Information Technology,3,89.1,14.2,43,55.1,77.4,2.2,Good,No,48.1,0,High,0.356,Medium,Low
+STU0638,18,Male,Engineering,4,87.4,11.5,42,63.7,23.8,1.95,Good,No,45.5,0,High,0.309,Medium,Low
+STU0639,23,Male,Engineering,1,88.2,20.2,52,95.0,78.9,3.02,Average,No,57.0,1,Medium,0.191,Low,Low
+STU0640,24,Female,Engineering,8,82.7,13.6,27,98.8,58.5,1.32,Good,No,56.2,1,Medium,0.131,Low,Medium
+STU0641,22,Male,Engineering,7,77.1,14.2,46,56.6,75.7,1.99,Good,Yes,53.9,1,Medium,0.157,Low,Low
+STU0642,24,Female,Information Technology,3,70.1,17.2,57,67.7,67.8,1.4,Average,Yes,52.7,1,Medium,0.276,Medium,Medium
+STU0643,23,Female,Engineering,6,53.3,13.8,40,73.8,64.7,2.99,Good,No,49.8,0,High,0.515,High,Medium
+STU0644,20,Female,Engineering,6,82.4,7.5,30,84.4,66.3,1.44,Good,No,44.7,0,High,0.352,Medium,Medium
+STU0645,22,Male,Information Technology,5,80.4,0.0,6,46.8,67.6,2.72,Good,No,44.8,0,High,0.318,Medium,High
+STU0646,18,Male,Mathematics,1,85.2,9.6,24,49.4,90.9,3.85,Poor,No,58.3,1,Medium,0.212,Low,High
+STU0647,20,Female,Computer Science,8,60.6,15.8,53,82.8,67.7,3.87,Good,Yes,51.4,1,Medium,0.356,Medium,Medium
+STU0648,20,Female,Mathematics,8,86.4,10.2,36,43.8,86.5,1.44,Good,Yes,53.8,1,Medium,0.211,Low,Medium
+STU0649,24,Female,Engineering,8,100.0,16.0,49,67.9,84.0,2.91,Good,No,62.3,1,Medium,0.185,Low,High
+STU0650,23,Female,Computer Science,8,79.0,12.7,50,77.6,79.3,2.01,Good,Yes,46.2,0,High,0.403,Medium,High
+STU0651,20,Male,Business,8,77.2,18.4,42,81.7,37.6,1.86,Good,No,56.8,1,Medium,0.211,Low,Medium
+STU0652,21,Female,Computer Science,6,82.0,10.5,29,72.7,87.0,2.62,Average,No,54.9,1,Medium,0.182,Low,Low
+STU0653,17,Male,Engineering,1,100.0,14.3,43,69.1,60.2,3.56,Good,No,50.4,1,Medium,0.052,Low,High
+STU0654,23,Male,Engineering,4,64.7,14.5,37,88.5,80.2,3.12,Good,No,50.5,1,Medium,0.204,Low,Low
+STU0655,20,Female,Business,2,80.6,19.5,59,79.6,51.5,2.2,Good,Yes,58.7,1,Medium,0.278,Medium,High
+STU0656,20,Male,Engineering,2,67.6,3.5,16,64.6,47.9,3.19,Good,Yes,54.7,1,Medium,0.295,Medium,Low
+STU0657,22,Male,Computer Science,7,70.9,9.7,23,75.6,100.0,1.13,Good,No,55.2,1,Medium,0.21,Low,Low
+STU0658,21,Male,Computer Science,7,77.4,16.2,46,81.1,51.7,2.17,Average,No,56.4,1,Medium,0.105,Low,High
+STU0659,16,Male,Information Technology,5,95.5,19.7,55,100.0,87.5,2.12,Average,No,69.1,1,Low,0.124,Low,High
+STU0660,18,Female,Computer Science,6,100.0,13.2,47,87.6,70.0,2.75,Average,No,61.6,1,Medium,0.091,Low,Medium
+STU0661,17,Male,Information Technology,2,83.8,10.5,36,94.4,60.9,2.56,Good,No,55.4,1,Medium,0.142,Low,High
+STU0662,22,Female,Computer Science,2,73.1,15.8,48,65.2,67.2,2.6,Average,No,52.5,1,Medium,0.202,Low,High
+STU0663,16,Female,Information Technology,7,100.0,16.3,48,66.6,45.9,2.58,Average,No,55.3,1,Medium,0.064,Low,Medium
+STU0664,17,Male,Information Technology,4,72.4,10.2,31,71.2,67.8,2.72,Good,No,44.9,0,High,0.347,Medium,High
+STU0665,21,Male,Engineering,5,70.6,13.7,34,72.7,49.6,3.08,Good,No,52.7,1,Medium,0.188,Low,Medium
+STU0666,22,Female,Computer Science,4,54.9,17.9,52,58.9,61.3,2.8,Average,Yes,53.9,1,High,0.502,High,Low
+STU0667,20,Female,Engineering,2,96.1,21.5,55,95.3,83.7,2.5,Good,No,61.2,1,Medium,0.183,Low,High
+STU0668,23,Female,Information Technology,7,90.6,15.7,58,89.1,72.3,2.98,Good,No,56.9,1,Medium,0.154,Low,Medium
+STU0669,24,Female,Information Technology,7,100.0,12.2,48,70.1,42.8,3.28,Average,No,55.4,1,Medium,0.041,Low,High
+STU0670,17,Male,Information Technology,6,59.9,11.7,41,85.3,82.5,2.31,Good,No,46.8,0,High,0.502,High,Low
+STU0671,24,Male,Information Technology,3,97.0,14.8,46,78.6,67.9,2.66,Poor,No,48.2,0,High,0.315,Medium,Low
+STU0672,21,Female,Computer Science,6,78.9,11.4,34,86.5,58.8,3.51,Good,No,61.5,1,Medium,0.166,Low,Low
+STU0673,21,Male,Information Technology,8,88.5,12.9,28,53.5,80.7,1.93,Good,No,46.7,0,High,0.342,Medium,High
+STU0674,16,Female,Computer Science,6,56.6,6.7,23,72.7,65.2,3.96,Good,No,50.0,1,High,0.355,Medium,High
+STU0675,21,Female,Information Technology,4,97.1,18.5,52,74.1,48.2,1.76,Good,No,46.0,0,High,0.262,Medium,Medium
+STU0676,22,Female,Business,3,88.2,6.3,26,85.0,99.4,2.46,Average,No,65.4,1,Low,0.104,Low,Low
+STU0677,21,Male,Information Technology,5,77.5,9.8,35,64.9,67.7,2.03,Average,Yes,51.6,1,Medium,0.258,Medium,Medium
+STU0678,16,Male,Engineering,3,86.4,12.5,45,35.0,66.6,4.0,Poor,No,49.7,0,High,0.389,Medium,Medium
+STU0679,20,Male,Computer Science,5,68.0,22.0,53,57.7,61.1,2.35,Good,No,39.8,0,High,0.385,Medium,High
+STU0680,24,Male,Mathematics,1,70.5,9.9,26,74.0,88.1,2.35,Good,No,49.3,0,High,0.373,Medium,High
+STU0681,22,Female,Engineering,2,72.0,8.7,41,76.0,59.1,2.44,Good,No,50.5,1,Medium,0.235,Low,Low
+STU0682,17,Male,Mathematics,7,53.9,9.2,36,100.0,41.7,2.77,Good,No,47.1,0,High,0.456,High,Medium
+STU0683,24,Male,Engineering,4,89.2,20.3,52,84.3,56.5,2.47,Poor,No,54.9,1,Medium,0.185,Low,High
+STU0684,24,Male,Computer Science,4,93.5,0.0,9,76.3,90.6,2.61,Good,No,56.1,1,Medium,0.112,Low,Medium
+STU0685,17,Male,Information Technology,5,68.9,7.0,25,74.5,82.1,0.23,Good,No,46.1,0,High,0.458,High,Medium
+STU0686,23,Female,Computer Science,4,82.5,25.7,67,92.7,63.7,2.74,Good,No,57.8,1,Medium,0.157,Low,High
+STU0687,19,Male,Engineering,7,74.5,15.0,47,65.6,91.3,2.71,Average,No,56.6,1,Medium,0.161,Low,Medium
+STU0688,21,Other,Business,2,82.3,6.5,45,72.8,80.7,3.43,Good,No,49.4,0,High,0.254,Medium,Low
+STU0689,20,Male,Computer Science,7,69.8,11.8,37,57.6,63.5,3.62,Average,No,64.7,1,Medium,0.143,Low,Medium
+STU0690,23,Female,Mathematics,2,66.5,12.3,42,97.7,65.2,2.57,Average,No,50.4,1,Medium,0.195,Low,High
+STU0691,24,Male,Computer Science,3,91.7,16.2,32,81.3,73.6,3.27,Average,No,60.3,1,Medium,0.109,Low,Medium
+STU0692,23,Male,Business,5,77.2,21.2,53,63.7,53.9,1.93,Good,No,49.9,0,High,0.329,Medium,High
+STU0693,24,Female,Business,8,100.0,13.9,50,73.2,68.1,3.24,Good,No,55.2,1,Medium,0.094,Low,Medium
+STU0694,24,Female,Computer Science,2,78.6,9.3,34,83.2,73.2,2.3,Good,No,51.6,1,Medium,0.143,Low,Medium
+STU0695,16,Female,Business,5,66.0,15.9,10,71.0,39.3,1.87,Average,No,41.5,0,High,0.359,Medium,High
+STU0696,18,Male,Engineering,1,94.0,8.5,34,66.4,64.8,2.57,Poor,No,45.6,0,High,0.369,Medium,Medium
+STU0697,22,Male,Computer Science,1,86.2,6.8,40,64.5,62.8,3.68,Average,No,55.2,1,Medium,0.19,Low,Medium
+STU0698,21,Female,Information Technology,7,87.4,3.2,1,80.4,85.5,2.83,Good,No,45.4,0,High,0.266,Medium,Low
+STU0699,16,Male,Computer Science,6,93.5,4.2,31,69.3,36.6,3.75,Good,No,60.2,1,Medium,0.116,Low,High
+STU0700,16,Female,Business,4,69.5,7.5,4,67.7,61.5,2.18,Average,Yes,49.1,0,High,0.386,Medium,Medium
+STU0701,20,Female,Computer Science,5,76.3,6.1,31,53.6,59.8,3.43,Good,No,51.1,1,Medium,0.116,Low,High
+STU0702,21,Female,Mathematics,4,75.8,13.6,40,76.2,84.3,2.24,Average,Yes,42.3,0,High,0.413,Medium,Medium
+STU0703,17,Female,Engineering,3,61.2,6.0,4,72.1,67.3,2.86,Average,No,42.0,0,High,0.461,High,Medium
+STU0704,17,Female,Computer Science,4,74.6,0.0,14,69.9,98.5,2.85,Good,No,60.8,1,Medium,0.15,Low,Medium
+STU0705,17,Male,Information Technology,3,95.4,6.8,34,78.2,79.3,3.16,Good,Yes,82.0,1,Low,0.146,Low,Medium
+STU0706,21,Male,Business,7,81.1,9.6,34,87.0,61.0,2.88,Good,No,59.8,1,Medium,0.157,Low,High
+STU0707,16,Female,Business,4,60.5,9.0,34,86.2,72.1,2.18,Good,No,54.1,1,Medium,0.239,Low,Low
+STU0708,21,Male,Information Technology,3,57.8,19.6,50,83.8,62.0,3.32,Average,No,55.4,1,High,0.397,Medium,High
+STU0709,20,Male,Computer Science,5,99.6,8.9,15,71.1,82.6,3.91,Good,No,55.9,1,Medium,0.161,Low,Low
+STU0710,20,Male,Computer Science,7,76.8,16.4,52,65.9,45.4,2.29,Good,No,51.3,1,Medium,0.162,Low,Medium
+STU0711,22,Female,Mathematics,3,69.6,11.9,50,58.3,54.0,1.42,Good,Yes,33.4,0,High,0.466,High,Low
+STU0712,20,Female,Information Technology,8,74.4,11.8,45,65.5,75.7,3.05,Good,No,44.5,0,High,0.346,Medium,High
+STU0713,22,Female,Engineering,4,58.8,7.8,11,75.3,88.8,2.47,Average,No,41.9,0,High,0.442,Medium,Medium
+STU0714,22,Male,Information Technology,6,96.5,11.7,24,62.4,30.6,2.61,Average,No,51.7,1,Medium,0.143,Low,Medium
+STU0715,24,Male,Mathematics,8,72.9,8.2,21,76.5,91.4,3.09,Good,No,54.8,1,Medium,0.255,Medium,High
+STU0716,23,Female,Computer Science,4,95.8,12.9,26,59.6,65.6,2.38,Good,No,51.4,1,Medium,0.066,Low,High
+STU0717,20,Male,Computer Science,2,78.7,10.8,34,48.4,36.0,2.51,Good,No,40.6,0,High,0.389,Medium,Low
+STU0718,20,Female,Mathematics,6,96.6,7.3,29,88.1,17.0,2.63,Good,No,40.1,0,High,0.296,Medium,High
+STU0719,18,Female,Mathematics,1,81.3,17.0,36,67.4,42.0,3.73,Good,No,47.4,0,High,0.374,Medium,Medium
+STU0720,21,Male,Information Technology,4,89.1,14.1,47,61.6,67.7,2.72,Poor,No,48.1,0,High,0.36,Medium,Low
+STU0721,17,Male,Information Technology,8,87.3,9.8,36,57.5,66.9,1.84,Good,No,38.0,0,High,0.303,Medium,Medium
+STU0722,24,Male,Information Technology,4,86.1,12.7,34,81.8,78.8,1.86,Good,No,49.9,0,High,0.353,Medium,High
+STU0723,23,Female,Information Technology,6,82.5,11.6,34,97.0,58.7,2.8,Good,No,48.1,0,High,0.368,Medium,Medium
+STU0724,17,Female,Computer Science,5,75.0,7.7,11,68.6,49.2,1.91,Average,No,45.9,0,High,0.423,Medium,High
+STU0725,23,Male,Engineering,2,100.0,12.4,35,71.6,61.0,1.61,Good,No,53.7,1,Medium,0.088,Low,High
+STU0726,17,Female,Computer Science,3,66.2,8.9,30,92.1,68.6,3.14,Poor,Yes,45.2,0,High,0.531,High,Medium
+STU0727,22,Male,Business,5,78.1,7.3,27,46.0,71.9,3.18,Good,No,46.1,0,High,0.249,Low,Medium
+STU0728,16,Male,Computer Science,1,78.2,3.9,22,100.0,54.6,2.44,Average,No,61.1,1,Medium,0.103,Low,High
+STU0729,20,Female,Computer Science,4,83.2,10.2,34,100.0,83.3,2.91,Average,Yes,53.5,1,Medium,0.211,Low,Medium
+STU0730,21,Male,Business,4,72.4,14.8,40,31.7,57.4,2.83,Good,No,45.2,0,High,0.326,Medium,Low
+STU0731,22,Male,Information Technology,7,82.1,8.5,31,73.4,53.2,3.12,Good,Yes,50.6,1,Medium,0.264,Medium,Medium
+STU0732,19,Female,Business,1,75.8,24.6,72,63.5,58.8,3.12,Good,No,58.8,1,Medium,0.124,Low,High
+STU0733,24,Male,Computer Science,7,57.4,16.4,45,70.8,86.3,0.88,Average,No,46.1,0,High,0.41,Medium,Medium
+STU0734,22,Female,Mathematics,4,78.1,18.5,53,68.3,65.7,2.53,Average,No,48.4,0,High,0.329,Medium,Medium
+STU0735,17,Male,Engineering,6,63.7,16.0,44,88.0,56.2,3.06,Good,No,51.6,1,Medium,0.273,Medium,Low
+STU0736,22,Male,Engineering,5,55.5,21.3,52,73.2,83.7,2.41,Good,No,51.4,1,High,0.414,Medium,Low
+STU0737,22,Male,Computer Science,3,79.8,8.1,32,60.4,100.0,2.73,Good,No,53.3,1,Medium,0.179,Low,High
+STU0738,19,Male,Information Technology,8,84.3,0.0,6,72.2,71.6,3.23,Good,Yes,43.7,0,High,0.411,Medium,Medium
+STU0739,22,Male,Information Technology,2,84.8,9.8,35,83.2,89.0,2.76,Average,No,64.6,1,Medium,0.177,Low,High
+STU0740,24,Male,Information Technology,1,85.4,14.8,43,56.1,85.6,3.76,Good,Yes,63.6,1,Medium,0.252,Medium,High
+STU0741,23,Female,Computer Science,7,52.9,12.8,36,48.7,57.7,3.49,Good,Yes,37.6,0,High,0.527,High,Medium
+STU0742,22,Male,Computer Science,5,60.3,13.4,37,100.0,68.5,2.62,Average,No,50.5,1,Medium,0.171,Low,High
+STU0743,21,Male,Information Technology,8,100.0,18.6,47,64.7,46.2,2.56,Average,No,49.9,0,High,0.251,Medium,High
+STU0744,18,Male,Computer Science,4,64.4,13.9,27,72.8,64.5,0.7,Average,Yes,34.1,0,High,0.482,High,High
+STU0745,23,Male,Information Technology,1,85.9,16.0,48,68.6,57.4,2.47,Good,No,39.1,0,High,0.328,Medium,High
+STU0746,19,Male,Computer Science,1,69.1,7.3,28,83.8,61.2,1.75,Poor,No,41.3,0,High,0.414,Medium,Medium
+STU0747,20,Female,Computer Science,4,79.0,6.5,31,100.0,55.3,2.85,Average,No,50.5,1,Medium,0.21,Low,High
+STU0748,18,Male,Business,2,69.8,20.1,50,84.3,63.1,2.81,Good,No,44.5,0,High,0.381,Medium,Low
+STU0749,18,Female,Information Technology,8,85.3,12.5,53,50.7,77.0,3.19,Good,Yes,53.3,1,Medium,0.182,Low,High
+STU0750,17,Female,Information Technology,1,79.8,8.9,27,52.9,66.0,3.68,Average,No,57.5,1,Medium,0.142,Low,Medium
+STU0751,24,Male,Information Technology,8,72.2,8.9,23,68.6,36.3,2.68,Good,No,48.0,0,High,0.448,Medium,Medium
+STU0752,17,Male,Engineering,2,64.3,8.8,21,70.7,55.3,4.0,Average,Yes,49.2,0,High,0.509,High,High
+STU0753,16,Male,Information Technology,1,81.5,8.5,15,47.4,42.2,2.86,Average,No,31.9,0,High,0.376,Medium,High
+STU0754,24,Female,Business,3,62.2,5.6,35,88.1,72.1,1.78,Average,No,50.4,1,Medium,0.19,Low,Low
+STU0755,20,Male,Mathematics,2,83.6,4.5,31,57.6,76.6,2.31,Average,No,48.5,0,High,0.298,Medium,High
+STU0756,19,Female,Information Technology,4,100.0,11.0,39,98.9,72.4,2.44,Poor,No,61.4,1,Medium,0.113,Low,High
+STU0757,22,Female,Mathematics,3,95.6,9.0,23,100.0,54.6,3.11,Good,No,68.6,1,Low,0.105,Low,High
+STU0758,19,Female,Engineering,5,87.3,17.5,63,71.0,72.2,2.04,Good,No,47.2,0,High,0.304,Medium,High
+STU0759,17,Female,Computer Science,5,76.9,13.5,37,82.0,60.0,2.49,Average,No,33.5,0,High,0.333,Medium,High
+STU0760,22,Other,Information Technology,1,52.8,13.3,37,55.3,48.7,2.59,Good,No,33.9,0,High,0.434,Medium,High
+STU0761,17,Male,Business,1,60.8,8.3,40,85.0,80.6,2.39,Average,No,52.7,1,Medium,0.205,Low,Medium
+STU0762,20,Male,Mathematics,2,94.7,11.4,40,67.0,81.9,3.27,Average,No,57.6,1,Medium,0.094,Low,Medium
+STU0763,24,Male,Information Technology,2,67.7,13.8,58,57.6,84.1,3.15,Good,No,44.3,0,High,0.434,Medium,High
+STU0764,24,Female,Computer Science,1,68.9,15.6,46,70.4,57.7,3.52,Average,No,42.7,0,High,0.324,Medium,High
+STU0765,19,Female,Business,3,75.8,11.5,32,67.5,88.0,2.47,Good,Yes,50.1,1,Medium,0.271,Medium,Low
+STU0766,23,Female,Computer Science,5,64.2,17.4,43,69.8,59.6,3.54,Average,Yes,43.7,0,High,0.538,High,Medium
+STU0767,21,Male,Engineering,3,62.1,12.0,22,90.2,79.1,1.75,Good,No,52.4,1,Medium,0.224,Low,Medium
+STU0768,20,Female,Information Technology,3,77.3,16.0,43,62.4,59.3,1.73,Average,No,42.7,0,High,0.33,Medium,High
+STU0769,17,Female,Business,4,66.4,9.6,40,100.0,64.2,1.85,Average,No,45.2,0,High,0.431,Medium,High
+STU0770,19,Female,Engineering,5,68.4,2.9,21,53.8,26.8,2.71,Good,No,32.3,0,High,0.347,Medium,Medium
+STU0771,21,Female,Business,3,67.8,13.3,39,100.0,62.9,3.54,Good,Yes,57.7,1,Medium,0.288,Medium,Low
+STU0772,24,Male,Business,2,84.8,15.6,36,58.7,69.5,2.28,Good,Yes,49.9,0,High,0.359,Medium,Medium
+STU0773,16,Male,Engineering,4,75.0,14.9,45,75.0,61.0,2.37,Average,No,50.3,1,Medium,0.105,Low,High
+STU0774,22,Female,Engineering,1,75.7,14.1,49,67.2,97.9,2.55,Good,No,55.8,1,Medium,0.171,Low,Medium
+STU0775,23,Male,Engineering,4,85.8,10.3,36,69.5,48.2,3.1,Good,Yes,49.2,0,High,0.346,Medium,Low
+STU0776,24,Male,Computer Science,8,76.2,8.0,29,87.8,58.4,2.37,Average,No,43.1,0,High,0.355,Medium,Medium
+STU0777,19,Male,Business,4,74.4,14.8,36,99.0,52.6,2.33,Good,No,47.0,0,High,0.407,Medium,High
+STU0778,17,Male,Computer Science,1,84.1,14.1,48,94.0,58.4,1.76,Good,No,48.7,0,High,0.398,Medium,Medium
+STU0779,18,Female,Engineering,6,86.7,9.2,5,68.5,85.5,2.3,Average,No,64.9,1,Medium,0.137,Low,Low
+STU0780,23,Female,Business,2,76.1,17.5,52,77.9,93.1,3.52,Good,No,52.2,1,Medium,0.216,Low,Medium
+STU0781,23,Male,Information Technology,2,79.0,7.6,47,62.5,56.1,2.76,Good,No,44.1,0,High,0.36,Medium,High
+STU0782,21,Male,Computer Science,2,67.8,9.1,18,59.1,55.7,2.18,Poor,No,42.7,0,High,0.433,Medium,Medium
+STU0783,17,Male,Information Technology,8,66.8,20.2,53,56.7,48.3,3.57,Average,No,46.5,0,High,0.316,Medium,Medium
+STU0784,17,Female,Business,8,88.0,16.3,46,68.0,90.2,2.29,Good,Yes,61.8,1,Medium,0.273,Medium,Low
+STU0785,20,Female,Computer Science,5,83.8,10.2,29,79.0,87.1,3.69,Average,Yes,57.7,1,Medium,0.183,Low,Medium
+STU0786,21,Female,Computer Science,5,83.9,13.4,48,44.4,66.2,3.68,Good,No,49.8,0,High,0.38,Medium,High
+STU0787,16,Male,Engineering,6,81.7,12.8,42,74.3,44.3,2.74,Good,No,53.1,1,Medium,0.175,Low,High
+STU0788,22,Male,Engineering,5,78.6,0.0,11,99.3,45.8,1.65,Average,Yes,55.4,1,Medium,0.207,Low,Medium
+STU0789,20,Male,Computer Science,5,87.1,7.5,33,93.0,70.9,4.0,Good,No,68.5,1,Low,0.144,Low,High
+STU0790,16,Female,Computer Science,8,90.2,11.7,36,65.6,77.3,2.97,Good,No,53.8,1,Medium,0.205,Low,Medium
+STU0791,16,Male,Mathematics,6,89.8,10.2,58,52.7,32.9,2.47,Average,No,42.3,0,High,0.362,Medium,High
+STU0792,20,Female,Business,1,76.7,13.2,40,82.4,62.5,3.37,Good,No,54.5,1,Medium,0.153,Low,Low
+STU0793,22,Female,Business,4,96.0,17.6,50,37.9,95.5,3.19,Good,Yes,57.5,1,Medium,0.148,Low,Medium
+STU0794,23,Male,Information Technology,8,81.0,10.4,19,92.8,64.3,3.62,Good,No,52.2,1,Medium,0.16,Low,High
+STU0795,19,Male,Computer Science,4,86.2,6.7,20,71.6,93.3,2.24,Average,No,59.1,1,Medium,0.129,Low,High
+STU0796,18,Male,Computer Science,2,81.7,13.6,49,100.0,79.0,2.92,Average,Yes,60.5,1,Medium,0.281,Medium,High
+STU0797,24,Male,Business,7,81.2,10.4,22,47.4,49.6,1.87,Poor,No,40.6,0,High,0.425,Medium,High
+STU0798,20,Male,Computer Science,5,68.4,11.2,17,89.7,63.0,3.17,Good,Yes,45.1,0,High,0.399,Medium,High
+STU0799,18,Female,Computer Science,5,87.1,10.5,33,73.4,65.8,2.68,Average,No,52.3,1,Medium,0.15,Low,High
+STU0800,19,Male,Business,4,100.0,23.2,72,69.7,51.8,2.9,Average,No,44.2,0,High,0.253,Medium,Medium
+STU0801,16,Male,Mathematics,1,73.1,0.8,12,53.1,51.5,2.6,Good,Yes,37.4,0,High,0.449,Medium,Medium
+STU0802,18,Female,Engineering,4,78.9,10.1,30,84.5,93.6,2.52,Good,Yes,52.9,1,Medium,0.254,Medium,High
+STU0803,20,Female,Information Technology,4,72.2,12.0,22,85.8,51.4,2.09,Average,Yes,48.7,0,High,0.499,High,Medium
+STU0804,24,Male,Information Technology,8,71.7,8.1,31,100.0,86.3,3.25,Good,Yes,69.6,1,Medium,0.312,Medium,High
+STU0805,22,Female,Information Technology,3,98.1,16.5,52,91.1,60.6,3.74,Average,No,64.9,1,Medium,0.058,Low,Medium
+STU0806,23,Female,Information Technology,2,69.3,16.1,31,65.5,67.6,2.31,Good,No,56.3,1,Medium,0.2,Low,Low
+STU0807,20,Female,Information Technology,4,71.8,11.8,45,58.9,77.6,3.09,Good,No,54.4,1,Medium,0.175,Low,Medium
+STU0808,16,Female,Information Technology,8,57.4,10.6,39,53.1,57.8,3.0,Poor,Yes,49.7,0,High,0.503,High,High
+STU0809,19,Male,Business,4,68.2,11.4,44,98.6,77.7,2.71,Average,No,65.9,1,Medium,0.203,Low,Low
+STU0810,24,Female,Engineering,4,55.8,11.5,40,62.5,33.2,1.63,Good,No,30.9,0,High,0.511,High,High
+STU0811,16,Male,Mathematics,6,86.2,11.6,41,98.7,75.5,1.79,Average,Yes,49.8,0,High,0.327,Medium,Low
+STU0812,23,Female,Computer Science,6,100.0,11.1,39,83.4,26.0,2.15,Good,Yes,51.3,1,Medium,0.159,Low,Medium
+STU0813,22,Female,Information Technology,3,73.2,13.3,46,80.3,64.1,1.2,Average,Yes,45.4,0,High,0.445,Medium,High
+STU0814,18,Male,Computer Science,8,56.3,15.8,30,70.1,82.5,3.69,Good,No,55.0,1,High,0.446,Medium,Medium
+STU0815,23,Male,Information Technology,5,89.7,5.8,11,85.6,78.6,2.96,Good,No,54.9,1,Medium,0.083,Low,High
+STU0816,23,Female,Computer Science,1,68.5,6.7,19,74.8,45.9,2.68,Good,Yes,40.8,0,High,0.409,Medium,Low
+STU0817,16,Female,Computer Science,4,94.9,3.3,16,69.1,48.1,1.17,Good,No,51.8,1,Medium,0.045,Low,Medium
+STU0818,16,Male,Engineering,8,74.3,16.3,49,86.1,56.3,1.42,Good,No,40.3,0,High,0.416,Medium,Medium
+STU0819,21,Female,Information Technology,4,69.8,13.3,42,72.7,71.2,2.7,Good,Yes,54.4,1,Medium,0.241,Low,High
+STU0820,24,Female,Mathematics,5,75.7,14.5,51,62.2,33.5,4.0,Poor,No,51.5,1,Medium,0.217,Low,Low
+STU0821,16,Female,Computer Science,5,87.9,4.9,30,84.6,67.8,2.21,Good,No,41.7,0,High,0.393,Medium,Medium
+STU0822,21,Male,Computer Science,6,75.0,20.9,49,74.0,73.3,3.3,Good,No,51.2,1,Medium,0.151,Low,High
+STU0823,17,Male,Information Technology,7,71.5,9.0,32,82.8,63.2,2.36,Good,No,44.6,0,High,0.388,Medium,High
+STU0824,21,Female,Computer Science,2,75.4,12.8,31,67.7,76.9,2.74,Average,Yes,54.9,1,Medium,0.301,Medium,High
+STU0825,21,Male,Computer Science,5,61.5,16.3,44,55.7,71.8,3.55,Good,No,47.9,0,High,0.455,High,High
+STU0826,16,Female,Mathematics,5,83.2,7.1,28,100.0,58.8,2.46,Good,No,52.2,1,Medium,0.094,Low,Medium
+STU0827,22,Male,Computer Science,2,54.8,9.3,3,99.7,35.1,2.22,Average,No,34.4,0,High,0.412,Medium,Medium
+STU0828,24,Female,Computer Science,6,72.2,12.9,58,89.1,70.3,3.69,Good,Yes,70.7,1,Medium,0.283,Medium,High
+STU0829,23,Male,Business,1,87.9,26.3,72,68.8,51.8,2.73,Poor,Yes,53.7,1,Medium,0.346,Medium,High
+STU0830,16,Male,Information Technology,4,81.9,13.5,35,70.2,58.2,3.46,Good,No,55.8,1,Medium,0.122,Low,High
+STU0831,18,Female,Business,3,85.7,20.0,69,97.1,76.1,2.22,Average,No,54.9,1,Medium,0.117,Low,High
+STU0832,18,Female,Information Technology,2,77.2,18.0,47,69.3,92.1,3.68,Good,No,55.7,1,Medium,0.188,Low,High
+STU0833,20,Female,Engineering,7,93.2,13.8,41,64.9,67.4,2.89,Average,No,64.9,1,Medium,0.132,Low,Low
+STU0834,17,Female,Computer Science,2,90.0,7.1,22,100.0,77.4,3.0,Average,No,47.7,0,High,0.327,Medium,Medium
+STU0835,23,Female,Information Technology,3,83.8,17.3,61,74.2,43.4,2.79,Good,No,51.5,1,Medium,0.111,Low,High
+STU0836,22,Female,Business,7,90.1,4.5,19,100.0,72.2,2.35,Good,No,48.0,0,High,0.278,Medium,Medium
+STU0837,23,Male,Engineering,8,87.8,20.0,55,52.6,67.0,2.7,Good,No,49.0,0,High,0.317,Medium,Low
+STU0838,17,Female,Information Technology,1,72.3,13.0,48,83.3,88.9,2.39,Good,No,50.6,1,Medium,0.241,Low,Medium
+STU0839,16,Female,Business,3,60.5,0.0,15,100.0,58.8,3.37,Poor,No,44.2,0,High,0.468,High,High
+STU0840,24,Male,Computer Science,6,83.5,10.3,32,75.5,63.9,2.56,Average,No,51.0,1,Medium,0.145,Low,High
+STU0841,18,Male,Computer Science,7,85.1,15.3,53,70.8,86.0,1.65,Average,No,36.8,0,High,0.279,Medium,High
+STU0842,21,Female,Computer Science,8,92.2,10.8,54,56.3,66.4,1.52,Poor,No,44.1,0,High,0.426,Medium,Low
+STU0843,24,Male,Business,5,65.8,15.6,47,92.3,49.1,1.49,Average,No,44.6,0,High,0.403,Medium,Medium
+STU0844,16,Female,Computer Science,1,66.2,7.7,28,62.7,100.0,3.13,Average,Yes,45.0,0,High,0.518,High,Low
+STU0845,16,Other,Business,7,84.0,5.5,23,73.5,49.7,1.89,Good,No,53.4,1,Medium,0.145,Low,High
+STU0846,16,Female,Computer Science,2,77.1,11.6,46,55.2,66.9,2.91,Good,Yes,44.9,0,High,0.435,Medium,Low
+STU0847,17,Male,Engineering,1,53.5,12.2,32,99.9,73.9,2.8,Good,No,50.9,1,High,0.386,Medium,High
+STU0848,16,Male,Engineering,6,82.9,10.3,30,93.5,72.5,2.65,Good,No,51.9,1,Medium,0.062,Low,Medium
+STU0849,23,Male,Computer Science,5,53.9,18.1,38,74.5,64.8,3.01,Good,No,48.5,0,High,0.494,High,High
+STU0850,21,Male,Computer Science,1,65.7,7.7,17,56.5,64.9,2.81,Good,No,52.6,1,Medium,0.22,Low,Medium
+STU0851,24,Female,Computer Science,2,95.6,13.6,36,99.6,64.0,0.8,Good,Yes,66.0,1,Low,0.186,Low,High
+STU0852,23,Female,Engineering,5,100.0,12.3,37,69.1,49.0,2.47,Good,Yes,54.9,1,Medium,0.11,Low,High
+STU0853,24,Male,Computer Science,3,62.2,4.2,33,57.3,100.0,3.0,Good,No,56.5,1,Medium,0.195,Low,Low
+STU0854,18,Male,Information Technology,6,73.7,5.4,26,46.8,64.3,3.85,Good,No,58.1,1,Medium,0.228,Low,Medium
+STU0855,18,Female,Information Technology,4,78.6,12.1,29,64.7,78.1,3.88,Good,No,57.4,1,Medium,0.235,Low,Medium
+STU0856,23,Male,Engineering,5,100.0,21.9,52,51.7,62.3,1.75,Good,Yes,59.0,1,Medium,0.135,Low,Medium
+STU0857,18,Female,Information Technology,4,71.6,14.9,54,65.0,62.0,2.46,Average,Yes,52.1,1,Medium,0.3,Medium,High
+STU0858,16,Male,Information Technology,3,71.8,3.4,26,86.9,60.3,1.6,Average,No,45.4,0,High,0.38,Medium,Medium
+STU0859,22,Female,Mathematics,3,98.1,0.0,10,69.0,41.7,3.76,Good,Yes,52.5,1,Medium,0.163,Low,High
+STU0860,23,Male,Computer Science,6,73.1,15.7,41,80.7,65.3,3.41,Good,Yes,43.7,0,High,0.522,High,Low
+STU0861,24,Female,Engineering,5,87.4,11.5,44,63.4,61.1,2.95,Good,No,52.6,1,Medium,0.112,Low,High
+STU0862,24,Male,Computer Science,5,58.8,17.7,41,76.0,87.9,2.82,Good,No,44.1,0,High,0.474,High,Medium
+STU0863,17,Female,Information Technology,5,75.8,7.6,30,100.0,47.7,3.67,Good,Yes,44.4,0,High,0.452,High,Medium
+STU0864,22,Male,Engineering,2,56.4,13.8,59,69.4,58.2,3.55,Poor,No,49.5,0,High,0.494,High,Medium
+STU0865,23,Male,Business,8,64.3,16.2,47,81.2,52.7,3.51,Good,No,44.7,0,High,0.458,High,High
+STU0866,22,Female,Business,5,88.9,9.8,25,50.0,92.5,3.02,Good,Yes,54.1,1,Medium,0.216,Low,Medium
+STU0867,23,Male,Computer Science,6,77.4,9.9,35,99.3,53.2,2.46,Average,No,52.1,1,Medium,0.167,Low,High
+STU0868,23,Male,Information Technology,8,73.9,12.1,33,67.4,77.6,3.24,Good,Yes,54.1,1,Medium,0.32,Medium,Medium
+STU0869,20,Male,Information Technology,8,68.3,14.7,31,91.8,84.5,3.27,Good,No,52.6,1,Medium,0.257,Medium,High
+STU0870,16,Male,Information Technology,6,75.1,11.9,42,73.0,65.5,2.57,Good,No,54.9,1,Medium,0.228,Low,High
+STU0871,20,Male,Information Technology,7,81.9,16.9,56,84.8,44.6,2.45,Poor,Yes,49.5,0,High,0.317,Medium,High
+STU0872,17,Female,Information Technology,4,90.8,9.7,29,85.7,44.8,3.49,Good,No,56.5,1,Medium,0.134,Low,High
+STU0873,17,Male,Information Technology,6,43.9,5.4,19,67.8,82.6,3.86,Average,No,41.9,0,High,0.493,High,Medium
+STU0874,17,Female,Computer Science,3,67.2,21.9,50,92.5,46.6,2.18,Average,No,48.2,0,High,0.39,Medium,High
+STU0875,22,Female,Information Technology,6,80.1,9.0,29,62.9,74.7,2.52,Good,No,56.0,1,Medium,0.184,Low,Medium
+STU0876,20,Male,Computer Science,1,76.7,9.2,26,87.4,69.9,2.95,Average,No,59.4,1,Medium,0.184,Low,High
+STU0877,20,Female,Engineering,8,83.2,11.7,28,68.8,74.4,3.04,Good,No,48.9,0,High,0.354,Medium,Low
+STU0878,22,Female,Business,2,81.5,12.3,52,80.6,76.0,2.33,Good,Yes,49.8,0,High,0.403,Medium,Medium
+STU0879,20,Female,Computer Science,6,74.0,10.1,36,67.6,52.1,4.0,Good,Yes,45.2,0,High,0.504,High,High
+STU0880,21,Male,Business,1,71.2,11.9,41,75.8,51.4,3.0,Poor,No,44.6,0,High,0.466,High,Medium
+STU0881,16,Male,Engineering,2,74.8,11.8,43,57.8,80.2,3.07,Good,No,43.1,0,High,0.383,Medium,Medium
+STU0882,23,Male,Computer Science,8,92.9,12.9,45,79.0,57.3,3.93,Good,No,56.9,1,Medium,0.128,Low,Medium
+STU0883,20,Female,Computer Science,7,68.5,0.2,7,75.7,21.2,2.39,Poor,No,41.3,0,High,0.492,High,High
+STU0884,17,Other,Computer Science,2,77.2,21.4,59,66.4,79.0,2.64,Good,Yes,49.3,0,High,0.472,High,Medium
+STU0885,23,Female,Computer Science,2,80.4,11.3,33,74.1,50.4,1.82,Average,No,44.7,0,High,0.334,Medium,Medium
+STU0886,22,Male,Engineering,7,98.3,14.9,46,77.1,75.9,2.58,Average,Yes,55.8,1,Medium,0.206,Low,High
+STU0887,16,Female,Mathematics,8,74.1,5.1,24,65.1,91.7,1.66,Average,No,53.7,1,Medium,0.191,Low,High
+STU0888,17,Male,Computer Science,2,90.5,9.6,28,72.9,68.3,3.22,Average,No,51.1,1,Medium,0.195,Low,Low
+STU0889,16,Female,Engineering,6,94.0,8.6,18,58.9,84.9,2.99,Average,Yes,51.4,1,Medium,0.228,Low,Medium
+STU0890,18,Male,Computer Science,3,77.2,19.3,54,100.0,70.6,2.51,Good,No,51.9,1,Medium,0.146,Low,Low
+STU0891,16,Female,Business,6,75.3,9.1,28,91.9,95.0,2.63,Poor,Yes,50.5,1,Medium,0.412,Medium,High
+STU0892,22,Female,Engineering,4,73.7,15.8,30,79.4,49.9,3.23,Poor,Yes,54.3,1,Medium,0.241,Low,Medium
+STU0893,20,Male,Information Technology,2,74.7,8.7,33,93.8,67.9,1.9,Average,No,49.2,0,High,0.387,Medium,Medium
+STU0894,24,Male,Computer Science,3,89.1,9.7,39,43.3,79.4,2.84,Average,No,50.4,1,Medium,0.096,Low,Medium
+STU0895,22,Female,Business,5,81.0,10.8,54,34.1,64.8,3.19,Good,No,53.8,1,Medium,0.231,Low,Medium
+STU0896,21,Male,Mathematics,7,81.1,18.4,47,68.6,87.6,1.45,Good,Yes,59.2,1,Medium,0.246,Low,Low
+STU0897,20,Female,Computer Science,1,63.4,2.6,11,52.9,60.7,3.18,Good,Yes,33.4,0,High,0.455,High,High
+STU0898,16,Female,Computer Science,8,65.4,5.4,13,71.2,100.0,1.53,Good,No,51.7,1,Medium,0.208,Low,Medium
+STU0899,16,Female,Computer Science,6,100.0,2.3,17,78.3,100.0,2.62,Average,No,60.0,1,Medium,0.051,Low,Medium
+STU0900,21,Male,Business,8,75.7,6.6,26,89.7,72.8,1.89,Average,No,47.0,0,High,0.345,Medium,High
+STU0901,16,Male,Business,8,67.9,7.9,21,56.8,77.4,3.7,Good,No,52.7,1,Medium,0.195,Low,Medium
+STU0902,16,Male,Engineering,2,96.6,3.9,17,81.4,88.3,1.89,Good,Yes,44.0,0,High,0.324,Medium,Low
+STU0903,17,Female,Engineering,1,81.7,8.3,12,75.2,47.8,1.54,Average,Yes,52.1,1,Medium,0.244,Low,Medium
+STU0904,23,Male,Engineering,7,85.5,1.9,22,80.6,45.7,2.79,Good,No,50.6,1,Medium,0.154,Low,High
+STU0905,20,Male,Engineering,2,76.2,6.9,19,66.7,89.4,2.41,Poor,No,45.8,0,High,0.375,Medium,Low
+STU0906,22,Male,Computer Science,2,73.9,18.0,49,97.1,72.7,1.65,Average,No,49.2,0,High,0.298,Medium,High
+STU0907,19,Female,Business,4,75.8,14.0,29,73.3,64.1,3.07,Good,No,41.8,0,High,0.369,Medium,Medium
+STU0908,17,Male,Computer Science,8,60.0,12.9,34,100.0,68.2,1.31,Good,No,45.4,0,High,0.441,Medium,Medium
+STU0909,19,Female,Information Technology,7,76.9,7.0,23,62.4,27.4,1.97,Average,Yes,35.3,0,High,0.462,High,Medium
+STU0910,16,Female,Mathematics,5,81.8,4.3,19,86.9,64.8,2.3,Good,No,42.1,0,High,0.355,Medium,Low
+STU0911,22,Female,Business,2,100.0,6.3,28,74.0,55.2,3.26,Average,No,58.3,1,Medium,0.143,Low,Medium
+STU0912,17,Female,Mathematics,3,79.1,11.8,47,69.8,83.6,3.61,Good,No,64.3,1,Medium,0.203,Low,High
+STU0913,19,Female,Information Technology,6,47.7,16.3,52,85.1,84.9,3.47,Good,No,54.1,1,High,0.576,High,Medium
+STU0914,24,Female,Information Technology,2,76.8,16.5,54,70.2,77.8,2.59,Good,No,51.0,1,Medium,0.297,Medium,Medium
+STU0915,21,Male,Information Technology,5,100.0,15.2,55,32.4,74.7,1.0,Average,Yes,46.7,0,High,0.27,Medium,High
+STU0916,20,Female,Computer Science,1,89.3,8.3,33,26.0,42.5,2.97,Poor,No,41.1,0,High,0.275,Medium,Low
+STU0917,20,Female,Computer Science,3,67.5,12.1,36,95.4,78.0,3.73,Average,No,51.9,1,Medium,0.21,Low,Medium
+STU0918,23,Female,Information Technology,2,85.7,10.4,41,94.7,78.7,3.56,Good,No,56.7,1,Medium,0.157,Low,Medium
+STU0919,18,Female,Computer Science,6,68.4,11.0,43,100.0,89.2,3.02,Average,No,56.4,1,Medium,0.203,Low,Low
+STU0920,21,Female,Mathematics,8,60.4,22.2,64,74.7,100.0,1.87,Good,No,54.5,1,Medium,0.267,Medium,High
+STU0921,23,Female,Computer Science,2,73.5,3.2,5,54.3,39.2,2.33,Average,No,38.7,0,High,0.355,Medium,High
+STU0922,21,Male,Computer Science,7,79.2,10.8,27,68.3,61.4,4.0,Poor,No,55.1,1,Medium,0.195,Low,Medium
+STU0923,20,Male,Engineering,6,53.7,18.1,48,75.2,55.4,1.71,Good,Yes,33.6,0,High,0.503,High,High
+STU0924,17,Male,Computer Science,8,63.1,4.7,27,58.9,70.9,1.9,Poor,No,45.6,0,High,0.46,High,Low
+STU0925,18,Male,Mathematics,8,78.1,8.8,29,100.0,68.2,3.36,Good,No,57.1,1,Medium,0.201,Low,High
+STU0926,24,Male,Business,1,72.7,9.4,40,100.0,64.0,2.4,Good,No,67.1,1,Medium,0.17,Low,High
+STU0927,20,Male,Computer Science,6,83.1,10.9,45,82.7,85.5,1.87,Good,Yes,50.9,1,Medium,0.216,Low,Medium
+STU0928,18,Male,Business,5,62.2,4.0,28,74.8,49.3,3.77,Poor,No,49.0,0,High,0.494,High,Medium
+STU0929,19,Female,Business,1,87.3,15.0,53,54.3,50.3,3.02,Good,Yes,65.4,1,Low,0.203,Low,High
+STU0930,21,Male,Engineering,3,62.6,15.3,35,99.7,50.6,2.43,Average,No,50.6,1,Medium,0.274,Medium,Medium
+STU0931,20,Female,Engineering,8,99.4,14.5,46,76.2,61.9,1.9,Good,Yes,51.8,1,Medium,0.126,Low,Medium
+STU0932,22,Female,Business,5,55.7,7.6,22,70.4,47.1,4.0,Average,No,40.7,0,High,0.392,Medium,High
+STU0933,18,Male,Business,3,63.8,12.4,24,82.7,67.2,2.68,Average,No,58.9,1,Medium,0.237,Low,Low
+STU0934,21,Male,Information Technology,3,83.4,7.5,24,65.6,65.2,3.68,Good,No,45.9,0,High,0.343,Medium,Low
+STU0935,19,Male,Business,7,99.6,10.3,43,77.4,54.6,3.33,Average,No,57.9,1,Medium,0.047,Low,Medium
+STU0936,24,Female,Mathematics,3,82.1,22.8,64,51.9,82.9,2.34,Average,No,49.6,0,High,0.385,Medium,High
+STU0937,17,Male,Business,2,85.3,12.5,54,92.4,67.0,2.34,Good,No,53.1,1,Medium,0.216,Low,Medium
+STU0938,17,Female,Business,5,78.2,6.1,25,73.3,86.1,3.71,Good,No,48.0,0,High,0.322,Medium,Medium
+STU0939,20,Female,Information Technology,8,64.7,12.9,58,93.5,64.7,3.72,Good,No,63.3,1,Medium,0.281,Medium,Medium
+STU0940,20,Female,Engineering,2,71.6,5.2,23,71.8,67.6,1.39,Poor,No,41.3,0,High,0.338,Medium,Medium
+STU0941,22,Male,Mathematics,3,62.2,6.0,23,72.8,58.4,3.08,Average,No,39.1,0,High,0.454,High,High
+STU0942,19,Male,Computer Science,4,61.4,6.8,15,55.6,67.9,2.62,Average,Yes,50.9,1,Medium,0.28,Medium,Low
+STU0943,24,Male,Computer Science,2,83.2,9.8,40,87.2,80.1,1.98,Average,No,50.2,1,Medium,0.186,Low,High
+STU0944,20,Male,Information Technology,6,63.4,16.7,43,61.0,61.0,2.88,Average,No,49.1,0,High,0.368,Medium,Medium
+STU0945,17,Male,Information Technology,3,82.2,14.9,38,67.2,76.8,1.76,Good,Yes,54.6,1,Medium,0.228,Low,High
+STU0946,17,Female,Business,2,61.1,14.6,52,75.0,54.2,2.37,Good,No,48.1,0,High,0.383,Medium,Medium
+STU0947,24,Female,Computer Science,3,81.9,6.5,34,76.9,80.9,2.14,Average,No,38.1,0,High,0.324,Medium,High
+STU0948,17,Female,Information Technology,8,71.6,9.3,40,47.7,58.1,2.35,Good,No,46.2,0,High,0.447,Medium,Low
+STU0949,24,Female,Business,8,96.3,13.4,37,71.3,82.5,2.65,Good,No,56.2,1,Medium,0.09,Low,High
+STU0950,18,Male,Business,5,82.2,8.9,29,87.7,69.0,1.99,Average,No,49.0,0,High,0.416,Medium,Medium
+STU0951,16,Female,Business,4,94.1,10.6,33,68.9,93.9,3.8,Average,No,60.8,1,Medium,0.088,Low,Low
+STU0952,18,Female,Business,7,68.2,14.2,48,71.4,48.4,3.05,Average,Yes,37.9,0,High,0.527,High,Medium
+STU0953,21,Female,Business,2,78.7,10.3,45,77.6,42.9,3.96,Good,No,53.0,1,Medium,0.1,Low,Medium
+STU0954,19,Female,Engineering,6,65.2,13.1,42,73.0,57.5,2.59,Poor,No,38.7,0,High,0.448,Medium,Medium
+STU0955,23,Male,Business,6,72.6,20.0,70,58.5,44.5,2.32,Good,No,42.6,0,High,0.348,Medium,High
+STU0956,21,Male,Information Technology,6,74.6,11.1,42,74.4,44.5,3.93,Good,No,51.9,1,Medium,0.243,Low,High
+STU0957,19,Male,Business,2,68.6,17.9,48,90.9,78.6,2.3,Poor,Yes,60.4,1,Medium,0.353,Medium,High
+STU0958,21,Male,Computer Science,6,62.2,14.8,49,58.2,67.9,2.58,Average,No,41.1,0,High,0.328,Medium,High
+STU0959,24,Female,Computer Science,5,59.6,4.7,34,69.0,59.8,3.2,Poor,No,54.1,1,High,0.429,Medium,Medium
+STU0960,19,Male,Information Technology,8,47.6,6.5,40,52.9,61.4,1.83,Average,No,42.0,0,High,0.429,Medium,Low
+STU0961,17,Female,Engineering,2,64.3,7.8,37,90.1,57.8,3.2,Average,Yes,47.8,0,High,0.52,High,High
+STU0962,19,Female,Business,5,86.2,7.7,27,73.5,96.1,3.11,Good,No,51.3,1,Medium,0.167,Low,Medium
+STU0963,23,Male,Computer Science,7,57.2,11.5,34,61.4,55.5,3.59,Good,Yes,37.8,0,High,0.499,High,Low
+STU0964,17,Male,Business,3,60.2,15.1,48,76.5,45.5,3.32,Poor,No,49.2,0,High,0.457,High,Low
+STU0965,24,Female,Computer Science,6,100.0,18.3,64,55.7,81.5,3.61,Average,No,55.2,1,Medium,0.109,Low,Medium
+STU0966,21,Female,Engineering,1,69.7,13.5,43,58.5,64.3,2.62,Good,No,53.7,1,Medium,0.156,Low,Medium
+STU0967,21,Male,Engineering,6,82.2,9.8,35,51.6,100.0,2.1,Good,No,47.0,0,High,0.35,Medium,Medium
+STU0968,18,Male,Business,5,86.4,1.6,14,57.9,59.1,4.0,Good,No,45.4,0,High,0.329,Medium,Medium
+STU0969,24,Female,Business,2,86.6,12.4,35,96.7,82.4,1.63,Good,No,56.5,1,Medium,0.123,Low,High
+STU0970,16,Male,Information Technology,1,58.2,12.1,35,63.3,86.4,1.7,Average,No,41.2,0,High,0.443,Medium,High
+STU0971,18,Female,Information Technology,6,75.0,12.9,39,82.5,59.1,3.1,Good,No,52.3,1,Medium,0.184,Low,Low
+STU0972,19,Male,Engineering,2,57.0,22.5,73,61.6,55.4,3.84,Good,No,55.9,1,High,0.452,High,Low
+STU0973,20,Male,Business,4,100.0,18.2,48,87.2,80.6,2.83,Poor,No,62.4,1,Medium,0.087,Low,Medium
+STU0974,20,Female,Information Technology,1,57.3,15.9,45,58.6,77.8,3.4,Good,No,50.8,1,High,0.455,High,Low
+STU0975,17,Female,Information Technology,8,64.4,7.2,19,75.6,44.0,1.3,Good,No,39.6,0,High,0.443,Medium,Medium
+STU0976,18,Female,Computer Science,5,64.5,9.4,36,75.8,48.8,2.35,Good,No,33.7,0,High,0.415,Medium,High
+STU0977,16,Male,Computer Science,8,58.5,11.5,46,100.0,24.9,1.39,Good,Yes,41.8,0,High,0.53,High,High
+STU0978,21,Other,Computer Science,2,95.6,8.1,41,85.1,78.1,3.25,Good,No,60.0,1,Medium,0.093,Low,Medium
+STU0979,19,Male,Information Technology,2,100.0,14.5,44,65.5,63.5,1.62,Good,No,55.1,1,Medium,0.116,Low,High
+STU0980,21,Male,Mathematics,5,71.8,13.8,45,86.0,65.2,1.81,Good,No,52.3,1,Medium,0.195,Low,High
+STU0981,21,Male,Information Technology,5,60.8,6.6,23,100.0,39.2,3.06,Good,Yes,46.1,0,High,0.451,High,High
+STU0982,22,Male,Computer Science,7,48.9,18.0,54,48.9,49.3,3.44,Good,No,48.9,0,High,0.497,High,Medium
+STU0983,20,Female,Computer Science,8,74.8,12.5,40,61.5,59.9,2.59,Good,No,45.2,0,High,0.295,Medium,High
+STU0984,21,Male,Information Technology,7,73.9,3.4,18,71.2,56.6,3.1,Poor,No,48.8,0,High,0.436,Medium,High
+STU0985,21,Female,Engineering,2,69.5,11.7,37,68.3,70.0,3.08,Good,No,48.5,0,High,0.367,Medium,Medium
+STU0986,21,Male,Information Technology,3,80.9,13.4,43,69.7,77.9,2.55,Good,Yes,55.3,1,Medium,0.218,Low,High
+STU0987,21,Other,Engineering,8,83.1,16.9,45,54.1,100.0,1.93,Average,No,50.5,1,Medium,0.154,Low,High
+STU0988,18,Male,Engineering,5,82.2,10.3,31,97.5,67.7,3.1,Good,No,66.6,1,Low,0.123,Low,Medium
+STU0989,18,Female,Computer Science,7,73.9,16.1,59,52.2,87.0,3.13,Good,No,64.7,1,Medium,0.205,Low,Medium
+STU0990,23,Male,Business,5,63.7,12.9,60,71.8,53.9,3.33,Average,Yes,53.5,1,Medium,0.307,Medium,Medium
+STU0991,19,Male,Mathematics,1,86.7,5.4,12,91.7,39.5,2.92,Average,Yes,59.1,1,Medium,0.189,Low,High
+STU0992,20,Female,Information Technology,4,78.2,4.9,11,74.5,62.0,1.88,Good,Yes,36.3,0,High,0.481,High,Low
+STU0993,17,Female,Computer Science,7,89.5,17.6,41,59.3,40.8,3.18,Average,Yes,41.1,0,High,0.39,Medium,Medium
+STU0994,19,Female,Mathematics,6,88.3,18.0,49,53.4,68.2,2.7,Average,Yes,49.4,0,High,0.412,Medium,Medium
+STU0995,20,Male,Engineering,2,59.5,13.6,47,71.3,54.7,2.36,Good,No,44.5,0,High,0.479,High,High
+STU0996,21,Female,Information Technology,2,59.4,19.5,58,62.9,34.8,2.49,Good,No,40.3,0,High,0.478,High,High
+STU0997,20,Female,Business,7,68.2,17.3,49,78.3,97.5,2.22,Good,No,45.0,0,High,0.41,Medium,Medium
+STU0998,19,Female,Computer Science,8,64.3,15.4,48,52.6,58.9,3.32,Average,No,53.6,1,Medium,0.211,Low,Medium
+STU0999,24,Male,Engineering,7,87.8,7.4,21,88.0,40.2,1.71,Good,No,58.5,1,Medium,0.072,Low,Medium
+STU1000,20,Female,Information Technology,1,82.6,20.7,54,76.8,83.3,2.0,Good,No,62.4,1,Medium,0.158,Low,Medium
