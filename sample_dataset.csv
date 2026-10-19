@@ -1,0 +1,41 @@
+student,email,gender,part_time_job,extracurricular_activities,career_aspiration,absence_days,weekly_self_study_hours,math_score,history_score,physics_score,chemistry_score,biology_score,english_score,geography_score,previous_gpa,lms_logins_last_30_days,attendance_percentage
+Alice,alice@gmail.com,female,False,True,Software Engineer,3.0,10.0,78.0,65.0,72.0,70.0,80.0,69.0,74.0,2.6,36,71
+Bob,bob@gmail.com,male,True,False,Teacher,20.0,2.0,35.0,40.0,33.0,38.0,45.0,39.0,30.0,3.9,57,85
+Charlie,charlie@gmail.com,male,False,True,Doctor,5.0,12.0,88.0,90.0,85.0,84.0,79.0,82.0,87.0,2.27,16,91
+Diana,diana@gmail.com,female,False,False,Artist,12.0,4.0,55.0,49.0,61.0,57.0,60.0,52.0,48.0,1.81,44,69
+Ethan,ethan@gmail.com,male,True,True,Government Officer,25.0,1.0,32.0,30.0,28.0,35.0,40.0,33.0,29.0,1.98,56,83
+Fatima,fatima@gmail.com,female,False,True,Lawyer,2.0,15.0,92.0,89.0,95.0,91.0,87.0,90.0,93.0,2.58,17,95
+George,george@gmail.com,male,False,False,Unknown,18.0,5.0,45.0,42.0,50.0,47.0,52.0,48.0,46.0,3.29,48,58
+Hannah,hannah@gmail.com,female,True,True,Scientist,0.0,20.0,85.0,88.0,90.0,92.0,86.0,84.0,91.0,1.9,27,57
+Fiona,fiona@gmail.com,female,True,True,Business Analyst,15.0,8.0,53.0,54.0,69.0,43.0,79.0,59.0,83.0,3.42,59,89
+Isaac,isaac@gmail.com,female,False,True,Accountant,19.0,4.0,58.0,100.0,99.0,87.0,33.0,89.0,31.0,3.24,20,91
+Julia,julia@gmail.com,male,False,False,Lawyer,20.0,30.0,63.0,35.0,51.0,76.0,66.0,92.0,55.0,2.97,32,100
+Kevin,kevin@gmail.com,male,True,True,Business Analyst,27.0,17.0,59.0,81.0,65.0,78.0,92.0,57.0,94.0,3.61,53,65
+Laura,laura@gmail.com,female,False,True,Doctor,4.0,25.0,75.0,47.0,77.0,32.0,96.0,68.0,67.0,2.04,42,75
+Michael,michael@gmail.com,female,True,True,Accountant,30.0,5.0,31.0,32.0,42.0,63.0,86.0,39.0,80.0,2.13,0,98
+Nina,nina@gmail.com,female,True,True,Doctor,3.0,9.0,57.0,96.0,85.0,69.0,48.0,73.0,83.0,1.83,41,70
+Oliver,oliver@gmail.com,male,True,True,Engineer,5.0,26.0,72.0,79.0,84.0,33.0,63.0,56.0,93.0,2.67,6,75
+Priya,priya@gmail.com,female,False,False,Teacher,26.0,21.0,48.0,94.0,88.0,83.0,35.0,64.0,59.0,3.27,15,83
+Quinn,quinn@gmail.com,female,True,True,Designer,1.0,15.0,69.0,64.0,70.0,59.0,84.0,74.0,38.0,3.99,60,66
+Ryan,ryan@gmail.com,female,True,False,Designer,17.0,16.0,83.0,50.0,80.0,53.0,100.0,97.0,91.0,3.17,23,91
+Sophia,sophia@gmail.com,male,True,True,Business Analyst,9.0,11.0,63.0,84.0,52.0,85.0,69.0,69.0,81.0,3.13,49,53
+Thomas,thomas@gmail.com,male,False,False,Researcher,5.0,21.0,43.0,50.0,84.0,74.0,80.0,52.0,79.0,1.96,18,88
+Uma,uma@gmail.com,male,False,True,Engineer,0.0,4.0,95.0,39.0,100.0,90.0,59.0,74.0,61.0,3.07,31,87
+Victor,victor@gmail.com,female,True,True,Software Engineer,13.0,25.0,30.0,89.0,44.0,43.0,80.0,45.0,50.0,3.0,50,61
+Wendy,wendy@gmail.com,female,True,False,Data Scientist,29.0,9.0,32.0,62.0,77.0,33.0,63.0,31.0,76.0,2.73,21,98
+Xavier,xavier@gmail.com,female,False,True,Engineer,9.0,5.0,69.0,60.0,100.0,42.0,56.0,37.0,94.0,3.61,26,84
+Yasmin,yasmin@gmail.com,male,False,True,Engineer,15.0,23.0,80.0,69.0,99.0,36.0,75.0,40.0,75.0,2.72,5,91
+Zachary,zachary@gmail.com,male,True,True,Engineer,8.0,2.0,34.0,69.0,77.0,69.0,86.0,49.0,34.0,2.82,36,52
+Ava,ava@gmail.com,female,False,False,Software Engineer,18.0,24.0,98.0,48.0,41.0,65.0,92.0,52.0,90.0,2.21,17,52
+Noah,noah@gmail.com,male,True,True,Data Scientist,9.0,20.0,92.0,60.0,40.0,69.0,64.0,51.0,44.0,3.63,4,70
+Mia,mia@gmail.com,female,False,True,Nurse,19.0,12.0,50.0,37.0,92.0,33.0,43.0,33.0,74.0,3.77,0,75
+Liam,liam@gmail.com,female,True,True,Lawyer,25.0,1.0,64.0,33.0,55.0,68.0,52.0,45.0,78.0,3.39,8,59
+Amelia,amelia@gmail.com,female,False,False,Designer,10.0,15.0,53.0,77.0,60.0,88.0,86.0,34.0,75.0,2.16,40,54
+Elijah,elijah@gmail.com,male,False,True,Business Analyst,12.0,13.0,58.0,75.0,97.0,56.0,59.0,84.0,94.0,3.35,47,68
+Isabella,isabella@gmail.com,female,True,False,Doctor,11.0,27.0,89.0,91.0,48.0,54.0,67.0,43.0,100.0,2.02,59,89
+James,james@gmail.com,male,True,False,Business Analyst,15.0,4.0,99.0,36.0,54.0,30.0,88.0,48.0,74.0,3.84,16,82
+Charlotte,charlotte@gmail.com,female,False,False,Artist,12.0,3.0,98.0,42.0,34.0,73.0,79.0,75.0,71.0,3.96,58,77
+Benjamin,benjamin@gmail.com,male,True,True,Nurse,22.0,1.0,84.0,87.0,41.0,89.0,61.0,87.0,50.0,2.67,42,66
+Evelyn,evelyn@gmail.com,male,True,True,Teacher,28.0,13.0,59.0,48.0,33.0,73.0,59.0,70.0,51.0,3.37,13,67
+Lucas,lucas@gmail.com,female,False,True,Designer,19.0,9.0,74.0,84.0,78.0,77.0,66.0,37.0,45.0,2.51,32,74
+Harper,harper@gmail.com,male,True,False,Doctor,11.0,9.0,54.0,89.0,86.0,83.0,33.0,59.0,86.0,2.62,51,77

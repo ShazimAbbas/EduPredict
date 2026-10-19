@@ -1,10 +1,11 @@
+import csv
 import io
 import os
 from datetime import datetime, timezone
 from functools import wraps
 
 import pandas as pd
-from flask import Flask, abort, flash, redirect, render_template, request, session, url_for
+from flask import Flask, abort, flash, redirect, render_template, request, send_file, session, url_for
 from pymongo import ASCENDING
 from pymongo.errors import DuplicateKeyError
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -28,14 +29,14 @@ def seed_database():
     users.create_index([("email", ASCENDING)], unique=True)
     students.create_index([("email", ASCENDING)], unique=True)
     students.create_index([("student_id", ASCENDING)], unique=True)
-    for name, email, role in [
-        ("System Administrator", "admin@edupredict.com", "admin"),
-        ("Lead Teacher", "teacher@edupredict.com", "teacher"),
+    for name, email, role, password in [
+        ("System Administrator", "admin@edupredict.com", "admin", "admin123"),
+        ("Lead Teacher", "teacher@edupredict.com", "teacher", "teacher123"),
     ]:
-        users.update_one({"email": email}, {"$setOnInsert": {
-            "username": name, "email": email, "password": generate_password_hash("EduPredict123!"),
-            "role": role, "created_at": datetime.now(timezone.utc),
-        }}, upsert=True)
+        users.update_one({"email": email}, {"$set": {
+            "username": name, "email": email, "password": generate_password_hash(password),
+            "role": role, "updated_at": datetime.now(timezone.utc),
+        }, "$setOnInsert": {"created_at": datetime.now(timezone.utc)}}, upsert=True)
     users.delete_many({"role": {"$nin": ["admin", "teacher", "student"]}})
 
 
@@ -72,8 +73,12 @@ def latest_by_student(roster):
     return {student["email"]: predictions.find_one({"student_email": student["email"]}, sort=[("timestamp", -1)]) for student in roster}
 
 
+def teacher_prediction_count():
+    return predictions.count_documents({"generated_by": session["user_email"]})
+
+
 def build_upload_record(row, index):
-    name = str(row.get("student_name") or row.get("name") or f"Student {index + 1}").strip()
+    name = str(row.get("student_name") or row.get("student") or row.get("name") or f"Student {index + 1}").strip()
     email = str(row.get("email") or f"upload.{datetime.now().strftime('%Y%m%d%H%M%S')}.{index}@edupredict.local").lower()
     record = new_student_profile(name, email, session["user_email"])
     record["student_id"] = str(row.get("student_id") or f"UPL-{datetime.now().strftime('%y%m%d%H%M%S')}-{index + 1}")
@@ -81,6 +86,12 @@ def build_upload_record(row, index):
         record[column] = str(row[column]).strip()
     for column in NUMERIC_COLUMNS:
         record[column] = float(row[column])
+    # Optional columns in the updated teacher template enrich the student profile.
+    for column in ("previous_gpa", "lms_logins_last_30_days", "attendance_percentage"):
+        if column in row and pd.notna(row[column]):
+            record[column] = float(row[column])
+    record["attendance_percentage"] = int(record["attendance_percentage"])
+    record["lms_logins_last_30_days"] = int(record["lms_logins_last_30_days"])
     return record
 
 
@@ -147,7 +158,7 @@ def dashboard():
         return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1).limit(12)))
     if session["role"] == "teacher":
         roster = list(students.find({"assigned_teacher": session["user_email"]}).sort("name", 1))
-        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster))
+        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count())
     student = students.find_one({"email": session["user_email"]})
     return render_template("student_dashboard.html", student=student, student_predictions=list(predictions.find({"student_email": session["user_email"]}).sort("timestamp", -1)))
 
@@ -160,6 +171,41 @@ def teacher_predict(student_id):
     save_prediction(student, session["user_email"])
     flash(f"Prediction generated for {student['name']}.", "success")
     return redirect(url_for("dashboard"))
+
+
+@app.route("/teacher/predict_selected", methods=["POST"])
+@login_required("teacher")
+def teacher_predict_selected():
+    selected_ids = request.form.getlist("student_ids")
+    if not selected_ids:
+        flash("Select at least one student to generate predictions.", "warning")
+        return redirect(url_for("dashboard"))
+    roster = students.find({"student_id": {"$in": selected_ids}, "assigned_teacher": session["user_email"]})
+    processed = 0
+    for student in roster:
+        save_prediction(student, session["user_email"])
+        processed += 1
+    flash(f"Generated predictions for {processed} student(s).", "success")
+    return redirect(url_for("dashboard"))
+
+
+@app.route("/teacher/download_predictions")
+@login_required("teacher")
+def download_predictions():
+    prediction_rows = list(predictions.find({"generated_by": session["user_email"]}).sort("timestamp", -1))
+    if not prediction_rows:
+        flash("Generate a prediction before downloading a report.", "warning")
+        return redirect(url_for("dashboard"))
+    output = io.StringIO()
+    columns = ["student_id", "name", "email", *CATEGORICAL_COLUMNS, "absence_days", "weekly_self_study_hours", *SCORE_COLUMNS,
+               "previous_gpa", "lms_logins_last_30_days", "attendance_percentage", "expected_marks", "pass_fail", "dropout_risk", "confidence", "improvement_suggestion", "generated_by", "timestamp"]
+    writer = csv.DictWriter(output, fieldnames=columns, extrasaction="ignore")
+    writer.writeheader()
+    for prediction in prediction_rows:
+        student = students.find_one({"student_id": prediction["student_id"]}) or {}
+        writer.writerow({**student, **prediction})
+    payload = io.BytesIO(output.getvalue().encode("utf-8-sig"))
+    return send_file(payload, mimetype="text/csv", as_attachment=True, download_name="edupredict_predictions.csv")
 
 
 @app.route("/teacher/upload_csv", methods=["POST"])
@@ -193,9 +239,11 @@ def update_student(student_id):
     if not student: abort(403)
     if request.method == "POST":
         try:
-            attendance, logins, gpa = float(request.form["attendance_percentage"]), float(request.form["lms_logins_last_30_days"]), float(request.form["previous_gpa"])
-            if not 0 <= attendance <= 100 or logins < 0 or not 0 <= gpa <= 4: raise ValueError
-            students.update_one({"_id": student["_id"]}, {"$set": {"attendance_percentage": attendance, "lms_logins_last_30_days": logins, "previous_gpa": gpa}})
+            values = {"absence_days": int(request.form["absence_days"]), "weekly_self_study_hours": int(request.form["weekly_self_study_hours"]),
+                      **{column: int(request.form[column]) for column in SCORE_COLUMNS}, "previous_gpa": float(request.form["previous_gpa"]),
+                      "lms_logins_last_30_days": int(request.form["lms_logins_last_30_days"]), "attendance_percentage": int(request.form["attendance_percentage"])}
+            if values["absence_days"] < 0 or values["weekly_self_study_hours"] < 0 or values["lms_logins_last_30_days"] < 0 or not 0 <= values["previous_gpa"] <= 4 or not 0 <= values["attendance_percentage"] <= 100 or any(not 0 <= values[column] <= 100 for column in SCORE_COLUMNS): raise ValueError
+            students.update_one({"_id": student["_id"]}, {"$set": values})
             flash("Student metrics updated successfully.", "success"); return redirect(url_for("dashboard"))
         except (KeyError, ValueError): flash("Use valid metric values.", "danger")
     return render_template("update_student.html", student=student)
@@ -241,6 +289,14 @@ def delete_user(user_id):
         users.delete_one({"_id": target["_id"]}); flash("User removed.", "success")
     else: flash("You cannot delete your own account.", "danger")
     return redirect(url_for("manage_users"))
+
+
+@app.route("/admin/reset_predictions", methods=["POST"])
+@login_required("admin")
+def reset_predictions():
+    result = predictions.delete_many({})
+    flash(f"Cleared {result.deleted_count} generated prediction(s). Student records were kept.", "success")
+    return redirect(url_for("dashboard"))
 
 
 @app.errorhandler(403)

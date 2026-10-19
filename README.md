@@ -13,8 +13,8 @@ Default accounts use the password `EduPredict123!`:
 
 | Email | Role |
 | --- | --- |
-| admin@edupredict.com | Admin |
-| teacher@edupredict.com | Teacher |
+| admin@edupredict.com | Admin (`admin123`) |
+| teacher@edupredict.com | Teacher (`teacher123`) |
 
 ## Teacher batch upload
 

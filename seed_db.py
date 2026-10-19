@@ -18,7 +18,7 @@ def seed(limit=50):
     db.students.create_index([("email", ASCENDING)], unique=True)
     db.students.create_index([("student_id", ASCENDING)], unique=True)
     for name, email, role in [("System Administrator", "admin@edupredict.com", "admin"), ("Lead Teacher", "teacher@edupredict.com", "teacher")]:
-        db.users.update_one({"email": email}, {"$setOnInsert": {"username": name, "email": email, "password": generate_password_hash("EduPredict123!"), "role": role, "created_at": datetime.now(timezone.utc)}}, upsert=True)
+        db.users.update_one({"email": email}, {"$setOnInsert": {"username": name, "email": email, "password": generate_password_hash("password123"), "role": role, "created_at": datetime.now(timezone.utc)}}, upsert=True)
     db.users.delete_many({"role": {"$nin": ["admin", "teacher", "student"]}})
     if not os.path.exists(DATASET_PATH):
         print("Default accounts created. student_scores_dataset.csv was not found.")
