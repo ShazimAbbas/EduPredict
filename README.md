@@ -1,29 +1,25 @@
 # EduPredict
 
-EduPredict is a Flask and MongoDB educational analytics platform with role-based dashboards and a scikit-learn GPA/dropout-risk forecasting workflow.
+EduPredict is a Flask, MongoDB, and scikit-learn education analytics application for Admins, Teachers, and Students.
 
-## Quick start
+## Run locally
 
-1. Ensure MongoDB is running locally at `mongodb://localhost:27017/` (or set `MONGO_URI`).
-2. Create and activate a Python 3.10+ virtual environment.
-3. Install dependencies: `pip install -r requirements.txt`
-4. Run: `python app.py`
-5. Visit `http://127.0.0.1:5000`.
+1. Start MongoDB at `mongodb://localhost:27017/` or configure `MONGO_URI`.
+2. Install dependencies with `pip install -r requirements.txt`.
+3. Run `python seed_db.py` to import sample students from `student_scores_dataset.csv`.
+4. Start the application with `python flask_app.py`.
 
-Staff accounts are seeded at first startup. The shared initial password is `EduPredict123!`:
+Default accounts use the password `EduPredict123!`:
 
-| Account | Role |
+| Email | Role |
 | --- | --- |
 | admin@edupredict.com | Admin |
-| analyst@edupredict.com | Analyst |
 | teacher@edupredict.com | Teacher |
 
-Public sign-up deliberately has no role field and always creates a student account. Set `FLASK_SECRET_KEY` to a unique secret before deployment.
+## Teacher batch upload
 
-## CSV data and model setup
+Teachers can upload a CSV from their dashboard. Use [sample_batch.csv](D:\Projects\EduPredict\sample_batch.csv) as the header reference. Each upload updates student records, runs the pass/fail model, and saves expected marks, risk, and improvement suggestions.
 
-Put `EduPredict.csv` in the project root, then run `python seed_db.py` to add the first 25 student records. Use `python seed_db.py --clear` only when you intentionally want to reset the application collections. Open [EduPredict_Model_Training.ipynb](D:\Projects\EduPredict\EduPredict_Model_Training.ipynb) in Jupyter or Colab and run its cells in order to train and save `edupredict_model.pkl` and `scaler.pkl`. The application uses those saved artifacts for predictions and retains a simple fallback score until they are available.
+## Model artifacts
 
-## Data flow
-
-The analyst selects student records in the Prediction Portal. The model creates a GPA forecast and a Low/Medium/High dropout assessment, then writes each result to `predictions`. The teacher, student, and admin dashboards query that same collection live on every request.
+The application automatically trains missing model artifacts from `student_scores_dataset.csv` during startup. To force a retrain after replacing the dataset, run `python train_model.py` and then restart `python flask_app.py`.
