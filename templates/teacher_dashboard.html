@@ -5,6 +5,7 @@
     <h1>Your learner roster</h1>
     <p>Manage student records and generate individual or group predictions.</p>
   </div>
+  <form class="reset-teacher" method="post" action="{{ url_for('teacher_reset_predictions') }}" onsubmit="return confirm('Delete predictions you generated? Student records will not be removed.');"><button class="danger-btn">Reset Predictions</button></form>
 </section>
 <section class="panel">
   <h2>Batch CSV upload</h2>

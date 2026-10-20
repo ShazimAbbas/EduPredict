@@ -10,7 +10,7 @@
 
 <body>
   <header class="topbar">
-    <a class="brand" href="{{ url_for('dashboard') }}">Edu<span>Predict</span></a>
+    <a class="brand" href="{{ url_for('dashboard') }}" aria-label="EduPredict dashboard"><span class="cap" aria-hidden="true">🎓</span><span class="edu">Edu</span><span>Predict</span></a>
     {% if current_user.email %}
     <nav>
       <a href="{{ url_for('dashboard') }}">Dashboard</a>{% if
