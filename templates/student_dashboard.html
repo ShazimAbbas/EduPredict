@@ -9,16 +9,12 @@
 {% if student %}
 <section class="stats">
   <article>
-    <strong
-      >{{ student.attendance_percentage|default(student.attendance_rate, true)
-      }}%</strong
-    ><span>Attendance</span>
+    <strong>{{ student.attendance_percentage|default(student.attendance_rate, true)
+      }}%</strong><span>Attendance</span>
   </article>
   <article>
-    <strong
-      >{{ student.lms_logins_last_30_days|default(student.lms_activity_score,
-      true) }}</strong
-    ><span>LMS logins (30 days)</span>
+    <strong>{{ student.lms_logins_last_30_days|default(student.lms_activity_score,
+      true) }}</strong><span>LMS logins (30 days)</span>
   </article>
   <article>
     <strong>{{ student.previous_gpa }}</strong><span>Previous GPA</span>
