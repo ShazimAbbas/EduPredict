@@ -95,6 +95,32 @@ def build_upload_record(row, index):
     return record
 
 
+def build_single_student_record(form):
+    name = form.get("student_name", form.get("name", "")).strip()
+    email = form.get("email", "").strip().lower()
+    if not name or not email:
+        raise ValueError("Student name and email are required.")
+    record = new_student_profile(name, email, session["user_email"])
+    for column in CATEGORICAL_COLUMNS:
+        value = form.get(column, "").strip()
+        if not value:
+            raise ValueError(f"{column.replace('_', ' ').title()} is required.")
+        record[column] = value
+    try:
+        record["absence_days"] = int(form["absence_days"])
+        record["weekly_self_study_hours"] = int(form["weekly_self_study_hours"])
+        for column in SCORE_COLUMNS:
+            record[column] = int(form[column])
+        record["previous_gpa"] = float(form["previous_gpa"])
+        record["lms_logins_last_30_days"] = int(form["lms_logins_last_30_days"])
+        record["attendance_percentage"] = int(form["attendance_percentage"])
+    except (KeyError, ValueError) as error:
+        raise ValueError("Enter valid numeric metric values.") from error
+    if record["absence_days"] < 0 or record["weekly_self_study_hours"] < 0 or record["lms_logins_last_30_days"] < 0 or not 0 <= record["previous_gpa"] <= 4 or not 0 <= record["attendance_percentage"] <= 100 or any(not 0 <= record[column] <= 100 for column in SCORE_COLUMNS):
+        raise ValueError("Scores and attendance must be 0–100; counts cannot be negative; GPA must be 0–4.")
+    return record
+
+
 @app.context_processor
 def global_context():
     return {"current_user": {"name": session.get("username"), "role": session.get("role"), "email": session.get("user_email")}}
@@ -162,7 +188,8 @@ def dashboard():
         return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1)), pass_count=pass_count, fail_count=fail_count, pass_rate=pass_rate)
     if session["role"] == "teacher":
         roster = list(students.find({"assigned_teacher": session["user_email"]}).sort("name", 1))
-        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count())
+        single_result = session.pop("single_prediction_result", None)
+        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count(), single_result=single_result)
     student = students.find_one({"email": session["user_email"]})
     return render_template("student_dashboard.html", student=student, student_predictions=list(predictions.find({"student_email": session["user_email"]}).sort("timestamp", -1)))
 
@@ -191,6 +218,26 @@ def teacher_predict_selected():
         processed += 1
     flash(f"Generated predictions for {processed} student(s).", "success")
     return redirect(url_for("dashboard"))
+
+
+@app.route("/teacher/single_predict", methods=["POST"])
+@login_required("teacher")
+def teacher_single_predict():
+    try:
+        record = build_single_student_record(request.form)
+        existing = students.find_one({"email": record["email"]})
+        if existing and existing.get("assigned_teacher") not in (None, session["user_email"]):
+            abort(403)
+        if existing:
+            record["student_id"] = existing["student_id"]
+        students.update_one({"email": record["email"]}, {"$set": record}, upsert=True)
+        result = predict_student_performance(record)
+        predictions.insert_one({"student_id": record["student_id"], "student_email": record["email"], "student_name": record["name"], "generated_by": session["user_email"], "timestamp": datetime.now(timezone.utc), **result})
+        session["single_prediction_result"] = {"name": record["name"], "result": result, "scores": [{"label": column.replace("_score", "").title(), "value": record[column]} for column in SCORE_COLUMNS]}
+        flash(f"Prediction generated for {record['name']}.", "success")
+    except ValueError as error:
+        flash(str(error), "danger")
+    return redirect(url_for("dashboard") + "#single-prediction")
 
 
 @app.route("/teacher/download_predictions")

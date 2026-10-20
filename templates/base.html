@@ -11,6 +11,11 @@
 <body>
   <header class="topbar">
     <a class="brand" href="{{ url_for('dashboard') }}" aria-label="EduPredict dashboard"><span class="cap" aria-hidden="true">🎓</span><span class="edu">Edu</span><span>Predict</span></a>
+    <div class="header-controls">
+      <label class="cosmic-toggle" aria-label="Switch colour theme" title="Switch light and dark theme">
+        <input type="checkbox" class="toggle" id="themeToggle" />
+        <span class="slider"><span class="cosmos"></span><span class="toggle-orb"><span class="inner-orb"></span><span class="ring"></span></span><span class="energy-line"></span><span class="energy-line"></span><span class="energy-line"></span><span class="particles"><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span></span></span>
+      </label>
     {% if current_user.email %}
     <nav>
       <a href="{{ url_for('dashboard') }}">Dashboard</a>{% if
@@ -18,6 +23,7 @@
         href="{{ url_for('logout') }}">Sign out</a>
     </nav>
     {% endif %}
+    </div>
   </header>
   <main class="container">
     {% with messages = get_flashed_messages(with_categories=true) %}{% for
@@ -26,5 +32,19 @@
     {% endfor %}{% endwith %} {% block content %}{% endblock %}
   </main>
 </body>
+
+<script>
+  const themeToggle = document.getElementById("themeToggle");
+  const savedTheme = localStorage.getItem("edupredict-theme");
+  if (savedTheme === "dark") {
+    document.documentElement.dataset.theme = "dark";
+    themeToggle.checked = true;
+  }
+  themeToggle?.addEventListener("change", () => {
+    const theme = themeToggle.checked ? "dark" : "light";
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("edupredict-theme", theme);
+  });
+</script>
 
 </html>
