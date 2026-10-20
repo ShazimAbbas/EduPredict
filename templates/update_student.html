@@ -1,14 +1,79 @@
-{% extends 'base.html' %}
-{% block title %}Update student metrics · EduPredict{% endblock %}
-{% block content %}
-<section class="hero"><div><p class="eyebrow">TEACHER MANAGEMENT</p><h1>Update academic metrics</h1><p>{{ student.name }} · {{ student.student_id }}</p></div><a class="button secondary" href="{{ url_for('dashboard') }}">Back to roster</a></section>
-<section class="panel form-panel"><form method="post" class="metrics-form">
-  <label>Absence days<input type="number" name="absence_days" min="0" step="1" required value="{{ student.absence_days|default(0, true)|int }}"></label>
-  <label>Weekly self-study hours<input type="number" name="weekly_self_study_hours" min="0" step="1" required value="{{ student.weekly_self_study_hours|default(0, true)|int }}"></label>
-  {% for column, label in [('math_score','Math score'),('history_score','History score'),('physics_score','Physics score'),('chemistry_score','Chemistry score'),('biology_score','Biology score'),('english_score','English score'),('geography_score','Geography score')] %}<label>{{ label }}<input type="number" name="{{ column }}" min="0" max="100" step="1" required value="{{ student[column]|default(0, true)|int }}"></label>{% endfor %}
-  <label>Previous GPA<input type="number" name="previous_gpa" min="0" max="4" step="0.01" required value="{{ student.previous_gpa|default(0, true) }}"></label>
-  <label>LMS logins in last 30 days<input type="number" name="lms_logins_last_30_days" min="0" step="1" required value="{{ student.lms_logins_last_30_days|default(0, true)|int }}"></label>
-  <label>Attendance percentage<input type="number" name="attendance_percentage" min="0" max="100" step="1" required value="{{ student.attendance_percentage|default(0, true)|int }}"></label>
-  <button>Save metrics</button>
-</form></section>
+{% extends 'base.html' %} {% block title %}Update student metrics · EduPredict{%
+endblock %} {% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">TEACHER MANAGEMENT</p>
+    <h1>Update academic metrics</h1>
+    <p>{{ student.name }} · {{ student.student_id }}</p>
+  </div>
+  <a class="button secondary" href="{{ url_for('dashboard') }}"
+    >Back to roster</a
+  >
+</section>
+<section class="panel form-panel">
+  <form method="post" class="metrics-form">
+    <label
+      >Absence days<input
+        type="number"
+        name="absence_days"
+        min="0"
+        step="1"
+        required
+        value="{{ student.absence_days|default(0, true)|int }}"
+    /></label>
+    <label
+      >Weekly self-study hours<input
+        type="number"
+        name="weekly_self_study_hours"
+        min="0"
+        step="1"
+        required
+        value="{{ student.weekly_self_study_hours|default(0, true)|int }}"
+    /></label>
+    {% for column, label in [('math_score','Math
+    score'),('history_score','History score'),('physics_score','Physics
+    score'),('chemistry_score','Chemistry score'),('biology_score','Biology
+    score'),('english_score','English score'),('geography_score','Geography
+    score')] %}<label
+      >{{ label }}<input
+        type="number"
+        name="{{ column }}"
+        min="0"
+        max="100"
+        step="1"
+        required
+        value="{{ student[column]|default(0, true)|int }}" /></label
+    >{% endfor %}
+    <label
+      >Previous GPA<input
+        type="number"
+        name="previous_gpa"
+        min="0"
+        max="4"
+        step="0.01"
+        required
+        value="{{ student.previous_gpa|default(0, true) }}"
+    /></label>
+    <label
+      >LMS logins in last 30 days<input
+        type="number"
+        name="lms_logins_last_30_days"
+        min="0"
+        step="1"
+        required
+        value="{{ student.lms_logins_last_30_days|default(0, true)|int }}"
+    /></label>
+    <label
+      >Attendance percentage<input
+        type="number"
+        name="attendance_percentage"
+        min="0"
+        max="100"
+        step="1"
+        required
+        value="{{ student.attendance_percentage|default(0, true)|int }}"
+    /></label>
+    <button>Save metrics</button>
+  </form>
+</section>
 {% endblock %}

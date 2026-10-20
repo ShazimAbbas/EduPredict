@@ -1,3 +1,28 @@
-{% extends 'base.html' %}{% block title %}Create account · EduPredict{% endblock %}{% block content %}
-<section class="auth-card"><p class="eyebrow">STUDENT REGISTRATION</p><h1>Start your learning profile</h1><p>All accounts created here are securely registered as student accounts.</p><form method="post"><label>Full name<input name="name" required autocomplete="name"></label><label>Email<input type="email" name="email" required autocomplete="email"></label><label>Password<input type="password" name="password" minlength="8" required autocomplete="new-password"></label><button>Create student account</button></form><p class="muted">Already registered? <a href="{{ url_for('signin') }}">Sign in</a></p></section>
+{% extends 'base.html' %}{% block title %}Create account · EduPredict{% endblock
+%}{% block content %}
+<section class="auth-card">
+  <p class="eyebrow">STUDENT REGISTRATION</p>
+  <h1>Start your learning profile</h1>
+  <p>All accounts created here are securely registered as student accounts.</p>
+  <form method="post">
+    <label>Full name<input name="name" required autocomplete="name" /></label
+    ><label
+      >Email<input
+        type="email"
+        name="email"
+        required
+        autocomplete="email" /></label
+    ><label
+      >Password<input
+        type="password"
+        name="password"
+        minlength="8"
+        required
+        autocomplete="new-password" /></label
+    ><button>Create student account</button>
+  </form>
+  <p class="muted">
+    Already registered? <a href="{{ url_for('signin') }}">Sign in</a>
+  </p>
+</section>
 {% endblock %}

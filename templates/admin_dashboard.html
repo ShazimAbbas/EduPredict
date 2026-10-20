@@ -1,8 +1,222 @@
-{% extends 'base.html' %}
-{% block content %}
-<section class="hero"><div><p class="eyebrow">ADMIN OVERVIEW</p><h1>System pulse</h1><p>Monitor users, student records, and prediction reports.</p></div><div class="hero-actions"><a class="button secondary" href="{{ url_for('manage_users') }}">Manage users</a><form method="post" action="{{ url_for('reset_predictions') }}" onsubmit="return confirm('Delete all generated predictions? Student records will not be removed.');"><button class="danger-btn">Reset predictions</button></form></div></section>
-<section class="stats"><article><strong>{{ user_count }}</strong><span>Accounts</span></article><article><strong>{{ student_count }}</strong><span>Student records</span></article><article><strong>{{ prediction_count }}</strong><span>Predictions logged</span></article></section>
-<section class="panel"><h2>Teacher prediction reports</h2><div class="table-wrap"><table><thead><tr><th>Teacher</th><th>Predictions</th><th>Pass</th><th>Fail</th></tr></thead><tbody>{% for report in reports %}<tr><td>{{ report._id }}</td><td>{{ report.total }}</td><td>{{ report.pass_count }}</td><td>{{ report.total - report.pass_count }}</td></tr>{% else %}<tr><td colspan="4">No teacher predictions have been generated.</td></tr>{% endfor %}</tbody></table></div></section>
-<section class="panel"><h2>Subject performance report</h2><div class="table-wrap"><table><thead><tr><th>Subject</th><th>Average mark</th><th>Student records</th></tr></thead><tbody>{% for report in subject_reports %}<tr><td>{{ report.subject }}</td><td>{{ report.average }}</td><td>{{ report.count }}</td></tr>{% else %}<tr><td colspan="3">No subject scores have been imported.</td></tr>{% endfor %}</tbody></table></div></section>
-<section class="panel"><h2>Latest prediction audit</h2>{% include 'prediction_table.html' %}</section>
+{% extends 'base.html' %} {% block content %}
+<style>
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1rem;
+  }
+  .outcome-grid .panel {
+    margin: 0;
+  }
+  .outcome-summary h2 {
+    margin: 0.1rem 0 0.25rem;
+    font-size: 1.65rem;
+  }
+  .ratio-track {
+    height: 12px;
+    margin: 1.3rem 0 0.65rem;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #263756;
+  }
+  .pass-fill {
+    display: block;
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--aqua), #70e4d2);
+  }
+  .ratio-labels {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+  .ratio-labels b {
+    color: var(--text);
+  }
+  .bar-chart {
+    height: 148px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 3.2rem;
+    padding: 1rem 1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .bar-group {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 0.4rem;
+    color: var(--muted);
+    font-size: 0.76rem;
+  }
+  .bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 76px;
+    padding-top: 0.35rem;
+    border-radius: 9px 9px 2px 2px;
+    transition: height 0.25s;
+  }
+  .bar span {
+    font-size: 0.73rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  .pass-bar {
+    background: linear-gradient(180deg, #65dfcc, var(--aqua));
+  }
+  .fail-bar {
+    background: linear-gradient(180deg, #ff8a9b, var(--danger));
+  }
+  @media (max-width: 760px) {
+    .outcome-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<section class="hero">
+  <div>
+    <p class="eyebrow">ADMIN OVERVIEW</p>
+    <h1>System pulse</h1>
+    <p>Monitor users, student records, and the full prediction history.</p>
+  </div>
+  <div class="hero-actions">
+    <a class="button secondary" href="{{ url_for('manage_users') }}"
+      >Manage users</a
+    >
+    <form
+      method="post"
+      action="{{ url_for('reset_predictions') }}"
+      onsubmit="
+        return confirm(
+          'Delete all generated predictions? Student records will not be removed.',
+        );
+      "
+    >
+      <button class="danger-btn">Reset predictions</button>
+    </form>
+    <form
+      method="post"
+      action="{{ url_for('remove_students') }}"
+      onsubmit="
+        return confirm(
+          'Remove every student record? User accounts and predictions will remain.',
+        );
+      "
+    >
+      <button class="danger-btn">Remove students</button>
+    </form>
+  </div>
+</section>
+<section class="stats">
+  <article><strong>{{ user_count }}</strong><span>Accounts</span></article>
+  <article>
+    <strong>{{ student_count }}</strong><span>Student records</span>
+  </article>
+  <article>
+    <strong>{{ prediction_count }}</strong><span>Predictions logged</span>
+  </article>
+</section>
+<section class="outcome-grid">
+  <article class="panel outcome-summary">
+    <p class="eyebrow">PREDICTION OUTCOMES</p>
+    <h2>{{ pass_rate }}% predicted pass rate</h2>
+    <p class="muted">
+      Based on {{ pass_count + fail_count }} completed prediction{{ '' if
+      pass_count + fail_count == 1 else 's' }}.
+    </p>
+    <div class="ratio-track">
+      <span class="pass-fill" style="width: {{ pass_rate }}%"></span>
+    </div>
+    <div class="ratio-labels">
+      <span><b>{{ pass_count }}</b> Pass</span
+      ><span><b>{{ fail_count }}</b> Fail</span>
+    </div>
+  </article>
+  <article class="panel outcome-chart">
+    <p class="eyebrow">PASS / FAIL DISTRIBUTION</p>
+    <div class="bar-chart">
+      <div class="bar-group">
+        <div class="bar pass-bar" style="height: {{ [pass_rate, 4]|max }}%">
+          <span>{{ pass_rate }}%</span>
+        </div>
+        <small>Pass</small>
+      </div>
+      <div class="bar-group">
+        <div
+          class="bar fail-bar"
+          style="height: {{ [100 - pass_rate, 4]|max }}%"
+        >
+          <span>{{ 100 - pass_rate if pass_count + fail_count else 0 }}%</span>
+        </div>
+        <small>Fail</small>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="panel">
+  <h2>Teacher prediction reports</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Teacher</th>
+          <th>Predictions</th>
+          <th>Pass</th>
+          <th>Fail</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for report in reports %}
+        <tr>
+          <td>{{ report._id }}</td>
+          <td>{{ report.total }}</td>
+          <td>{{ report.pass_count }}</td>
+          <td>{{ report.total - report.pass_count }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="4">No teacher predictions have been generated.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="panel">
+  <h2>Subject performance report</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Average mark</th>
+          <th>Student records</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for report in subject_reports %}
+        <tr>
+          <td>{{ report.subject }}</td>
+          <td>{{ report.average }}</td>
+          <td>{{ report.count }}</td>
+        </tr>
+        {% else %}
+        <tr>
+          <td colspan="3">No subject scores have been imported.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+<section class="panel">
+  <h2>Latest prediction audit</h2>
+  {% include 'prediction_table.html' %}
+</section>
 {% endblock %}

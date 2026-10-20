@@ -1,7 +1,136 @@
-{% extends 'base.html' %}
-{% block content %}
-<section class="hero"><div><p class="eyebrow">TEACHER DASHBOARD</p><h1>Your learner roster</h1><p>Manage student records and generate individual or group predictions.</p></div></section>
-<section class="panel"><h2>Batch CSV upload</h2><p class="muted">Upload a class CSV to add or update students and generate predictions for the batch.</p><form class="upload-form" method="post" action="{{ url_for('upload_csv') }}" enctype="multipart/form-data"><input type="file" name="file" accept=".csv,text/csv" required><button>Import and predict batch</button></form></section>
-<section class="panel"><div class="section-actions"><h2>Student records and latest results</h2><a class="button {% if not prediction_count %}disabled-link{% endif %}" {% if prediction_count %}href="{{ url_for('download_predictions') }}"{% else %}aria-disabled="true"{% endif %}>Download predictions CSV</a></div><form method="post" action="{{ url_for('teacher_predict_selected') }}"><div class="bulk-actions"><label class="select-all"><input type="checkbox" id="selectAll"> Select all students</label><button id="bulkPredictButton" disabled>Predict selected</button></div><div class="table-wrap"><table><thead><tr><th></th><th>Student</th><th>Expected marks</th><th>Result</th><th>Risk</th><th>Improvement suggestion</th><th>Actions</th></tr></thead><tbody>{% for student in roster %}{% set item = latest_predictions.get(student.email) %}<tr><td><input class="student-select" type="checkbox" name="student_ids" value="{{ student.student_id }}" aria-label="Select {{ student.name }}"></td><td>{{ student.name }}<small>{{ student.email }}</small></td><td>{{ item.expected_marks if item else 'Pending' }}</td><td>{% if item %}<span class="badge {{ 'low' if item.pass_fail == 'Pass' else 'high' }}">{{ item.pass_fail }}</span>{% else %}—{% endif %}</td><td>{% if item %}<span class="badge {{ item.dropout_risk|lower }}">{{ item.dropout_risk }}</span>{% else %}—{% endif %}</td><td>{{ item.improvement_suggestion if item else 'Generate a prediction to see suggestions.' }}</td><td><button class="small" type="submit" formaction="{{ url_for('teacher_predict', student_id=student.student_id) }}" formmethod="post">Predict</button><a class="button secondary small" href="{{ url_for('update_student', student_id=student.student_id) }}">Edit metrics</a></td></tr>{% else %}<tr><td colspan="7">No students assigned yet. Upload a CSV to add your class.</td></tr>{% endfor %}</tbody></table></div></form></section>
-<script>const all=document.getElementById('selectAll'),boxes=[...document.querySelectorAll('.student-select')],button=document.getElementById('bulkPredictButton');function update(){const chosen=boxes.filter(x=>x.checked).length;button.disabled=!chosen;all.checked=chosen>0&&chosen===boxes.length;all.indeterminate=chosen>0&&chosen<boxes.length}all?.addEventListener('change',()=>{boxes.forEach(x=>x.checked=all.checked);update()});boxes.forEach(x=>x.addEventListener('change',update));</script>
+{% extends 'base.html' %} {% block content %}
+<section class="hero">
+  <div>
+    <p class="eyebrow">TEACHER DASHBOARD</p>
+    <h1>Your learner roster</h1>
+    <p>Manage student records and generate individual or group predictions.</p>
+  </div>
+</section>
+<section class="panel">
+  <h2>Batch CSV upload</h2>
+  <p class="muted">
+    Upload a class CSV to add or update students and generate predictions for
+    the batch.
+  </p>
+  <form
+    class="upload-form"
+    method="post"
+    action="{{ url_for('upload_csv') }}"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="file" accept=".csv,text/csv" required /><button>
+      Import and predict batch
+    </button>
+  </form>
+</section>
+<section class="panel">
+  <div class="section-actions">
+    <h2>Student records and latest results</h2>
+    <a
+      class="button {% if not prediction_count %}disabled-link{% endif %}"
+      {%
+      if
+      prediction_count
+      %}href="{{ url_for('download_predictions') }}"
+      {%
+      else
+      %}aria-disabled="true"
+      {%
+      endif
+      %}
+      >Download predictions CSV</a
+    >
+  </div>
+  <form method="post" action="{{ url_for('teacher_predict_selected') }}">
+    <div class="bulk-actions">
+      <label class="select-all"
+        ><input type="checkbox" id="selectAll" /> Select all students</label
+      ><button id="bulkPredictButton" disabled>Predict selected</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Student</th>
+            <th>Expected marks</th>
+            <th>Result</th>
+            <th>Risk</th>
+            <th>Improvement suggestion</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in roster %}{% set item =
+          latest_predictions.get(student.email) %}
+          <tr>
+            <td>
+              <input
+                class="student-select"
+                type="checkbox"
+                name="student_ids"
+                value="{{ student.student_id }}"
+                aria-label="Select {{ student.name }}"
+              />
+            </td>
+            <td>{{ student.name }}<small>{{ student.email }}</small></td>
+            <td>{{ item.expected_marks if item else 'Pending' }}</td>
+            <td>
+              {% if item %}<span
+                class="badge {{ 'low' if item.pass_fail == 'Pass' else 'high' }}"
+                >{{ item.pass_fail }}</span
+              >{% else %}—{% endif %}
+            </td>
+            <td>
+              {% if item %}<span class="badge {{ item.dropout_risk|lower }}"
+                >{{ item.dropout_risk }}</span
+              >{% else %}—{% endif %}
+            </td>
+            <td>
+              {{ item.improvement_suggestion if item else 'Generate a prediction
+              to see suggestions.' }}
+            </td>
+            <td>
+              <button
+                class="small"
+                type="submit"
+                formaction="{{ url_for('teacher_predict', student_id=student.student_id) }}"
+                formmethod="post"
+              >
+                Predict</button
+              ><a
+                class="button secondary small"
+                href="{{ url_for('update_student', student_id=student.student_id) }}"
+                >Edit metrics</a
+              >
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="7">
+              No students assigned yet. Upload a CSV to add your class.
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </form>
+</section>
+<script>
+  const all = document.getElementById("selectAll"),
+    boxes = [...document.querySelectorAll(".student-select")],
+    button = document.getElementById("bulkPredictButton");
+  function update() {
+    const chosen = boxes.filter((x) => x.checked).length;
+    button.disabled = !chosen;
+    all.checked = chosen > 0 && chosen === boxes.length;
+    all.indeterminate = chosen > 0 && chosen < boxes.length;
+  }
+  all?.addEventListener("change", () => {
+    boxes.forEach((x) => (x.checked = all.checked));
+    update();
+  });
+  boxes.forEach((x) => x.addEventListener("change", update));
+</script>
 {% endblock %}

@@ -151,11 +151,15 @@ def logout():
 def dashboard():
     if session["role"] == "admin":
         report = list(predictions.aggregate([{"$group": {"_id": "$generated_by", "total": {"$sum": 1}, "pass_count": {"$sum": {"$cond": [{"$eq": ["$pass_fail", "Pass"]}, 1, 0]}}}}, {"$sort": {"total": -1}}]))
+        pass_count = predictions.count_documents({"pass_fail": "Pass"})
+        fail_count = predictions.count_documents({"pass_fail": "Fail"})
+        total_results = pass_count + fail_count
+        pass_rate = round(pass_count / total_results * 100) if total_results else 0
         subject_reports = []
         for column in SCORE_COLUMNS:
             values = [student.get(column) for student in students.find({column: {"$exists": True}}, {column: 1}) if isinstance(student.get(column), (int, float))]
             if values: subject_reports.append({"subject": column.replace("_score", "").title(), "average": round(sum(values) / len(values), 1), "count": len(values)})
-        return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1).limit(12)))
+        return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1)), pass_count=pass_count, fail_count=fail_count, pass_rate=pass_rate)
     if session["role"] == "teacher":
         roster = list(students.find({"assigned_teacher": session["user_email"]}).sort("name", 1))
         return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count())
@@ -296,6 +300,14 @@ def delete_user(user_id):
 def reset_predictions():
     result = predictions.delete_many({})
     flash(f"Cleared {result.deleted_count} generated prediction(s). Student records were kept.", "success")
+    return redirect(url_for("dashboard"))
+
+
+@app.route("/admin/remove_students", methods=["POST"])
+@login_required("admin")
+def remove_students():
+    result = students.delete_many({})
+    flash(f"Removed {result.deleted_count} student record(s). User accounts and predictions were kept.", "success")
     return redirect(url_for("dashboard"))
 
 
