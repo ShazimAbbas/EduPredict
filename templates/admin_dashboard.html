@@ -159,6 +159,14 @@
   </article>
 </section>
 <section class="panel">
+  <h2>CSV batch prediction reports</h2>
+  <p class="muted">Every teacher CSV import is predicted immediately and summarized here for system-wide oversight.</p>
+  <div class="table-wrap"><table><thead><tr><th>Batch</th><th>Teacher</th><th>Students</th><th>Pass / fail</th><th>Pass rate</th><th>Expected average</th><th>Improvement potential</th><th>Generated</th></tr></thead><tbody>
+    {% for batch in batch_reports %}<tr><td>{{ batch.batch_name }}</td><td>{{ batch.teacher }}</td><td>{{ batch.total }}</td><td>{{ batch.pass_count }} / {{ batch.fail_count }}</td><td><span class="badge low">{{ batch.pass_rate }}% pass</span></td><td>{{ batch.expected_average }}%</td><td>{{ batch.improvement_factor }} pts</td><td>{{ batch.timestamp.strftime('%d %b %Y, %H:%M') }}</td></tr>
+    {% else %}<tr><td colspan="8">No teacher CSV batch predictions have been generated.</td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+<section class="panel">
   <h2>Teacher prediction reports</h2>
   <div class="table-wrap">
     <table>

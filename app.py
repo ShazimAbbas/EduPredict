@@ -62,11 +62,26 @@ def new_student_profile(name, email, teacher="teacher@edupredict.com"):
             "previous_gpa": 0, **{column: 0 for column in NUMERIC_COLUMNS}}
 
 
-def save_prediction(student, generated_by):
+def save_prediction(student, generated_by, batch=None):
     result = predict_student_performance(student)
-    predictions.insert_one({"student_id": student["student_id"], "student_email": student["email"],
-                            "student_name": student["name"], "generated_by": generated_by,
-                            "timestamp": datetime.now(timezone.utc), **result})
+    document = {"student_id": student["student_id"], "student_email": student["email"],
+                "student_name": student["name"], "generated_by": generated_by,
+                "timestamp": datetime.now(timezone.utc), **result}
+    if batch:
+        document.update(batch)
+    predictions.insert_one(document)
+    return result
+
+
+def summarise_batch(results, batch_id, batch_name):
+    total = len(results)
+    passed = sum(result["pass_fail"] == "Pass" for result in results)
+    expected_average = round(sum(float(result["expected_marks"]) for result in results) / total, 1)
+    return {"batch_id": batch_id, "batch_name": batch_name, "total": total,
+            "pass_count": passed, "fail_count": total - passed,
+            "pass_rate": round(passed * 100 / total), "expected_average": expected_average,
+            "improvement_factor": round(max(0, 100 - expected_average), 1),
+            "high_risk_count": sum(result["dropout_risk"] == "High" for result in results)}
 
 
 def latest_by_student(roster):
@@ -75,6 +90,41 @@ def latest_by_student(roster):
 
 def teacher_prediction_count():
     return predictions.count_documents({"generated_by": session["user_email"]})
+
+
+def latest_batch_summary(teacher_email):
+    """Return the teacher's most recent saved CSV batch, even after a new login."""
+    batches = list(predictions.aggregate([
+        {"$match": {"generated_by": teacher_email, "batch_id": {"$exists": True}}},
+        {"$group": {"_id": "$batch_id", "batch_name": {"$first": "$batch_name"},
+                    "total": {"$sum": 1},
+                    "pass_count": {"$sum": {"$cond": [{"$eq": ["$pass_fail", "Pass"]}, 1, 0]}},
+                    "expected_average": {"$avg": "$expected_marks"},
+                    "high_risk_count": {"$sum": {"$cond": [{"$eq": ["$dropout_risk", "High"]}, 1, 0]}},
+                    "timestamp": {"$max": "$timestamp"}}},
+        {"$sort": {"timestamp": -1}}, {"$limit": 1},
+    ]))
+    if not batches:
+        # Predictions generated before batch IDs were introduced still need a
+        # visible, persistent teacher overview after the user signs in again.
+        saved_results = list(predictions.find({"generated_by": teacher_email}).sort("timestamp", -1))
+        if not saved_results:
+            return None
+        total = len(saved_results)
+        passed = sum(result.get("pass_fail") == "Pass" for result in saved_results)
+        expected_average = round(sum(float(result.get("expected_marks", 0)) for result in saved_results) / total, 1)
+        return {"batch_id": None, "batch_name": "Saved prediction overview", "total": total,
+                "pass_count": passed, "fail_count": total - passed,
+                "pass_rate": round(passed * 100 / total), "expected_average": expected_average,
+                "improvement_factor": round(max(0, 100 - expected_average), 1),
+                "high_risk_count": sum(result.get("dropout_risk") == "High" for result in saved_results)}
+    batch = batches[0]
+    batch["batch_id"] = batch.pop("_id")
+    batch["fail_count"] = batch["total"] - batch["pass_count"]
+    batch["pass_rate"] = round(batch["pass_count"] * 100 / batch["total"])
+    batch["expected_average"] = round(batch["expected_average"], 1)
+    batch["improvement_factor"] = round(max(0, 100 - batch["expected_average"]), 1)
+    return batch
 
 
 def build_upload_record(row, index):
@@ -185,11 +235,25 @@ def dashboard():
         for column in SCORE_COLUMNS:
             values = [student.get(column) for student in students.find({column: {"$exists": True}}, {column: 1}) if isinstance(student.get(column), (int, float))]
             if values: subject_reports.append({"subject": column.replace("_score", "").title(), "average": round(sum(values) / len(values), 1), "count": len(values)})
-        return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1)), pass_count=pass_count, fail_count=fail_count, pass_rate=pass_rate)
+        batch_reports = list(predictions.aggregate([
+            {"$match": {"batch_id": {"$exists": True}}},
+            {"$group": {"_id": "$batch_id", "batch_name": {"$first": "$batch_name"},
+                        "teacher": {"$first": "$generated_by"}, "total": {"$sum": 1},
+                        "pass_count": {"$sum": {"$cond": [{"$eq": ["$pass_fail", "Pass"]}, 1, 0]}},
+                        "expected_average": {"$avg": "$expected_marks"}, "timestamp": {"$max": "$timestamp"}}},
+            {"$sort": {"timestamp": -1}}, {"$limit": 12},
+        ]))
+        for batch in batch_reports:
+            batch["fail_count"] = batch["total"] - batch["pass_count"]
+            batch["pass_rate"] = round(batch["pass_count"] * 100 / batch["total"])
+            batch["expected_average"] = round(batch["expected_average"], 1)
+            batch["improvement_factor"] = round(max(0, 100 - batch["expected_average"]), 1)
+        return render_template("admin_dashboard.html", user_count=users.count_documents({}), student_count=students.count_documents({}), prediction_count=predictions.count_documents({}), reports=report, subject_reports=subject_reports, recent_predictions=list(predictions.find().sort("timestamp", -1)), pass_count=pass_count, fail_count=fail_count, pass_rate=pass_rate, batch_reports=batch_reports)
     if session["role"] == "teacher":
         roster = list(students.find({"assigned_teacher": session["user_email"]}).sort("name", 1))
         single_result = session.pop("single_prediction_result", None)
-        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count(), single_result=single_result)
+        batch_summary = latest_batch_summary(session["user_email"])
+        return render_template("teacher_dashboard.html", roster=roster, latest_predictions=latest_by_student(roster), prediction_count=teacher_prediction_count(), single_result=single_result, batch_summary=batch_summary)
     student = students.find_one({"email": session["user_email"]})
     return render_template("student_dashboard.html", student=student, student_predictions=list(predictions.find({"student_email": session["user_email"]}).sort("timestamp", -1)))
 
@@ -271,13 +335,19 @@ def upload_csv():
         missing = [column for column in UPLOAD_REQUIRED if column not in dataframe.columns]
         if missing: raise ValueError("Missing columns: " + ", ".join(missing))
         dataframe = dataframe.dropna(subset=UPLOAD_REQUIRED)
-        processed = 0
+        processed, batch_results = 0, []
+        batch_id = "BATCH-" + datetime.now().strftime("%Y%m%d%H%M%S%f")
+        batch_name = uploaded.filename
         for index, row in dataframe.iterrows():
             record = build_upload_record(row, index)
             students.update_one({"email": record["email"]}, {"$set": record}, upsert=True)
-            save_prediction(record, session["user_email"])
+            batch_results.append(save_prediction(record, session["user_email"], {"batch_id": batch_id, "batch_name": batch_name}))
             processed += 1
-        flash(f"Imported and predicted {processed} student record(s).", "success")
+        if processed:
+            session["batch_prediction_summary"] = summarise_batch(batch_results, batch_id, batch_name)
+            flash(f"Imported and predicted {processed} student record(s).", "success")
+        else:
+            flash("The CSV did not contain any complete student records.", "warning")
     except (ValueError, UnicodeDecodeError, pd.errors.ParserError) as error:
         flash(f"CSV could not be processed: {error}", "danger")
     return redirect(url_for("dashboard"))
