@@ -372,4 +372,4 @@ def forbidden(_): return render_template("error.html", code=403, message="You do
 
 seed_database()
 
-if __name__ == "__main__": app.run(debug=True)
+if __name__ == "__main__": app.run(debug=True, use_reloader=False)

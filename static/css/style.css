@@ -249,7 +249,7 @@ tbody tr:last-child td {
 }
 
 tbody tr:hover {
-    background: #f8f9ff
+    background: var(--surface)
 }
 
 td small,
